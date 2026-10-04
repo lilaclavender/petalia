@@ -16,7 +16,7 @@ import discoverHeroGifts from "../assets/discover-hero-gifts.png";
   Change "emotion-bg.png" below ONLY if your real
   image file has a different name.
 */
-import emotionCardBg from "../assets/Emotion-card-bg.png";
+import emotionCardBg from "../assets/emotion-card-bg.png";
 import "../styles/Discover.css";
 
 

@@ -21,7 +21,7 @@ import "../styles/VendorDashboard.css";
 import VendorHeader from "../components/VendorHeader";
 import VendorSidebar from "../components/VendorSidebar";
 import productImages from "../data/productImages";
-import localShop1 from "../assets/local-Shop-1.jpg";
+import localShop1 from "../assets/local-shop-1.jpg";
 
 function VendorDashboard() {
   const vendorProductImages = {
