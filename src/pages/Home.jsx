@@ -1,6 +1,6 @@
 import heroGifts from "../assets/hero-gifts.png";
 import heroBackground from "../assets/heroBg.png";
-import lavenderStem from "../assets/lavender-stem.png";
+import lavenderStem from "../assets/lavender-Stem.png";
 import anniversaryImg from "../assets/anniversary.png";
 import balloonImg from "../assets/balloon.png";
 import letterImg from "../assets/letter.png";
