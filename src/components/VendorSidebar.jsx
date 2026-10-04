@@ -11,7 +11,7 @@ import {
 import { supabase } from "../lib/supabase";
 
 import sidebarFlowers from "../assets/blur sakura.png";
-import localShop1 from "../assets/local-Shop-1.jpg";
+import localShop1 from "../assets/local-shop-1.jpg";
 
 function VendorSidebar({ shop }) {
   const navigate = useNavigate();
@@ -25,12 +25,10 @@ function VendorSidebar({ shop }) {
   const handleProducts = () => {
     // If already on dashboard, scroll directly to products.
     if (location.pathname === "/vendor-dashboard") {
-      document
-        .querySelector(".vendor-products-section")
-        ?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      document.querySelector(".vendor-products-section")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
 
       return;
     }
@@ -39,20 +37,15 @@ function VendorSidebar({ shop }) {
     navigate("/vendor-dashboard#products");
   };
 
-  const isDashboard =
-    location.pathname === "/vendor-dashboard";
+  const isDashboard = location.pathname === "/vendor-dashboard";
 
-  const isShopProfile =
-    location.pathname === "/vendor/shop-profile";
+  const isShopProfile = location.pathname === "/vendor/shop-profile";
 
-  const isOrders =
-    location.pathname === "/vendor/orders";
+  const isOrders = location.pathname === "/vendor/orders";
 
-  const isSettings =
-    location.pathname === "/vendor/settings";
+  const isSettings = location.pathname === "/vendor/settings";
 
-  const isProducts =
-    location.pathname.startsWith("/vendor/products");
+  const isProducts = location.pathname.startsWith("/vendor/products");
 
   return (
     <aside className="vendor-sidebar">
@@ -74,9 +67,7 @@ function VendorSidebar({ shop }) {
       <nav className="vendor-sidebar-nav">
         <button
           type="button"
-          className={`vendor-nav-item ${
-            isDashboard ? "active" : ""
-          }`}
+          className={`vendor-nav-item ${isDashboard ? "active" : ""}`}
           onClick={() => navigate("/vendor-dashboard")}
         >
           <LayoutDashboard size={19} />
@@ -85,9 +76,7 @@ function VendorSidebar({ shop }) {
 
         <button
           type="button"
-          className={`vendor-nav-item ${
-            isProducts ? "active" : ""
-          }`}
+          className={`vendor-nav-item ${isProducts ? "active" : ""}`}
           onClick={handleProducts}
         >
           <Package size={19} />
@@ -96,9 +85,7 @@ function VendorSidebar({ shop }) {
 
         <button
           type="button"
-          className={`vendor-nav-item ${
-            isOrders ? "active" : ""
-          }`}
+          className={`vendor-nav-item ${isOrders ? "active" : ""}`}
           onClick={() => navigate("/vendor/orders")}
         >
           <ClipboardList size={19} />
@@ -107,9 +94,7 @@ function VendorSidebar({ shop }) {
 
         <button
           type="button"
-          className={`vendor-nav-item ${
-            isShopProfile ? "active" : ""
-          }`}
+          className={`vendor-nav-item ${isShopProfile ? "active" : ""}`}
           onClick={() => navigate("/vendor/shop-profile")}
         >
           <CircleUserRound size={19} />
@@ -123,9 +108,7 @@ function VendorSidebar({ shop }) {
       <div className="vendor-sidebar-bottom">
         <button
           type="button"
-          className={`vendor-nav-item ${
-            isSettings ? "active" : ""
-          }`}
+          className={`vendor-nav-item ${isSettings ? "active" : ""}`}
           onClick={() => navigate("/vendor/settings")}
         >
           <Settings size={19} />
@@ -144,11 +127,7 @@ function VendorSidebar({ shop }) {
 
       {/* DECORATION */}
       <div className="vendor-sidebar-decoration">
-        <img
-          src={sidebarFlowers}
-          alt=""
-          className="sidebar-flower-image"
-        />
+        <img src={sidebarFlowers} alt="" className="sidebar-flower-image" />
 
         <div className="sidebar-flower-text">
           Flowers
