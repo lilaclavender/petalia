@@ -539,162 +539,12 @@ function Payment() {
               </div>
             </header>
 
-            {/* =========================
+                        {/* =========================
                 KHQR PAYMENT
             ========================= */}
 
             {paymentMethod === "khqr" && (
               <div className="khqr-payment">
-                <div className="khqr-amount">
-                  <span>Order total</span>
-
-                  <strong>${total.toFixed(2)}</strong>
-                </div>
-
-                {/* QR prototype */}
-
-                <div className="khqr-visual-area">
-                  <div className="khqr-glow" />
-
-                  <div className="khqr-frame">
-                    <div className="khqr-top">
-                      <span>KHQR</span>
-
-                      <small>PETALIA</small>
-                    </div>
-
-                    <div className="khqr-code-placeholder">
-                      {khqrPayment?.qr ? (
-                        <QRCodeSVG
-                          value={khqrPayment.qr}
-                          size={180}
-                          level="M"
-                        />
-                      ) : (
-                        <>
-                          <i className="fi fi-rr-qr-scan" />
-                          <span>Generate KHQR to pay</span>
-                        </>
-                      )}
-                    </div>
-
-                    <div className="khqr-bottom">
-                      <span>Petalia</span>
-
-                      <strong>${total.toFixed(2)}</strong>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Payment instruction */}
-
-                <div className="khqr-instruction">
-                  <div className="khqr-instruction-icon">
-                    <i className="fi fi-rr-mobile-button" />
-                  </div>
-
-                  <div>
-                    <strong>Pay securely with KHQR</strong>
-
-                    <p>
-                      Generate your KHQR, scan it with your banking app, then
-                      verify your payment to complete the order.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Pending status */}
-
-                <div className="payment-waiting">
-                  <div className="waiting-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-
-                  <div>
-                    <strong>Payment pending</strong>
-
-                    <small>Payment has not been verified.</small>
-                  </div>
-                </div>
-
-                {/* Submit order */}
-
-                                {/* =========================
-                    PAYMENT ACTION
-                ========================= */}
-
-                {!khqrPayment?.qr ? (
-                  <button
-                    type="button"
-                    className={`complete-payment-button ${
-                      isProcessing ? "payment-processing" : ""
-                    }`}
-                    onClick={completePayment}
-                    disabled={isProcessing}
-                  >
-                    {isProcessing ? (
-                      <>
-                        <span className="button-spinner" />
-                        Generating KHQR...
-                      </>
-                    ) : (
-                      <>
-                        Generate KHQR
-                        <i className="fi fi-rr-arrow-right" />
-                      </>
-                    )}
-                  </button>
-                ) : (
-                  <div className="khqr-ready-section">
-                    <div className="khqr-ready-message">
-                      <div className="khqr-ready-icon">
-                        <i className="fi fi-rr-check" />
-                      </div>
-
-                      <div>
-                        <strong>KHQR ready</strong>
-
-                        <span>
-                          Scan the QR with your banking app. Once payment is
-                          complete, verify it below.
-                        </span>
-                      </div>
-                    </div>
-
-                    <button
-                      type="button"
-                      className={`complete-payment-button ${
-                        isProcessing ? "payment-processing" : ""
-                      }`}
-                      onClick={checkBakongPayment}
-                      disabled={isProcessing}
-                    >
-                      {isProcessing ? (
-                        <>
-                          <span className="button-spinner" />
-                          Checking Payment...
-                        </>
-                      ) : (
-                        <>
-                          Check Payment
-                          <i className="fi fi-rr-arrow-right" />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* =========================
-                KHQR PAYMENT
-            ========================= */}
-
-            {paymentMethod === "khqr" && (
-              <div className="khqr-payment">
-
                 <div className="khqr-amount">
                   <span>Order total</span>
                   <strong>${total.toFixed(2)}</strong>
@@ -740,10 +590,9 @@ function Payment() {
 
                   <div>
                     <strong>Pay securely with KHQR</strong>
-
                     <p>
-                      Generate your KHQR, scan it with your banking app,
-                      then verify your payment to complete the order.
+                      Generate your KHQR, scan it with your banking app, then
+                      verify your payment to complete the order.
                     </p>
                   </div>
                 </div>
@@ -786,7 +635,6 @@ function Payment() {
                   </button>
                 ) : (
                   <div className="khqr-ready-section">
-
                     <div className="khqr-ready-message">
                       <div className="khqr-ready-icon">
                         <i className="fi fi-rr-check" />
@@ -795,8 +643,8 @@ function Payment() {
                       <div>
                         <strong>KHQR ready</strong>
                         <span>
-                          Scan the QR with your banking app. Once payment
-                          is complete, verify it below.
+                          Scan the QR with your banking app. Once payment is
+                          complete, verify it below.
                         </span>
                       </div>
                     </div>
@@ -821,10 +669,8 @@ function Payment() {
                         </>
                       )}
                     </button>
-
                   </div>
                 )}
-
               </div>
             )}
 
