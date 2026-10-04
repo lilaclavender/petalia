@@ -1,0 +1,25 @@
+:root {
+  /* Petalia Color Palette */
+  --color-lavender: #eee7f1;
+  --color-primary: #d35b8c;
+  --color-cream: #f9f4f0;
+  --color-plum: #6e536f;
+  --color-mauve: #a36f7e;
+  --color-sage: #748b7a;
+
+  /* Basic Colors */
+  --color-white: #ffffff;
+  --color-text: #6e536f;
+
+  /* Typography */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Layout */
+  --container-width: 1370px;
+}

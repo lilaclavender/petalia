@@ -1,0 +1,153 @@
+.vendor-center-header {
+  height: 72px;
+  width: 100%;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fffaf7;
+  border-bottom: 1px solid rgba(110, 83, 111, 0.12);
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.vendor-center-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vendor-center-logo {
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 700;
+  color: #6e536f;
+
+  cursor: pointer;
+}
+
+.vendor-center-divider {
+  width: 1px;
+  height: 25px;
+  background: rgba(110, 83, 111, 0.22);
+}
+
+.vendor-center-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #a36f7e;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.vendor-center-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vendor-center-view-shop {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(211, 91, 140, 0.24);
+  border-radius: 999px;
+
+  background: transparent;
+  color: #d35b8c;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.vendor-center-view-shop:hover {
+  background: #f8eef1;
+}
+
+/* =========================
+   SELLER ACCOUNT
+========================= */
+
+.vendor-center-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px 10px;
+
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+
+  color: #6e536f;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.vendor-center-account:hover {
+  background: #f8eef1;
+}
+
+.vendor-center-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eee7f1;
+  color: #6e536f;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.vendor-center-account-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1.25;
+}
+
+.vendor-center-account-text small {
+  font-size: 9px;
+  color: #a36f7e;
+}
+
+.vendor-center-account-text strong {
+  margin-top: 2px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #6e536f;
+}
+
+.vendor-center-page {
+  min-height: 100vh;
+  background: #fffaf7;
+}

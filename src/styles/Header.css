@@ -1,0 +1,399 @@
+.site-header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee7f1;
+}
+
+/* =========================
+   HEADER LAYOUT
+========================= */
+
+.header-container {
+  width: calc(100% - 100px);
+  max-width: 1800px;
+  min-height: 100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.brand {
+  text-decoration: none;
+  flex-shrink: 0;
+
+  /* Space between logo/tagline and Home */
+  margin-right: 250px;
+}
+
+.brand h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  font-style: italic;
+  font-weight: 600;
+
+  color: #6e536f;
+  line-height: 1;
+}
+
+.brand p {
+  margin: 6px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  color: #a36f7e;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  white-space: nowrap;
+}
+
+.main-nav a,
+.discover-link {
+  position: relative;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #6e536f;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.discover-link:hover {
+  color: #d35b8c;
+}
+
+/* Active page */
+
+.main-nav a.active {
+  color: #d35b8c;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  /* Push actions to right side */
+  margin-left: auto;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  width: 300px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  border: 1px solid #d35b8c;
+  border-radius: 22px;
+}
+
+.search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+
+  color: #6e536f;
+}
+
+.search-box input::placeholder {
+  color: #b8aeb7;
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  color: #d35b8c;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* =========================
+   WISHLIST / CART
+========================= */
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #6e536f;
+  text-decoration: none;
+}
+
+.header-icon svg {
+  width: 23px;
+  height: 23px;
+  stroke-width: 1.7;
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background-color: #eee7f1;
+  color: #6e536f;
+
+  text-decoration: none;
+}
+
+.account-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.7;
+}
+
+.header-icon {
+  position: relative;
+}
+
+.header-count {
+  position: absolute;
+
+  top: -6px;
+  right: -7px;
+
+  min-width: 16px;
+  height: 16px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 2px solid #fffaf7;
+  border-radius: 999px;
+
+  background: #d35b8c;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.search-submit {
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: inherit;
+  cursor: pointer;
+}
+
+/* =========================
+   ACCOUNT MENU
+========================= */
+
+.account-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.account-menu .account-icon {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Dropdown */
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+
+  width: 220px;
+  padding: 14px;
+
+  background: #fffaf7;
+  border: 1px solid rgba(110, 83, 111, 0.14);
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(110, 83, 111, 0.14);
+
+  z-index: 1000;
+}
+
+/* User information */
+
+.account-dropdown-user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 4px 6px 12px;
+
+  border-bottom: 1px solid rgba(110, 83, 111, 0.12);
+}
+
+.account-dropdown-user span {
+  font-size: 11px;
+  color: #a36f7e;
+}
+
+.account-dropdown-user strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6e536f;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Sign Out */
+
+.account-signout {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 9px 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #6e536f;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.account-signout:hover {
+  background: #f8eef1;
+  color: #d35b8c;
+}
+
+/* =========================
+   ACTIVE HEADER ICONS
+========================= */
+
+.header-icon,
+.account-icon {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.header-icon:hover {
+  color: #d35b8c;
+}
+
+/* Wishlist / Cart active page */
+
+.header-icon-active {
+  color: #d35b8c;
+}
+
+/* Account active page */
+
+.account-menu .account-icon.account-icon-active {
+  background: #f8eef1;
+  color: #d35b8c;
+}
+
+/* =========================
+   ACCOUNT DROPDOWN LINK
+========================= */
+
+.account-dropdown-link {
+  width: 100%;
+  margin-top: 8px;
+  padding: 9px 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  color: #6e536f;
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.account-dropdown-link:hover {
+  background: #f8eef1;
+  color: #d35b8c;
+}

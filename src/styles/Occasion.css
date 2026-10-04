@@ -1,0 +1,920 @@
+/* =====================================================
+   OCCASION PAGE
+===================================================== */
+
+.occasion-page {
+  min-height: 100vh;
+  background: #eee7f1;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.occasion-breadcrumb-wrap {
+  width: 100%;
+  background: #eee7f1;
+}
+
+.occasion-breadcrumb {
+  width: min(1790px, calc(100% - 104px));
+  min-height: 56px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+
+  color: #8e788c;
+}
+
+.occasion-breadcrumb button {
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  color: #8e788c;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.occasion-breadcrumb button:hover {
+  color: #d35b8c;
+}
+
+.occasion-breadcrumb span {
+  color: #baa9b8;
+}
+
+.occasion-breadcrumb strong {
+  color: #6e536f;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.occasion-hero {
+  position: relative;
+
+  min-height: 275px;
+
+  padding: 58px 40px 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(248, 225, 235, 0.55) 0%,
+      rgba(238, 231, 241, 0) 57%
+    ),
+    #eee7f1;
+}
+
+
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
+.occasion-hero-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 760px;
+
+  text-align: center;
+}
+
+.occasion-eyebrow {
+  margin: 0 0 13px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2.6px;
+
+  color: #d35b8c;
+}
+
+.occasion-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4.5vw, 58px);
+  font-weight: 500;
+
+  line-height: 1.08;
+
+  color: #6e536f;
+}
+
+.occasion-hero-description {
+  max-width: 610px;
+
+  margin: 17px auto 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #897687;
+}
+
+
+/* =====================================================
+   SOFT BACKGROUND FLOWER
+===================================================== */
+
+.occasion-flower-watermark {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 50%;
+  top: 53%;
+
+  width: 430px;
+  height: 280px;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0.06;
+
+  pointer-events: none;
+}
+
+
+/* shared petal */
+
+.occasion-flower-petal {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 130px;
+  height: 205px;
+
+  border-radius: 75% 25% 70% 30% / 78% 35% 65% 22%;
+
+  background: linear-gradient(
+    155deg,
+    #e778a4 0%,
+    #f0a4c0 48%,
+    #f8d7e4 100%
+  );
+
+  transform-origin: 50% 92%;
+}
+
+
+/* center/top petal */
+
+.occasion-flower-watermark .petal-one {
+  transform: translate(-50%, -88%) rotate(0deg);
+}
+
+
+/* left upper */
+
+.occasion-flower-watermark .petal-two {
+  transform: translate(-74%, -73%) rotate(-37deg);
+}
+
+
+/* right upper */
+
+.occasion-flower-watermark .petal-three {
+  transform: translate(-26%, -73%) rotate(37deg);
+}
+
+
+/* left lower */
+
+.occasion-flower-watermark .petal-four {
+  transform: translate(-88%, -42%) rotate(-67deg);
+}
+
+
+/* right lower */
+
+.occasion-flower-watermark .petal-five {
+  transform: translate(-12%, -42%) rotate(67deg);
+}
+
+
+/* soft flower center */
+
+.occasion-flower-center {
+  position: absolute;
+
+  left: 50%;
+  top: 70%;
+
+  width: 60px;
+  height: 60px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #e88eaf;
+}
+
+
+/* =====================================================
+   SMALL HERO PETALS
+===================================================== */
+
+.occasion-small-petal {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 27px;
+  height: 15px;
+
+  border-radius: 85% 15% 85% 15% / 80% 20% 80% 20%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(211, 91, 140, 0.38),
+    rgba(244, 181, 207, 0.15)
+  );
+
+  pointer-events: none;
+}
+
+.occasion-small-petal-left {
+  left: 12%;
+  top: 40%;
+
+  transform: rotate(18deg);
+}
+
+.occasion-small-petal-right {
+  right: 12%;
+  top: 32%;
+
+  transform: rotate(-28deg);
+}
+
+
+/* =====================================================
+   OCCASION SECTION
+===================================================== */
+
+.occasion-section {
+  position: relative;
+  z-index: 3;
+
+  width: min(1166px, calc(100% - 80px));
+
+  margin: -35px auto 0;
+
+  padding: 0 0 80px;
+}
+
+
+/* =====================================================
+   OCCASION GRID
+===================================================== */
+
+.occasion-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.occasion-card {
+  position: relative;
+
+  min-height: 205px;
+
+  padding: 25px 24px 23px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border: 1px solid rgba(110, 83, 111, 0.08);
+
+  border-radius: 17px;
+
+  background: rgba(255, 250, 247, 0.8);
+
+  text-align: left;
+
+  color: inherit;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(110, 83, 111, 0.025);
+
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.occasion-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(211, 91, 140, 0.2);
+
+  background: rgba(255, 250, 247, 0.95);
+
+  box-shadow: 0 12px 26px rgba(110, 83, 111, 0.08);
+}
+
+
+/* keyboard accessibility */
+
+.occasion-card:focus-visible {
+  outline: 2px solid rgba(211, 91, 140, 0.55);
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   ICON AREA + SMALL DECORATIONS
+===================================================== */
+
+.occasion-icon-area {
+  position: relative;
+
+  width: 92px;
+  height: 52px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* little decoration container */
+
+.occasion-mini-decor {
+  position: absolute;
+
+  left: 57px;
+  top: 8px;
+
+  width: 34px;
+  height: 30px;
+
+  color: #d35b8c;
+
+  pointer-events: none;
+}
+
+
+/* every tiny icon */
+
+.occasion-mini-decor svg {
+  position: absolute;
+
+  width: 11px;
+  height: 11px;
+
+  stroke-width: 1.6;
+
+  opacity: 0.65;
+}
+
+
+/* first little decoration */
+
+.occasion-mini-decor .mini-one {
+  left: 1px;
+  top: 2px;
+
+  transform: rotate(-12deg);
+}
+
+
+/* second little decoration */
+
+.occasion-mini-decor .mini-two {
+  right: 1px;
+  bottom: 2px;
+
+  width: 8px;
+  height: 8px;
+
+  opacity: 0.48;
+
+  transform: rotate(18deg);
+}
+
+
+/* =====================================================
+   DECORATION COLORS
+===================================================== */
+
+.decoration-birthday .occasion-mini-decor {
+  color: #d85c8f;
+}
+
+.decoration-anniversary .occasion-mini-decor {
+  color: #ce5c86;
+}
+
+.decoration-christmas .occasion-mini-decor {
+  color: #829563;
+}
+
+.decoration-graduation .occasion-mini-decor {
+  color: #a774c6;
+}
+
+.decoration-wedding .occasion-mini-decor {
+  color: #ca718f;
+}
+
+.decoration-congratulations .occasion-mini-decor {
+  color: #dc8078;
+}
+
+.decoration-new-baby .occasion-mini-decor {
+  color: #817dce;
+}
+
+.decoration-just-because .occasion-mini-decor {
+  color: #d35b8c;
+}
+
+
+/* =====================================================
+   PETAL ICON BACKGROUND
+===================================================== */
+
+.occasion-icon {
+  --occasion-bloom: rgba(247, 207, 224, 0.72);
+
+  position: relative;
+
+  width: 62px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: transparent;
+
+  isolation: isolate;
+}
+
+
+/* Main Lucide icon */
+
+.occasion-main-icon {
+  position: relative;
+  z-index: 5;
+
+  width: 22px;
+  height: 22px;
+}
+
+
+/* Flower container */
+
+.icon-bloom {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 42px;
+  height: 38px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+}
+
+
+/* Individual petals */
+
+.bloom-petal {
+  position: absolute;
+
+  width: 24px;
+  height: 23px;
+
+  background: var(--occasion-bloom);
+
+  border-radius: 65% 55% 60% 50%;
+
+  opacity: 0.72;
+}
+
+
+/* TOP LEFT */
+
+.bloom-petal-1 {
+  left: 2px;
+  top: 1px;
+
+  transform: rotate(-20deg);
+}
+
+
+/* TOP RIGHT */
+
+.bloom-petal-2 {
+  right: 2px;
+  top: 1px;
+
+  transform: rotate(20deg);
+}
+
+
+/* BOTTOM LEFT */
+
+.bloom-petal-3 {
+  left: 3px;
+  bottom: 1px;
+
+  transform: rotate(18deg);
+}
+
+
+/* BOTTOM RIGHT */
+
+.bloom-petal-4 {
+  right: 3px;
+  bottom: 1px;
+
+  transform: rotate(-18deg);
+}
+
+
+/* =====================================================
+   ICON COLORS
+===================================================== */
+
+.occasion-icon-pink {
+  --occasion-bloom: rgba(247, 207, 224, 0.78);
+  color: #d85c8f;
+}
+
+.occasion-icon-rose {
+  --occasion-bloom: rgba(245, 207, 222, 0.78);
+  color: #ce5c86;
+}
+
+.occasion-icon-sage {
+  --occasion-bloom: rgba(217, 227, 204, 0.82);
+  color: #788b5b;
+}
+
+.occasion-icon-lavender {
+  --occasion-bloom: rgba(229, 211, 242, 0.8);
+  color: #9a63bd;
+}
+
+.occasion-icon-blush {
+  --occasion-bloom: rgba(246, 213, 225, 0.8);
+  color: #c96588;
+}
+
+.occasion-icon-peach {
+  --occasion-bloom: rgba(248, 215, 207, 0.82);
+  color: #d97573;
+}
+
+.occasion-icon-lilac {
+  --occasion-bloom: rgba(218, 219, 245, 0.82);
+  color: #7774c9;
+}
+
+.occasion-icon-mauve {
+  --occasion-bloom: rgba(242, 209, 224, 0.8);
+  color: #d35b8c;
+}
+
+
+/* =====================================================
+   CARD TEXT
+===================================================== */
+
+.occasion-card h2 {
+  margin: 0 0 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 500;
+
+  color: #6e536f;
+}
+
+.occasion-card-description {
+  margin: 0 0 17px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+
+  line-height: 1.65;
+
+  color: #887686;
+}
+
+
+/* =====================================================
+   EXPLORE LINK
+===================================================== */
+
+.occasion-explore {
+  margin-top: auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #d35b8c;
+}
+
+.occasion-arrow {
+  display: inline-block;
+
+  transition: transform 0.2s ease;
+}
+
+.occasion-card:hover .occasion-arrow {
+  transform: translateX(3px);
+}
+
+
+/* =====================================================
+   SHOP BY EMOTION BRIDGE
+===================================================== */
+
+.occasion-emotion-bridge {
+  max-width: 560px;
+
+  margin: 58px auto 0;
+
+  text-align: center;
+}
+
+
+/* decorative divider */
+
+.occasion-bridge-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: #d35b8c;
+}
+
+.occasion-bridge-divider > span {
+  width: 38px;
+  height: 1px;
+
+  background: rgba(211, 91, 140, 0.28);
+}
+
+.occasion-bridge-divider svg {
+  opacity: 0.7;
+}
+
+
+/* small label */
+
+.occasion-bridge-eyebrow {
+  margin: 0 0 8px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+
+  color: #d35b8c;
+}
+
+
+/* bridge heading */
+
+.occasion-emotion-bridge h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 500;
+
+  line-height: 1.3;
+
+  color: #6e536f;
+}
+
+
+/* bridge description */
+
+.occasion-bridge-description {
+  margin: 9px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #8b7988;
+}
+
+
+/* Shop by Emotion link */
+
+.occasion-bridge-link {
+  margin-top: 14px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.occasion-bridge-link:hover {
+  color: #b84775;
+
+  gap: 9px;
+}
+
+.occasion-bridge-link span {
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .occasion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .occasion-section {
+    margin-top: -5px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .occasion-breadcrumb {
+    width: calc(100% - 40px);
+
+    min-height: 50px;
+
+    font-size: 11px;
+  }
+
+  .occasion-breadcrumb button {
+    font-size: 11px;
+  }
+
+
+  /* HERO */
+
+  .occasion-hero {
+    min-height: 245px;
+
+    padding: 48px 20px 42px;
+  }
+
+  .occasion-hero h1 {
+    font-size: 39px;
+  }
+
+  .occasion-hero-description {
+    max-width: 360px;
+
+    font-size: 12px;
+  }
+
+
+  /* BACKGROUND FLOWER */
+
+  .occasion-flower-watermark {
+    width: 320px;
+    height: 220px;
+
+    opacity: 0.06;
+  }
+
+  .occasion-flower-petal {
+    width: 100px;
+    height: 155px;
+  }
+
+  .occasion-small-petal-left {
+    left: 6%;
+  }
+
+  .occasion-small-petal-right {
+    right: 6%;
+  }
+
+
+  /* OCCASION SECTION */
+
+  .occasion-section {
+    width: calc(100% - 40px);
+
+    margin: 0 auto;
+
+    padding-bottom: 60px;
+  }
+
+
+  /* CARDS */
+
+  .occasion-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .occasion-card {
+    min-height: 195px;
+  }
+
+
+  /* EMOTION BRIDGE */
+
+  .occasion-emotion-bridge {
+    margin-top: 45px;
+
+    padding: 0 15px;
+  }
+
+  .occasion-emotion-bridge h2 {
+    font-size: 22px;
+  }
+}

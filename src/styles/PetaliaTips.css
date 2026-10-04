@@ -1,0 +1,943 @@
+/* =====================================================
+   PETALIA TIPS
+===================================================== */
+
+.petalia-tips-page {
+  min-height: 100vh;
+  background: #eee7f1;
+  color: #6e536f;
+}
+
+
+/* =====================================================
+   SHARED
+===================================================== */
+
+.tips-section {
+  width: min(1166px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.tips-eyebrow {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+
+  color: #d35b8c;
+}
+
+.tips-primary-btn {
+  min-height: 40px;
+  padding: 0 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #d35b8c;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tips-primary-btn:hover {
+  background: #c64f82;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(211, 91, 140, 0.18);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.tips-hero {
+  position: relative;
+
+  width: 100%;
+  height: 480px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-image: url("../assets/tips-hero-guide.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.tips-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 520px;
+
+  margin-left: max(52px, calc((100vw - 1166px) / 2));
+  padding-right: 20px;
+}
+
+.tips-hero .tips-eyebrow {
+  margin: 0 0 14px;
+}
+
+.tips-hero-content h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4vw, 56px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+
+  color: #6e536f;
+}
+
+.tips-hero-description {
+  max-width: 440px;
+  margin: 20px 0 26px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+
+  color: #776574;
+}
+
+
+/* =====================================================
+   EXPLORE PETALIA TIPS
+===================================================== */
+
+.tips-explore {
+  padding: 42px 0 40px;
+}
+
+.tips-section-label {
+  margin-bottom: 22px;
+}
+
+.tips-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* SAME CARD STYLE FOR ALL 3 */
+
+.tips-category-card {
+  position: relative;
+
+  width: 100%;
+  height: 168px;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  overflow: hidden;
+
+  background: #fffaf7;
+  border: 1px solid rgba(110, 83, 111, 0.06);
+  border-radius: 16px;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow: 0 8px 26px rgba(110, 83, 111, 0.035);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.tips-category-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(211, 91, 140, 0.15);
+  box-shadow: 0 12px 30px rgba(110, 83, 111, 0.08);
+}
+
+
+/* IMAGE */
+
+.tips-category-image-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tips-category-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+/*
+  IMPORTANT:
+  Flower Meanings now uses the SAME image styling
+  as Candle Guide and Gift Giving.
+*/
+
+.tips-category-image-flower-meanings {
+  object-fit: cover;
+  object-position: center;
+}
+
+.tips-category-card:hover .tips-category-image {
+  transform: scale(1.035);
+}
+
+
+/* CONTENT */
+
+.tips-category-content {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 20px 18px 18px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background: #fffaf7;
+
+  text-align: left;
+}
+
+.tips-category-icon {
+  width: 36px;
+  height: 34px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
+
+  background: #f8e8ee;
+  color: #d35b8c;
+}
+
+.tips-category-content h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.15;
+
+  color: #6e536f;
+}
+
+.tips-category-content p {
+  max-width: 180px;
+
+  margin: 7px 0 0;
+  padding-right: 18px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+
+  color: #837180;
+}
+
+
+/* ARROW */
+
+.tips-category-arrow {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3e5eb;
+  color: #d35b8c;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tips-category-card:hover .tips-category-arrow {
+  background: #d35b8c;
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+
+/* =====================================================
+   FEATURED GUIDE
+===================================================== */
+
+.tips-featured-section {
+  padding: 20px 0 36px;
+}
+
+.tips-featured-section > .tips-eyebrow {
+  margin-bottom: 20px;
+}
+
+.tips-featured-card {
+  position: relative;
+
+  min-height: 315px;
+
+  display: grid;
+  grid-template-columns: 44% 56%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(110, 83, 111, 0.08);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 84% 24%,
+      rgba(255, 250, 247, 0.7),
+      transparent 28%
+    ),
+    linear-gradient(
+      112deg,
+      #f7ebf1 0%,
+      #f2eaf4 48%,
+      #eee5f3 100%
+    );
+
+  box-shadow: 0 8px 28px rgba(110, 83, 111, 0.035);
+}
+
+.tips-featured-image-wrap {
+  position: relative;
+
+  min-height: 315px;
+  overflow: hidden;
+}
+
+.tips-featured-image-wrap::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    transparent 74%,
+    rgba(242, 234, 244, 0.42) 100%
+  );
+
+  pointer-events: none;
+}
+
+.tips-featured-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+}
+
+.tips-featured-content {
+  position: relative;
+
+  align-self: center;
+
+  padding: 42px 44px 42px 48px;
+}
+
+
+/* small decorative paper */
+
+.tips-featured-content::before {
+  content: "";
+
+  position: absolute;
+
+  right: 34px;
+  top: 28px;
+
+  width: 108px;
+  height: 132px;
+
+  border: 1px solid rgba(110, 83, 111, 0.05);
+  border-radius: 5px 8px 5px 7px;
+
+  background: rgba(255, 250, 247, 0.25);
+
+  transform: rotate(4deg);
+
+  pointer-events: none;
+}
+
+.tips-featured-content h2 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 520px;
+  margin: 11px 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3vw, 39px);
+  font-weight: 500;
+  line-height: 1.05;
+
+  color: #6e536f;
+}
+
+.tips-featured-description {
+  position: relative;
+  z-index: 2;
+
+  max-width: 480px;
+  margin: 16px 0 21px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #7d6b79;
+}
+
+.tips-small-btn {
+  position: relative;
+  z-index: 3;
+
+  min-height: 38px;
+  padding: 0 19px;
+}
+
+.tips-featured-sparkle {
+  position: absolute;
+  z-index: 2;
+
+  right: 35px;
+  bottom: 30px;
+
+  color: rgba(211, 91, 140, 0.22);
+}
+
+
+/* =====================================================
+   MORE FROM PETALIA
+===================================================== */
+
+.tips-more-section {
+  padding: 30px 0 40px;
+}
+
+.tips-more-section > .tips-eyebrow {
+  margin-bottom: 20px;
+}
+
+.tips-article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tips-article-card {
+  overflow: hidden;
+
+  border: 1px solid rgba(110, 83, 111, 0.09);
+  border-radius: 14px;
+
+  background: rgba(255, 250, 247, 0.84);
+
+  box-shadow: 0 8px 25px rgba(110, 83, 111, 0.025);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.tips-article-card:nth-child(2) {
+  background: rgba(246, 240, 248, 0.88);
+}
+
+.tips-article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(110, 83, 111, 0.07);
+}
+
+.tips-article-image-button {
+  width: 100%;
+  height: 190px;
+
+  padding: 0;
+
+  display: block;
+  overflow: hidden;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.tips-article-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.tips-article-card:hover .tips-article-image {
+  transform: scale(1.035);
+}
+
+.tips-article-content {
+  padding: 20px 20px 21px;
+}
+
+.tips-article-content h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.25;
+
+  color: #6e536f;
+}
+
+.tips-article-content p {
+  min-height: 50px;
+  margin: 9px 0 13px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: #82717f;
+}
+
+.tips-read-more {
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+}
+
+.tips-read-more:hover {
+  color: #b94675;
+}
+
+
+/* =====================================================
+   GIFT FINDER CTA
+===================================================== */
+
+.tips-finder {
+  position: relative;
+
+  width: min(1166px, calc(100% - 80px));
+  min-height: 180px;
+
+  margin: 30px auto 72px;
+  padding: 38px 52px;
+
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  align-items: center;
+  gap: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(110, 83, 111, 0.07);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 82% 35%,
+      rgba(255, 250, 247, 0.65),
+      transparent 28%
+    ),
+    linear-gradient(
+      112deg,
+      #f6e9f0 0%,
+      #f2eaf4 45%,
+      #eee5f3 100%
+    );
+}
+
+.tips-finder-icon {
+  position: relative;
+  z-index: 3;
+
+  width: 46px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+
+  background: rgba(255, 250, 247, 0.72);
+  color: #d35b8c;
+}
+
+.tips-finder-content {
+  position: relative;
+  z-index: 3;
+}
+
+.tips-finder-content h2 {
+  margin: 8px 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+
+  color: #6e536f;
+}
+
+.tips-finder-content > p:not(.tips-eyebrow) {
+  max-width: 540px;
+  margin: 10px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: #7e6d7b;
+}
+
+.tips-finder-btn {
+  position: relative;
+  z-index: 4;
+
+  white-space: nowrap;
+}
+
+.tips-finder-petal {
+  position: absolute;
+
+  width: 25px;
+  height: 13px;
+
+  border-radius: 80% 20% 80% 20%;
+
+  background: rgba(211, 91, 140, 0.14);
+
+  pointer-events: none;
+}
+
+.tips-finder-petal-one {
+  right: 18%;
+  top: 28px;
+
+  transform: rotate(28deg);
+}
+
+.tips-finder-petal-two {
+  right: 8%;
+  bottom: 25px;
+
+  transform: rotate(-28deg) scale(0.8);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .tips-hero {
+    height: 440px;
+    background-position: 55% center;
+  }
+
+  .tips-hero-content {
+    max-width: 460px;
+    margin-left: 40px;
+  }
+
+  .tips-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .tips-hero-description {
+    max-width: 380px;
+  }
+
+  .tips-category-grid {
+    gap: 16px;
+  }
+
+  .tips-category-card {
+    height: 165px;
+    grid-template-columns: 45% 55%;
+  }
+
+  .tips-category-content {
+    padding: 18px 16px 16px 18px;
+  }
+
+  .tips-category-content h3 {
+    font-size: 17px;
+  }
+
+  .tips-category-content p {
+    font-size: 10px;
+  }
+
+  .tips-featured-content {
+    padding: 35px;
+  }
+
+  .tips-finder {
+    padding: 35px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .tips-breadcrumb {
+    width: calc(100% - 40px);
+    min-height: 50px;
+    font-size: 10px;
+  }
+
+  .tips-section {
+    width: calc(100% - 40px);
+  }
+
+
+  /* HERO */
+
+  .tips-hero {
+    height: 560px;
+    align-items: flex-start;
+
+    background-size: auto 100%;
+    background-position: 58% center;
+  }
+
+  .tips-hero-content {
+    width: calc(100% - 40px);
+    max-width: 420px;
+
+    margin: 0 auto;
+    padding-top: 48px;
+    padding-right: 0;
+  }
+
+  .tips-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .tips-hero-description {
+    max-width: 340px;
+    font-size: 11px;
+  }
+
+
+  /* EXPLORE */
+
+  .tips-explore {
+    padding-top: 48px;
+  }
+
+  .tips-category-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tips-category-card {
+    height: 165px;
+    grid-template-columns: 40% 60%;
+  }
+
+  .tips-category-content {
+    padding: 20px 18px;
+  }
+
+
+  /* FEATURED */
+
+  .tips-featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-featured-image-wrap {
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .tips-featured-image-wrap::after {
+    display: none;
+  }
+
+  .tips-featured-content {
+    padding: 32px 26px 36px;
+  }
+
+  .tips-featured-content::before {
+    width: 80px;
+    height: 100px;
+
+    right: 18px;
+    top: 20px;
+  }
+
+  .tips-featured-content h2 {
+    font-size: 30px;
+  }
+
+
+  /* ARTICLES */
+
+  .tips-article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-article-image-button {
+    height: 230px;
+  }
+
+
+  /* FINDER */
+
+  .tips-finder {
+    width: calc(100% - 40px);
+
+    margin-bottom: 50px;
+    padding: 34px 26px;
+
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .tips-finder-content h2 {
+    font-size: 26px;
+  }
+
+  .tips-finder-btn {
+    justify-self: start;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .tips-hero {
+    height: 540px;
+    background-position: 60% center;
+  }
+
+  .tips-hero-content h1 {
+    font-size: 35px;
+  }
+
+  .tips-hero-description {
+    max-width: 300px;
+  }
+
+
+  /* EXPLORE */
+
+  .tips-category-card {
+    height: 160px;
+    grid-template-columns: 38% 62%;
+  }
+
+  .tips-category-content {
+    padding: 18px 15px;
+  }
+
+  .tips-category-content h3 {
+    font-size: 16px;
+  }
+
+  .tips-category-content p {
+    font-size: 10px;
+    padding-right: 20px;
+  }
+
+  .tips-category-arrow {
+    right: 12px;
+    bottom: 12px;
+  }
+
+
+  /* FEATURED */
+
+  .tips-featured-image-wrap {
+    height: 210px;
+    min-height: 210px;
+  }
+
+
+  /* ARTICLES */
+
+  .tips-article-image-button {
+    height: 200px;
+  }
+}

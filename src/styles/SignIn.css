@@ -1,0 +1,1144 @@
+/* =====================================================
+   PETALIA — SIGN IN
+===================================================== */
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.signin-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px;
+
+  background: #eee7f1;
+
+  font-family: "Inter", sans-serif;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.signin-shell {
+  width: 100%;
+  max-width: 1380px;
+  min-height: 720px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(550px, 1.15fr)
+    minmax(430px, 0.85fr);
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 45px
+    rgba(110, 83, 111, 0.12);
+}
+
+
+/* =====================================================
+   LEFT PHOTO
+===================================================== */
+
+.signin-visual-side {
+  position: relative;
+
+  min-height: 720px;
+
+  overflow: hidden;
+
+  background: #eadede;
+}
+
+
+.signin-visual-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.8s ease;
+}
+
+
+.signin-visual-side:hover
+.signin-visual-image {
+  transform: scale(1.018);
+}
+
+
+/* =====================================================
+   VERY SOFT PHOTO LIGHT
+
+   This is NOT a visible box.
+   It only improves readability.
+===================================================== */
+
+.signin-photo-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255, 250, 247, 0.50) 0%,
+      rgba(255, 250, 247, 0.23) 20%,
+      rgba(255, 250, 247, 0.05) 40%,
+      transparent 57%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   PETALIA BRAND
+===================================================== */
+
+.signin-brand {
+  position: absolute;
+  z-index: 4;
+
+  top: 55px;
+  left: 58px;
+}
+
+.signin-logo {
+  display: block;
+
+  width: 145px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.signin-brand p {
+  margin: 7px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  color: #756276;
+}
+
+
+.signin-brand h2 {
+  margin: 0;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 42px;
+  line-height: 1;
+
+  font-style: italic;
+  font-weight: 600;
+
+  color: #6e536f;
+
+  text-shadow:
+    0 2px 14px
+    rgba(255, 250, 247, 0.95);
+}
+
+
+.signin-brand p {
+  margin: 9px 0 0;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  color: #756276;
+
+  text-shadow:
+    0 1px 9px
+    rgba(255, 250, 247, 0.95);
+}
+
+
+/* =====================================================
+   STORY TEXT
+===================================================== */
+
+.signin-story-content {
+  position: absolute;
+
+  z-index: 3;
+
+  /*
+    Right side of photo because
+    bouquet is heavier on the left.
+  */
+
+  top: 190px;
+  right: 36px;
+
+  width: 300px;
+
+  padding: 30px 22px;
+
+
+  /*
+    IMPORTANT:
+
+    This is a faded glow,
+    NOT a rectangle/card.
+
+    It makes the text readable
+    without hiding the image.
+  */
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 250, 247, 0.76) 0%,
+      rgba(255, 250, 247, 0.48) 32%,
+      rgba(255, 250, 247, 0.20) 57%,
+      rgba(255, 250, 247, 0) 82%
+    );
+}
+.signin-story-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =====================================================
+   STORY HEADING
+===================================================== */
+
+.signin-story-content h1 {
+  margin: 0;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 33px;
+  line-height: 1.12;
+
+  font-weight: 600;
+
+  color: #58445d;
+
+  text-shadow:
+    0 1px 10px
+    rgba(255, 255, 255, 0.72);
+}
+
+
+.signin-story-content h1 span {
+  color: #d35b8c;
+}
+
+
+/* DESCRIPTION */
+
+.signin-story-description {
+  margin:
+    18px 0 22px;
+
+  max-width: 245px;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: #655667;
+
+  text-shadow:
+    0 1px 8px
+    rgba(255, 255, 255, 0.65);
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.signin-benefits {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+.signin-benefit {
+  display: grid;
+
+  grid-template-columns:
+    21px 1fr;
+
+  gap: 10px;
+
+  align-items: start;
+}
+
+
+/* =====================================================
+   FLATICON ICONS
+
+   NO circle
+   NO box
+   NO icon background
+===================================================== */
+
+/* TEXT */
+
+.signin-benefit h3 {
+  margin:
+    0 0 3px;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: #57475b;
+
+  text-shadow:
+    0 1px 7px
+    rgba(255, 255, 255, 0.70);
+}
+
+
+.signin-benefit p {
+  margin: 0;
+
+  font-size: 9px;
+  line-height: 1.4;
+
+  color: #6e6070;
+
+  text-shadow:
+    0 1px 7px
+    rgba(255, 255, 255, 0.68);
+}
+
+
+/* =====================================================
+   RIGHT FORM SIDE
+===================================================== */
+
+.signin-form-side {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    70px 70px
+    55px;
+
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.signin-language {
+  position: absolute;
+
+  top: 25px;
+  right: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 2px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #a36f7e;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.signin-language svg {
+  width: 14px;
+  height: 14px;
+
+  stroke-width: 1.5;
+}
+
+
+.signin-language:hover {
+  color: #d35b8c;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.signin-form-wrapper {
+  width: 100%;
+
+  max-width: 440px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.signin-heading {
+  margin-bottom: 38px;
+
+  text-align: center;
+}
+
+
+.signin-heading h1 {
+  margin: 0;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 34px;
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  color: #6e536f;
+}
+
+
+.signin-heading p {
+  margin:
+    10px 0 0;
+
+  font-size: 11px;
+
+  color: #ad98a7;
+}
+
+
+/* =====================================================
+   FIELD
+===================================================== */
+
+.signin-field {
+  margin-bottom: 20px;
+}
+
+
+.signin-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #6e536f;
+}
+
+
+/* =====================================================
+   INPUT BOX
+===================================================== */
+
+.signin-input-box {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  border:
+    1px solid
+    rgba(110, 83, 111, 0.14);
+
+  border-radius: 8px;
+
+  background: #f5eff6;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.signin-input-box:focus-within {
+  border-color: #d35b8c;
+
+  background: #faf6fa;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(211, 91, 140, 0.08);
+}
+
+
+/* SIMPLE ICON */
+
+.signin-input-icon {
+  width: 17px;
+  height: 17px;
+
+  margin-left: 15px;
+
+  color: #a98da0;
+
+  stroke-width: 1.5;
+
+  flex-shrink: 0;
+}
+
+
+.signin-input-box input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding:
+    0 12px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  color: #6e536f;
+}
+
+
+.signin-input-box
+input::placeholder {
+  color: #baa8b5;
+}
+
+
+/* =====================================================
+   PASSWORD EYE
+===================================================== */
+
+.signin-eye {
+  width: 45px;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ad96a7;
+
+  cursor: pointer;
+}
+
+
+.signin-eye svg {
+  width: 16px;
+  height: 16px;
+
+  stroke-width: 1.5;
+}
+
+
+.signin-eye:hover {
+  color: #d35b8c;
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+.signin-forgot-row {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: -7px;
+
+  margin-bottom: 23px;
+}
+
+
+.signin-forgot {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 10px;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+}
+
+
+.signin-forgot:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   SIGN IN BUTTON
+===================================================== */
+
+.signin-submit {
+  width: 100%;
+  height: 49px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #d35b8c;
+
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px
+    rgba(211, 91, 140, 0.16);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.signin-submit:hover {
+  background: #c84d80;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 9px 20px
+    rgba(211, 91, 140, 0.22);
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.signin-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin:
+    25px 0 18px;
+}
+
+
+.signin-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(110, 83, 111, 0.11);
+}
+
+
+.signin-divider p {
+  margin: 0;
+
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  color: #b09daa;
+}
+
+
+/* =====================================================
+   GOOGLE
+===================================================== */
+
+.signin-google {
+  width: 100%;
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  border:
+    1px solid
+    rgba(110, 83, 111, 0.17);
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #6e536f;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.signin-google:hover {
+  border-color:
+    rgba(211, 91, 140, 0.35);
+
+  background: #fffafb;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.signin-google-icon {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   CREATE ACCOUNT
+===================================================== */
+
+.signin-create-text {
+  margin:
+    20px 0 0;
+
+  text-align: center;
+
+  font-size: 10px;
+
+  color: #aa98a5;
+}
+
+
+.signin-create-text button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: inherit;
+
+  font-weight: 500;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+}
+
+
+.signin-create-text
+button:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .signin-page {
+    padding: 30px;
+  }
+
+
+  .signin-shell {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .signin-form-side {
+    padding:
+      70px 45px
+      50px;
+  }
+
+
+  .signin-brand {
+    left: 35px;
+  }
+
+
+  .signin-story-content {
+    top: 180px;
+
+    right: 22px;
+
+    width: 270px;
+
+    padding:
+      25px 17px;
+  }
+
+
+  .signin-story-content h1 {
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 850px) {
+
+  .signin-page {
+    padding: 20px;
+  }
+
+
+  .signin-shell {
+    display: block;
+
+    max-width: 520px;
+  }
+
+
+  .signin-visual-side {
+    display: none;
+  }
+
+
+  .signin-form-side {
+    min-height: 680px;
+
+    padding:
+      80px 35px
+      50px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .signin-page {
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+
+  .signin-shell {
+    min-height: 100vh;
+
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+
+  .signin-form-side {
+    min-height: 100vh;
+
+    padding:
+      80px 24px
+      40px;
+  }
+
+
+  .signin-heading h1 {
+    font-size: 28px;
+  }
+}
+
+/* =====================================================
+   FINAL SIGN IN STORY GLASS
+   LOCK THIS VERSION
+===================================================== */
+
+.signin-story-content {
+  position: absolute;
+  z-index: 3;
+
+  /* move lower */
+  top: 205px;
+  right: 28px;
+
+  width: 340px;
+
+  padding: 32px 28px;
+
+  border-radius: 18px;
+
+  /* lighter, more transparent glass */
+  background: rgba(255, 247, 247, 0.22);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.58);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  /* soft glow */
+  box-shadow:
+    0 0 28px rgba(255, 245, 248, 0.20),
+    0 10px 28px rgba(110, 83, 111, 0.08);
+}
+.signin-story-content::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.20),
+      rgba(255, 255, 255, 0.03)
+    );
+
+  pointer-events: none;
+}
+
+/* MAIN STORY HEADING */
+
+.signin-story-content h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 33px;
+  line-height: 1.12;
+  font-weight: 600;
+
+  color: #5b465f;
+}
+
+
+.signin-story-content h1 span {
+  color: #d35b8c;
+}
+
+
+/* DESCRIPTION */
+
+.signin-story-description {
+  margin: 18px 0 24px;
+
+  max-width: 260px;
+
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: #665568;
+
+  text-shadow: none;
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.signin-benefits {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+
+.signin-benefit {
+  display: grid;
+
+  grid-template-columns: 22px 1fr;
+
+  gap: 11px;
+
+  align-items: start;
+}
+
+
+/* SIMPLE ICON ONLY
+   NO CIRCLE / NO BOX */
+
+.signin-benefit-icon {
+  display: block;
+
+  width: 21px;
+  height: 21px;
+
+  margin-top: 1px;
+
+  object-fit: contain;
+}
+
+
+.signin-benefit h3 {
+  margin: 0 0 4px;
+
+  font-size: 10.5px;
+  font-weight: 600;
+
+  color: #58485c;
+
+  text-shadow: none;
+}
+
+
+.signin-benefit p {
+  margin: 0;
+
+  font-size: 9.5px;
+  line-height: 1.45;
+
+  color: #746574;
+
+  text-shadow: none;
+}
+
+
+/* =====================================================
+   KEEP PETALIA LOGO READABLE
+===================================================== */
+
+.signin-brand {
+  z-index: 4;
+}
+
+
+.signin-brand h2 {
+  color: #6e536f;
+
+  text-shadow:
+    0 2px 12px rgba(255, 250, 247, 0.75);
+}
+
+
+.signin-brand p {
+  color: #756276;
+
+  text-shadow:
+    0 1px 8px rgba(255, 250, 247, 0.75);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .signin-story-content {
+    top: 160px;
+    right: 20px;
+
+    width: 300px;
+
+    padding: 28px 24px;
+  }
+
+
+  .signin-story-content h1 {
+    font-size: 29px;
+  }
+}

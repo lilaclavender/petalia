@@ -1,0 +1,1647 @@
+/* =========================
+   PRODUCT DETAIL PAGE
+========================= */
+
+.product-detail-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 38px 0 75px;
+
+  background: #eee7f1;
+
+  color: #6e536f;
+}
+
+.product-detail-container {
+  width: calc(100% - 100px);
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.product-detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 28px;
+
+  font-size: 11px;
+
+  color: #a36f7e;
+}
+
+.product-detail-breadcrumb strong {
+  color: #6e536f;
+}
+
+/* =========================
+   MAIN PRODUCT
+========================= */
+
+.product-main-section {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 0.95fr);
+
+  gap: 52px;
+
+  align-items: start;
+
+  margin-bottom: 45px;
+}
+/* =========================
+   FINAL PRODUCT DETAIL TYPOGRAPHY
+========================= */
+
+/* Main section headings */
+.section-heading h2,
+.gift-summary-heading h2,
+.small-section-heading h2,
+.related-gifts-heading h2 {
+  font-size: 24px;
+}
+
+/* Small eyebrow text */
+.section-eyebrow,
+.related-gifts-heading span,
+.seller-section-content > span {
+  font-size: 12px;
+}
+
+/* Section description */
+.section-heading p,
+.small-section-heading p,
+.gift-summary-heading > span {
+  font-size: 13px;
+}
+
+/* Personalization headings */
+.customization-heading h3 {
+  font-size: 16px;
+}
+
+.required-label,
+.optional-label {
+  font-size: 11px;
+}
+
+/* Wrapping */
+.wrapping-option > span {
+  font-size: 13px;
+}
+
+.customization-note {
+  font-size: 12px;
+}
+
+/* Message card */
+.message-card-option {
+  font-size: 12px;
+}
+
+.message-card-option small {
+  font-size: 11px;
+}
+
+.gift-message-area textarea {
+  font-size: 13px;
+}
+
+.message-count {
+  font-size: 11px;
+}
+
+/* Add-ons */
+.addon-option strong {
+  font-size: 13px;
+}
+
+.addon-option span {
+  font-size: 12px;
+}
+
+/* Gift summary */
+.summary-item span {
+  font-size: 11px;
+}
+
+.summary-item strong {
+  font-size: 13px;
+}
+
+.summary-item small {
+  font-size: 12px;
+}
+
+.summary-total span {
+  font-size: 11px;
+}
+
+.summary-total strong {
+  font-size: 20px;
+}
+
+/* Why This Gift + Good to Know */
+.why-gift-item h3,
+.good-to-know-item h3 {
+  font-size: 14px;
+}
+
+.why-gift-item p,
+.good-to-know-item p {
+  font-size: 13px;
+}
+
+/* Seller */
+.seller-section-content h2 {
+  font-size: 18px;
+}
+
+.seller-section-content p {
+  font-size: 13px;
+}
+
+/* Buttons */
+.add-gift-basket-button,
+.view-shop-button,
+.personalize-button,
+.detail-secondary-wishlist {
+  font-size: 13px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.product-gallery {
+  display: grid;
+
+  grid-template-columns: 1fr 90px;
+
+  gap: 14px;
+}
+
+.product-main-image-wrapper {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 550px;
+
+  border-radius: 18px;
+
+  background: #fffaf7;
+}
+
+.product-main-image {
+  width: 100%;
+  height: 550px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.detail-product-badge {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 3;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #d35b8c;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.detail-wishlist-button {
+  position: absolute;
+
+  top: 17px;
+  right: 17px;
+
+  z-index: 3;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 250, 247, 0.95);
+
+  color: #a36f7e;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.detail-wishlist-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.detail-wishlist-button:hover {
+  color: #d35b8c;
+
+  transform: scale(1.05);
+}
+
+.gallery-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 3;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 250, 247, 0.9);
+
+  color: #d35b8c;
+
+  cursor: pointer;
+}
+
+.gallery-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.gallery-arrow-left {
+  left: 14px;
+}
+
+.gallery-arrow-right {
+  right: 14px;
+}
+
+.product-thumbnails {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.product-thumbnail {
+  width: 90px;
+  height: 105px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 2px solid transparent;
+
+  border-radius: 11px;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+.product-thumbnail.active {
+  border-color: #d35b8c;
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
+.product-detail-info {
+  padding-top: 10px;
+}
+
+.product-detail-info h1 {
+  margin: 0 0 14px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(30px, 3vw, 44px);
+
+  line-height: 1.1;
+
+  color: #6e536f;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 14px;
+
+  font-size: 12px;
+}
+
+.detail-rating svg {
+  width: 17px;
+  height: 17px;
+
+  color: #e4ad32;
+}
+
+.detail-rating span {
+  color: #a36f7e;
+}
+
+.detail-price {
+  margin-bottom: 17px;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  color: #d35b8c;
+}
+
+.detail-seller {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 20px;
+
+  font-size: 11px;
+}
+
+.detail-seller svg {
+  width: 15px;
+  height: 15px;
+
+  color: #d35b8c;
+}
+
+.detail-description {
+  max-width: 520px;
+
+  margin-bottom: 18px;
+
+  line-height: 1.8;
+
+  font-size: 12px;
+
+  color: #786579;
+}
+
+.detail-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.detail-tags span {
+  padding: 6px 11px;
+
+  border: 1px solid rgba(211, 91, 140, 0.2);
+
+  border-radius: 20px;
+
+  background: #fff8fa;
+
+  color: #a36f7e;
+
+  font-size: 9px;
+}
+
+/* =========================
+   MEANING CARD
+========================= */
+
+.detail-meaning-card {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px 16px;
+
+  margin-bottom: 22px;
+
+  border-radius: 11px;
+
+  background: rgba(211, 91, 140, 0.08);
+}
+
+.detail-meaning-card > svg {
+  flex: 0 0 auto;
+
+  width: 25px;
+  height: 25px;
+
+  color: #d35b8c;
+}
+
+.detail-meaning-card strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 11px;
+}
+
+.detail-meaning-card p {
+  margin: 0;
+
+  line-height: 1.5;
+
+  font-size: 9px;
+}
+
+/* =========================
+   QUANTITY
+========================= */
+
+.detail-quantity-area {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(110, 83, 111, 0.16);
+
+  border-radius: 7px;
+
+  background: #fffaf7;
+}
+
+.quantity-control button {
+  width: 32px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #6e536f;
+
+  cursor: pointer;
+}
+
+.quantity-control button:disabled {
+  opacity: 0.35;
+
+  cursor: default;
+}
+
+.quantity-control button svg {
+  width: 12px;
+  height: 12px;
+}
+
+.quantity-control span {
+  min-width: 28px;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+/* =========================
+   MAIN ACTIONS
+========================= */
+
+.detail-main-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.personalize-button,
+.detail-secondary-wishlist {
+  min-height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 17px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.personalize-button {
+  border: none;
+
+  background: #d35b8c;
+
+  color: white;
+}
+
+.personalize-button:hover {
+  background: #c34c7e;
+}
+
+.detail-secondary-wishlist {
+  border: 1px solid #d35b8c;
+
+  background: transparent;
+
+  color: #d35b8c;
+}
+
+.detail-secondary-wishlist.active {
+  background: rgba(211, 91, 140, 0.08);
+}
+
+.personalize-button svg,
+.detail-secondary-wishlist svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.personalize-section,
+.gift-summary-section,
+.why-gift-section,
+.good-to-know-section,
+.detail-seller-section,
+.related-gifts-section {
+  margin-top: 22px;
+
+  border-radius: 15px;
+}
+
+.personalize-section,
+.gift-summary-section,
+.why-gift-section,
+.good-to-know-section {
+  padding: 25px;
+
+  background: #fffaf7;
+
+  border: 1px solid rgba(110, 83, 111, 0.08);
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #d35b8c;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.section-heading h2,
+.small-section-heading h2 {
+  margin: 0 0 6px;
+
+  font-family: "Playfair Display", serif;
+
+  color: #6e536f;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+}
+
+.section-heading p,
+.small-section-heading p {
+  margin: 0;
+
+  color: #a36f7e;
+
+  font-size: 10px;
+}
+
+/* =========================
+   PERSONALIZATION
+========================= */
+
+.personalize-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.customization-card {
+  padding: 17px;
+
+  border: 1px solid rgba(110, 83, 111, 0.1);
+
+  border-radius: 12px;
+
+  background: #fff;
+}
+
+.customization-heading {
+  display: flex;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+}
+
+.customization-number {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: rgba(211, 91, 140, 0.12);
+
+  color: #d35b8c;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.customization-heading h3 {
+  margin: 0 0 4px;
+
+  font-size: 11px;
+}
+
+.required-label,
+.optional-label {
+  display: inline-block;
+
+  padding: 3px 7px;
+
+  border-radius: 10px;
+
+  font-size: 7px;
+}
+
+.required-label {
+  background: rgba(211, 91, 140, 0.12);
+
+  color: #d35b8c;
+}
+
+.optional-label {
+  background: rgba(110, 83, 111, 0.07);
+
+  color: #8f758f;
+}
+
+/* =========================
+   WRAPPING OPTIONS
+========================= */
+
+.wrapping-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 7px;
+}
+
+.wrapping-option {
+  position: relative;
+
+  padding: 7px;
+
+  border: 1px solid rgba(110, 83, 111, 0.1);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #6e536f;
+
+  cursor: pointer;
+}
+
+.wrapping-option.selected {
+  border-color: #d35b8c;
+
+  background: #fff8fa;
+}
+
+.wrapping-preview {
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 7px;
+
+  border-radius: 6px;
+
+  background: #f9f4f0;
+}
+
+.wrapping-preview svg {
+  width: 21px;
+  height: 21px;
+
+  color: #d35b8c;
+}
+
+.wrapping-option > span {
+  font-size: 8px;
+}
+
+.selected-check {
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+
+  width: 13px;
+  height: 13px;
+
+  color: #d35b8c;
+}
+
+.customization-note {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 10px;
+
+  padding: 7px 9px;
+
+  border-radius: 6px;
+
+  background: #f6edf6;
+
+  font-size: 8px;
+}
+
+.customization-note svg {
+  width: 11px;
+  height: 11px;
+
+  color: #d35b8c;
+}
+
+/* =========================
+   MESSAGE CARDS
+========================= */
+
+.card-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 6px;
+}
+
+.message-card-option {
+  min-height: 75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 7px;
+
+  border: 1px solid rgba(110, 83, 111, 0.1);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #6e536f;
+
+  cursor: pointer;
+
+  font-size: 7px;
+}
+
+.message-card-option.selected {
+  border-color: #d35b8c;
+
+  background: #fff8fa;
+}
+
+.message-card-option svg {
+  width: 19px;
+  height: 19px;
+
+  color: #d35b8c;
+}
+
+.message-card-option small {
+  color: #d35b8c;
+
+  font-size: 7px;
+}
+
+.gift-message-area {
+  position: relative;
+
+  margin-top: 10px;
+}
+
+.gift-message-area textarea {
+  width: 100%;
+  min-height: 75px;
+
+  padding: 9px;
+
+  resize: none;
+
+  border: 1px solid rgba(110, 83, 111, 0.14);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  color: #6e536f;
+
+  background: #fffaf7;
+}
+
+.gift-message-area textarea:focus {
+  border-color: rgba(211, 91, 140, 0.55);
+}
+
+.message-count {
+  position: absolute;
+
+  right: 8px;
+  bottom: 6px;
+
+  font-size: 7px;
+
+  color: #a36f7e;
+}
+
+/* =========================
+   ADD-ON
+========================= */
+
+.addon-options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.addon-option {
+  position: relative;
+
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px;
+
+  border: 1px solid rgba(110, 83, 111, 0.1);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #6e536f;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.addon-option.selected {
+  border-color: #d35b8c;
+
+  background: #fff8fa;
+}
+
+.addon-option img {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 6px;
+
+  object-fit: cover;
+}
+
+.addon-option strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 8px;
+}
+
+.addon-option span {
+  color: #d35b8c;
+
+  font-size: 8px;
+}
+
+.addon-option.no-addon {
+  justify-content: center;
+
+  min-height: 37px;
+}
+
+/* =========================
+   GIFT SUMMARY
+========================= */
+
+.gift-summary-heading {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+.gift-summary-heading h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 21px;
+}
+
+.gift-summary-heading span {
+  font-size: 9px;
+
+  color: #a36f7e;
+}
+
+.gift-summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    1fr
+    1fr
+    1fr
+    0.7fr
+    auto
+    auto;
+
+  gap: 10px;
+
+  align-items: stretch;
+}
+
+.summary-item {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px;
+
+  border-right: 1px solid rgba(110, 83, 111, 0.08);
+}
+
+.summary-item > img {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 6px;
+
+  object-fit: cover;
+}
+
+.summary-item > svg {
+  flex: 0 0 auto;
+
+  width: 18px;
+  height: 18px;
+
+  color: #d35b8c;
+}
+
+.summary-item span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #a36f7e;
+
+  font-size: 7px;
+}
+
+.summary-item strong {
+  display: block;
+
+  overflow: hidden;
+
+  font-size: 8px;
+
+  text-overflow: ellipsis;
+}
+
+.summary-item small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 7px;
+
+  color: #d35b8c;
+}
+
+.summary-message {
+  max-width: 110px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.summary-total {
+  min-width: 90px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 9px;
+}
+
+.summary-total span {
+  margin-bottom: 4px;
+
+  font-size: 7px;
+
+  color: #a36f7e;
+}
+
+.summary-total strong {
+  font-size: 15px;
+
+  color: #d35b8c;
+}
+
+.add-gift-basket-button {
+  align-self: center;
+
+  min-width: 145px;
+
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #d35b8c;
+
+  color: white;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.add-gift-basket-button:hover {
+  background: #c34c7e;
+}
+
+.add-gift-basket-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.basket-success-message {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  width: fit-content;
+
+  margin-top: 13px;
+
+  padding: 8px 12px;
+
+  border-radius: 7px;
+
+  background: rgba(116, 139, 122, 0.12);
+
+  color: #748b7a;
+
+  font-size: 9px;
+}
+
+.basket-success-message svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* =========================
+   WHY THIS GIFT
+========================= */
+
+.small-section-heading {
+  margin-bottom: 18px;
+}
+
+.small-section-heading h2 {
+  font-size: 20px;
+}
+
+.why-gift-grid,
+.good-to-know-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.why-gift-item,
+.good-to-know-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  padding: 13px;
+
+  border-radius: 9px;
+
+  background: rgba(238, 231, 241, 0.32);
+}
+
+.info-icon {
+  width: 35px;
+  height: 35px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #d35b8c;
+}
+
+.info-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.why-gift-item h3,
+.good-to-know-item h3 {
+  margin: 0 0 4px;
+
+  font-size: 10px;
+}
+
+.why-gift-item p,
+.good-to-know-item p {
+  margin: 0;
+
+  line-height: 1.5;
+
+  font-size: 8px;
+
+  color: #8a738b;
+}
+
+/* =========================
+   GOOD TO KNOW
+========================= */
+
+.good-to-know-item > svg {
+  flex: 0 0 auto;
+
+  width: 22px;
+  height: 22px;
+
+  color: #d35b8c;
+}
+
+/* =========================
+   SELLER SECTION
+========================= */
+
+.detail-seller-section {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px 22px;
+
+  background: linear-gradient(90deg, #f8eaf0, #fffaf7);
+
+  border: 1px solid rgba(211, 91, 140, 0.08);
+}
+
+.seller-section-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #d35b8c;
+}
+
+.seller-section-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.seller-section-content {
+  flex: 1;
+}
+
+.seller-section-content span {
+  color: #d35b8c;
+
+  font-size: 8px;
+}
+
+.seller-section-content h2 {
+  margin: 3px 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 17px;
+}
+
+.seller-section-content p {
+  margin: 0;
+
+  font-size: 8px;
+
+  color: #8f758f;
+}
+
+.view-shop-button {
+  padding: 8px 15px;
+
+  border: 1px solid #d35b8c;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #d35b8c;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   RELATED GIFTS
+========================= */
+
+.related-gifts-section {
+  padding: 25px;
+
+  background: rgba(248, 234, 240, 0.72);
+}
+
+.related-gifts-heading {
+  margin-bottom: 18px;
+}
+
+.related-gifts-heading span {
+  color: #d35b8c;
+
+  font-size: 8px;
+}
+
+.related-gifts-heading h2 {
+  margin: 4px 0 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 21px;
+}
+
+.related-gifts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1150px) {
+  .product-main-section {
+    gap: 30px;
+  }
+
+  .personalize-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gift-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .related-gifts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   PRODUCT DETAIL READABILITY
+========================= */
+
+/* Personalization card titles */
+.customization-heading h3 {
+  font-size: 14px;
+}
+
+/* Required / Optional */
+.required-label,
+.optional-label {
+  font-size: 9px;
+}
+
+/* Wrapping option names */
+.wrapping-option > span {
+  font-size: 11px;
+}
+
+/* Small note under wrapping */
+.customization-note {
+  font-size: 10px;
+}
+
+/* Message card options */
+.message-card-option {
+  font-size: 10px;
+}
+
+.message-card-option small {
+  font-size: 9px;
+}
+
+/* Message input */
+.gift-message-area textarea {
+  font-size: 11px;
+}
+
+.message-count {
+  font-size: 9px;
+}
+
+/* Add-on */
+.addon-option strong {
+  font-size: 11px;
+}
+
+.addon-option span {
+  font-size: 10px;
+}
+
+/* Gift summary */
+.gift-summary-heading span {
+  font-size: 10px;
+}
+
+.summary-item span {
+  font-size: 10px;
+}
+
+.summary-item strong {
+  font-size: 11px;
+}
+
+.summary-item small {
+  font-size: 10px;
+}
+
+.summary-total span {
+  font-size: 10px;
+}
+
+.summary-total strong {
+  font-size: 17px;
+}
+
+.add-gift-basket-button {
+  font-size: 10px;
+}
+
+/* Why This Gift + Good to Know */
+.small-section-heading p {
+  font-size: 11px;
+}
+
+.why-gift-item h3,
+.good-to-know-item h3 {
+  font-size: 12px;
+}
+
+.why-gift-item p,
+.good-to-know-item p {
+  font-size: 11px;
+}
+
+/* Seller */
+.seller-section-content span {
+  font-size: 10px;
+}
+
+.seller-section-content p {
+  font-size: 11px;
+}
+
+.view-shop-button {
+  font-size: 10px;
+}
+
+@media (max-width: 850px) {
+  .product-detail-container {
+    width: calc(100% - 40px);
+    max-width: 1800px;
+    margin: 0;
+  }
+
+  .product-main-section {
+    grid-template-columns: 1fr;
+  }
+
+  .product-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .product-thumbnails {
+    flex-direction: row;
+  }
+
+  .product-thumbnail {
+    width: 75px;
+    height: 75px;
+  }
+
+  .why-gift-grid,
+  .good-to-know-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gift-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-seller-section {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .product-detail-container {
+    width: calc(100% - 24px);
+  }
+
+  .product-main-image-wrapper {
+    min-height: 400px;
+  }
+
+  .product-main-image {
+    height: 400px;
+  }
+
+  .gift-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .related-gifts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-main-actions {
+    flex-direction: column;
+  }
+
+  .personalize-button,
+  .detail-secondary-wishlist {
+    width: 100%;
+  }
+}

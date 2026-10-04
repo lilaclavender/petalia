@@ -1,0 +1,1277 @@
+/* =====================================================
+   PAGE
+===================================================== */
+
+.occasion-shop-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(248, 224, 235, 0.2),
+      transparent 28%
+    ),
+    #eee7f1;
+
+  color: #6e536f;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.occasion-shop-breadcrumb-wrap {
+  width: 100%;
+  background: #eee7f1;
+}
+
+.occasion-shop-breadcrumb {
+  width: calc(100% - 64px);
+  min-height: 56px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+
+  color: #8e788c;
+}
+
+
+.occasion-shop-breadcrumb button {
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  color: #8e788c;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.occasion-shop-breadcrumb button:hover {
+  color: #d35b8c;
+}
+
+.occasion-shop-breadcrumb span {
+  color: #b9a8b7;
+}
+
+.occasion-shop-breadcrumb strong {
+  font-weight: 600;
+  color: #6e536f;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.occasion-shop-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 440px;
+
+  margin: 12px 0 0;
+  padding: 64px max(52px, calc((100% - 1400px) / 2));
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+
+  overflow: hidden;
+
+  border: none;
+  border-radius: 0;
+
+  background:
+    radial-gradient(
+      circle at 72% 45%,
+      rgba(248, 224, 235, 0.42),
+      transparent 42%
+    ),
+    linear-gradient(
+      110deg,
+      #f4eef6 0%,
+      #f5edf5 42%,
+      #f8e9ef 72%,
+      #faedf1 100%
+    );
+
+  box-shadow: none;
+}
+
+/* HERO TEXT */
+
+.occasion-shop-hero-content {
+  position: relative;
+  z-index: 5;
+
+  max-width: 570px;
+}
+
+.occasion-shop-eyebrow,
+.occasion-shop-section-eyebrow {
+  margin: 0 0 12px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2.3px;
+
+  color: #d35b8c;
+}
+
+.occasion-shop-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 4.4vw, 61px);
+  font-weight: 500;
+
+  line-height: 1.04;
+
+  letter-spacing: -1.2px;
+
+  color: #6e536f;
+}
+
+.occasion-shop-hero-description {
+  max-width: 490px;
+
+  margin: 20px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+
+  line-height: 1.75;
+
+  color: #7f6e7d;
+}
+
+/* HERO BUTTON */
+
+.occasion-shop-primary-btn {
+  min-height: 43px;
+
+  margin-top: 27px;
+  padding: 0 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: linear-gradient(100deg, #d35b8c, #c64e80);
+
+  box-shadow: 0 7px 18px rgba(211, 91, 140, 0.14);
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.occasion-shop-primary-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 22px rgba(211, 91, 140, 0.2);
+}
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+
+.occasion-shop-hero-art {
+  position: absolute;
+  z-index: 2;
+
+  top: 0;
+  right: 0;
+
+  width: 58%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 8%,
+    rgba(0, 0, 0, 0.72) 22%,
+    #000 38%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 8%,
+    rgba(0, 0, 0, 0.72) 22%,
+    #000 38%
+  );
+}
+/* HERO FALLBACK */
+
+.occasion-shop-hero-placeholder {
+  position: relative;
+
+  width: 280px;
+  height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(196, 84, 129, 0.68);
+}
+
+.hero-placeholder-circle {
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.75),
+    rgba(246, 210, 224, 0.35)
+  );
+}
+
+.hero-placeholder-gift {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-placeholder-sparkle {
+  position: absolute;
+  z-index: 3;
+
+  right: 28px;
+  top: 35px;
+
+  color: rgba(211, 91, 140, 0.48);
+}
+
+/* HERO PETALS */
+
+.occasion-shop-hero-petal {
+  position: absolute;
+  z-index: 5;
+
+  width: 36px;
+  height: 20px;
+
+  border-radius: 85% 15% 85% 15%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(235, 133, 174, 0.36),
+    rgba(247, 191, 214, 0.18)
+  );
+
+  pointer-events: none;
+}
+
+.hero-petal-left {
+  left: 42%;
+  top: 15%;
+
+  transform: rotate(28deg);
+}
+
+.hero-petal-right {
+  right: 3%;
+  bottom: 18%;
+
+  transform: rotate(-32deg);
+}
+
+/* =====================================================
+   MEANING SECTION
+===================================================== */
+
+.occasion-shop-meaning {
+  width: min(1050px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 65px 0 60px;
+}
+
+.occasion-shop-section-heading {
+  max-width: 700px;
+
+  margin: 0 auto 34px;
+
+  text-align: center;
+}
+
+.occasion-shop-section-heading h2,
+.occasion-shop-products-top h2,
+.occasion-shop-guidance-content h2,
+.occasion-shop-finder h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+
+  color: #6e536f;
+}
+
+.occasion-shop-section-heading h2 {
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+.occasion-shop-section-heading > p:last-child {
+  max-width: 590px;
+
+  margin: 12px auto 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #897687;
+}
+
+/* MEANING ITEMS */
+
+.occasion-shop-meaning-grid {
+  max-width: 880px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 72px;
+}
+
+.occasion-shop-meaning-item {
+  text-align: center;
+}
+
+.occasion-shop-meaning-icon {
+  position: relative;
+
+  width: 58px;
+  height: 54px;
+
+  margin: 0 auto 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #d35b8c;
+}
+
+.occasion-shop-meaning-icon svg {
+  position: relative;
+  z-index: 3;
+}
+
+.occasion-shop-icon-petal {
+  position: absolute;
+
+  width: 43px;
+  height: 40px;
+
+  border-radius: 66% 44% 62% 48% / 62% 54% 46% 56%;
+
+  transform: rotate(-18deg);
+
+  background: linear-gradient(
+    145deg,
+    rgba(247, 199, 219, 0.76),
+    rgba(244, 217, 228, 0.58)
+  );
+}
+
+.occasion-shop-meaning-item h3 {
+  margin: 0 0 7px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #6e536f;
+}
+
+.occasion-shop-meaning-item p {
+  max-width: 210px;
+
+  margin: 0 auto;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+
+  line-height: 1.65;
+
+  color: #897687;
+}
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.occasion-shop-products {
+  width: min(1400px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 58px 0 80px;
+
+  border-top: 1px solid rgba(110, 83, 111, 0.09);
+}
+
+.occasion-shop-products-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.occasion-shop-products-top h2 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+/* SORT */
+
+.occasion-shop-sort {
+  min-width: 180px;
+  height: 39px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(110, 83, 111, 0.13);
+  border-radius: 999px;
+
+  background: rgba(255, 250, 247, 0.72);
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+
+  color: #6e536f;
+
+  outline: none;
+  cursor: pointer;
+}
+
+/* TABS */
+
+.occasion-shop-tabs {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  flex-wrap: wrap;
+}
+
+.occasion-shop-tabs button {
+  min-height: 35px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(110, 83, 111, 0.09);
+  border-radius: 999px;
+
+  background: rgba(255, 250, 247, 0.56);
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  color: #806f7e;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.occasion-shop-tabs button:hover {
+  transform: translateY(-1px);
+
+  border-color: rgba(211, 91, 140, 0.28);
+
+  color: #d35b8c;
+}
+
+.occasion-shop-tabs button.active {
+  border-color: #d35b8c;
+
+  background: #d35b8c;
+
+  color: #ffffff;
+}
+
+/* PRODUCT GRID */
+
+.occasion-shop-product-grid {
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+/* =====================================================
+   EMPTY PRODUCTS
+===================================================== */
+
+.occasion-shop-empty-products {
+  min-height: 230px;
+
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed rgba(110, 83, 111, 0.17);
+  border-radius: 18px;
+
+  background: rgba(255, 250, 247, 0.35);
+
+  text-align: center;
+
+  color: #d35b8c;
+}
+
+.occasion-shop-empty-products h3 {
+  margin: 13px 0 5px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 500;
+
+  color: #6e536f;
+}
+
+.occasion-shop-empty-products p {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+
+  color: #897687;
+}
+
+.occasion-shop-empty-products button {
+  margin-top: 17px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   PETALIA GUIDANCE
+   Image blends into the whole section
+===================================================== */
+
+.occasion-shop-guidance {
+  position: relative;
+
+  width: min(1166px, calc(100% - 80px));
+  height: 260px;
+  min-height: 0;
+
+  margin: 60px auto 0;
+
+  display: grid;
+  grid-template-columns: 52% 48%;
+  align-items: stretch;
+
+  overflow: hidden;
+
+  border: none;
+  border-radius: 20px;
+  box-shadow: none;
+
+  background:
+    radial-gradient(
+      circle at 72% 45%,
+      rgba(248, 224, 235, 0.38),
+      transparent 46%
+    ),
+    linear-gradient(
+      105deg,
+      #eee4f1 0%,
+      #f1e5f0 48%,
+      #f6e8ef 100%
+    );
+}
+
+
+/* =====================================================
+   LEFT IMAGE
+===================================================== */
+
+.occasion-shop-guidance-art {
+  position: relative;
+  z-index: 1;
+
+  width: 110%;
+  height: 260px;
+
+  margin: 0;
+
+  overflow: visible;
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.95) 64%,
+    rgba(0, 0, 0, 0.72) 76%,
+    rgba(0, 0, 0, 0.35) 88%,
+    rgba(0, 0, 0, 0.1) 96%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.95) 64%,
+    rgba(0, 0, 0, 0.72) 76%,
+    rgba(0, 0, 0, 0.35) 88%,
+    rgba(0, 0, 0, 0.1) 96%,
+    transparent 100%
+  );
+}
+
+
+.occasion-shop-guidance-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  transition: transform 0.35s ease;
+}
+
+
+/* Very tiny zoom only */
+.occasion-shop-guidance:hover
+.occasion-shop-guidance-image {
+  transform: scale(1.015);
+}
+
+
+/* =====================================================
+   RIGHT TEXT
+===================================================== */
+
+.occasion-shop-guidance-content {
+  position: relative;
+  z-index: 4;
+
+  max-width: 450px;
+
+  align-self: center;
+
+  margin-left: -5px;
+  padding: 30px 36px 30px 5px;
+}
+
+.occasion-shop-guidance-content h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.15;
+
+  color: #6e536f;
+}
+
+.occasion-shop-guidance-content
+> p:not(.occasion-shop-section-eyebrow) {
+  max-width: 420px;
+
+  margin: 11px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.65;
+
+  color: #806f7e;
+}
+
+
+.occasion-shop-guidance-content button {
+  margin-top: 20px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.occasion-shop-guidance-content button:hover {
+  gap: 10px;
+  color: #b84775;
+}
+
+
+/* =====================================================
+   DECORATIVE PETALS
+===================================================== */
+
+.occasion-guidance-petal {
+  position: absolute;
+  z-index: 5;
+
+  width: 37px;
+  height: 19px;
+
+  border-radius: 80% 20% 80% 20%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(211, 91, 140, 0.13),
+      rgba(236, 158, 190, 0.06)
+    );
+
+  pointer-events: none;
+}
+
+
+.guidance-petal-one {
+  right: 24px;
+  top: 24px;
+
+  transform: rotate(25deg);
+}
+
+
+.guidance-petal-two {
+  right: 52px;
+  bottom: 24px;
+
+  width: 27px;
+  height: 15px;
+
+  transform: rotate(-32deg);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .occasion-shop-guidance {
+    width: calc(100% - 60px);
+
+    grid-template-columns: 52% 48%;
+
+    min-height: 290px;
+  }
+
+  .occasion-shop-guidance-art {
+    width: 115%;
+  }
+
+  .occasion-shop-guidance-content {
+    margin-left: 0;
+
+    padding:
+      38px
+      30px
+      38px
+      5px;
+  }
+
+  .occasion-shop-guidance-content h2 {
+    font-size: 28px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .occasion-shop-guidance {
+    width: calc(100% - 40px);
+
+    margin-top: 50px;
+
+    display: block;
+
+    min-height: auto;
+
+    border-radius: 20px;
+  }
+
+
+  .occasion-shop-guidance-art {
+    width: 100%;
+    height: 235px;
+
+    /*
+      On mobile we fade downward instead,
+      because image is above the text.
+    */
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 60%,
+      rgba(0, 0, 0, 0.85) 72%,
+      rgba(0, 0, 0, 0.45) 84%,
+      rgba(0, 0, 0, 0.12) 94%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 60%,
+      rgba(0, 0, 0, 0.85) 72%,
+      rgba(0, 0, 0, 0.45) 84%,
+      rgba(0, 0, 0, 0.12) 94%,
+      transparent 100%
+    );
+  }
+
+
+  .occasion-shop-guidance-image {
+    object-position: center;
+  }
+
+
+  .occasion-shop-guidance-content {
+    max-width: none;
+
+    margin: -12px 0 0;
+
+    padding: 10px 26px 35px;
+  }
+
+
+  .occasion-shop-guidance-content h2 {
+    font-size: 27px;
+  }
+}
+
+/* =====================================================
+   GIFT FINDER
+===================================================== */
+
+.occasion-shop-finder {
+  position: relative;
+
+  width: min(760px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 58px 30px 68px;
+
+  text-align: center;
+}
+
+.occasion-shop-finder h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  color: #6e536f;
+}
+
+.occasion-shop-finder > p:not(.occasion-shop-section-eyebrow) {
+  max-width: 540px;
+
+  margin: 12px auto 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #897687;
+}
+
+.occasion-shop-finder button {
+  min-height: 39px;
+
+  margin-top: 20px;
+  padding: 0 19px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid rgba(211, 91, 140, 0.45);
+  border-radius: 999px;
+
+  background: rgba(255, 250, 247, 0.35);
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.occasion-shop-finder button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 250, 247, 0.9);
+}
+
+.occasion-shop-finder button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 250, 247, 0.92);
+
+  box-shadow: 0 8px 18px rgba(110, 83, 111, 0.06);
+}
+
+/* FINDER PETALS */
+
+.occasion-shop-finder-petal {
+  position: absolute;
+
+  width: 45px;
+  height: 24px;
+
+  border-radius: 80% 20% 80% 20%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(211, 91, 140, 0.1),
+    rgba(236, 158, 190, 0.04)
+  );
+
+  pointer-events: none;
+}
+
+.finder-petal-one {
+  left: -5%;
+  top: 48%;
+
+  transform: rotate(24deg);
+}
+
+.finder-petal-two {
+  right: -4%;
+  bottom: 18%;
+
+  transform: rotate(-28deg);
+}
+
+/* =====================================================
+   NOT FOUND
+===================================================== */
+
+.occasion-shop-not-found {
+  min-height: 65vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.occasion-shop-not-found h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+
+  color: #6e536f;
+}
+
+.occasion-shop-not-found button {
+  margin-top: 15px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #d35b8c;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .occasion-shop-hero {
+    grid-template-columns: 0.95fr 1.05fr;
+
+    padding: 50px 42px;
+  }
+
+  .occasion-shop-hero h1 {
+    font-size: 45px;
+  }
+
+  .occasion-shop-hero-art {
+    height: 300px;
+  }
+
+  .occasion-shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .occasion-shop-guidance {
+    gap: 35px;
+
+    padding: 32px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  /* BREADCRUMB */
+
+  .occasion-shop-breadcrumb {
+    width: calc(100% - 40px);
+    min-height: 50px;
+
+    font-size: 10px;
+
+  }
+
+  /* HERO */
+
+  .occasion-shop-hero {
+    width: calc(100% - 40px);
+    min-height: auto;
+
+    margin-top: 8px;
+    padding: 43px 26px 24px;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 21px;
+  }
+
+  .occasion-shop-hero-content {
+    max-width: none;
+  }
+
+  .occasion-shop-hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -0.6px;
+  }
+
+  .occasion-shop-hero-description {
+    font-size: 12px;
+  }
+
+  .occasion-shop-hero-art {
+    height: 240px;
+
+    margin-top: 22px;
+  }
+
+  .occasion-shop-hero-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 1;
+  }
+
+  .hero-petal-left {
+    left: 82%;
+    top: 8%;
+  }
+
+  .hero-petal-right {
+    right: 5%;
+    bottom: 4%;
+  }
+
+  /* MEANING */
+
+  .occasion-shop-meaning {
+    width: calc(100% - 40px);
+
+    padding: 68px 0 72px;
+  }
+
+  .occasion-shop-section-heading {
+    margin-bottom: 38px;
+  }
+
+  .occasion-shop-section-heading h2 {
+    font-size: 28px;
+  }
+
+  .occasion-shop-meaning-grid {
+    grid-template-columns: 1fr;
+
+    gap: 34px;
+  }
+
+  /* PRODUCTS */
+
+  .occasion-shop-products {
+    width: calc(100% - 40px);
+
+    padding: 60px 0 72px;
+  }
+
+  .occasion-shop-products-top {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 19px;
+  }
+
+  .occasion-shop-products-top h2 {
+    font-size: 28px;
+  }
+
+  .occasion-shop-sort {
+    width: 100%;
+  }
+
+  .occasion-shop-product-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  /* GUIDANCE */
+
+  .occasion-shop-guidance {
+    width: calc(100% - 40px);
+
+    margin-bottom: 55px;
+    padding: 25px;
+
+    grid-template-columns: 1fr;
+
+    gap: 27px;
+
+    border-radius: 20px;
+  }
+
+  .occasion-shop-guidance-art {
+    height: 210px;
+  }
+
+  .occasion-shop-guidance-content h2 {
+    font-size: 27px;
+  }
+
+  /* FINDER */
+
+  .occasion-shop-finder {
+    width: calc(100% - 40px);
+
+    padding: 45px 14px 70px;
+  }
+
+  .occasion-shop-finder h2 {
+    font-size: 28px;
+  }
+}

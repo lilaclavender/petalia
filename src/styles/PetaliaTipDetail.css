@@ -1,0 +1,1414 @@
+/* =========================================================
+   PETALIA TIP DETAIL
+========================================================= */
+
+.petalia-tip-detail-page {
+  min-height: 100vh;
+  background: #eee7f1;
+  color: #6e536f;
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.tip-detail-breadcrumb-wrap {
+  width: 100%;
+  padding: 0 32px;
+}
+
+.tip-detail-breadcrumb {
+  width: min(1166px, 100%);
+  min-height: 44px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+
+  color: #9c8799;
+}
+
+.tip-detail-breadcrumb button {
+  border: none;
+  background: transparent;
+
+  padding: 0;
+
+  color: #9c8799;
+  font: inherit;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.tip-detail-breadcrumb button:hover {
+  color: #d35b8c;
+}
+
+.tip-detail-breadcrumb strong {
+  color: #6e536f;
+  font-weight: 600;
+}
+
+/* =========================================================
+   COMMON TEXT
+========================================================= */
+
+.tip-detail-eyebrow {
+  margin: 0 0 12px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #d35b8c;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.tip-detail-hero {
+  width: min(1280px, calc(100% - 80px));
+  min-height: 390px;
+
+  margin: 18px auto 0;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: linear-gradient(120deg, #fff8fa 0%, #faedf3 48%, #f5e3ec 100%);
+}
+
+.tip-detail-hero-content {
+  padding: 68px 64px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tip-detail-hero-content h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 0.98;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-detail-hero-description {
+  max-width: 440px;
+
+  margin: 22px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+
+  color: #806a7d;
+}
+
+.tip-detail-primary-btn {
+  min-height: 42px;
+
+  margin-top: 28px;
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #d35b8c;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.tip-detail-primary-btn:hover {
+  transform: translateY(-2px);
+
+  background: #c94e81;
+
+  box-shadow: 0 9px 20px rgba(211, 91, 140, 0.2);
+}
+
+.tip-detail-hero-placeholder {
+  min-height: 390px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(245, 216, 229, 0.72),
+    rgba(250, 235, 241, 0.84)
+  );
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+
+  color: #b898a7;
+}
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.tip-detail-section {
+  width: min(1280px, calc(100% - 80px));
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.tip-detail-intro {
+  max-width: 760px;
+
+  padding: 82px 0 70px;
+
+  text-align: center;
+}
+
+.tip-detail-intro h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-detail-intro > p:last-child {
+  max-width: 650px;
+
+  margin: 18px auto 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: #806a7d;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.tip-detail-section-heading {
+  margin-bottom: 30px;
+}
+
+.tip-detail-section-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-detail-section-heading > p:last-child {
+  max-width: 580px;
+
+  margin: 12px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+
+  color: #806a7d;
+}
+
+/* =========================================================
+   FLOWER LIBRARY
+========================================================= */
+
+.tip-flower-guide {
+  padding: 20px 0 76px;
+}
+
+.tip-flower-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+/* =========================================================
+   FLOWER CARD - FULL IMAGE STYLE
+========================================================= */
+
+.tip-flower-card {
+  position: relative;
+
+  min-width: 0;
+  height: 420px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(110, 83, 111, 0.08);
+  border-radius: 18px;
+
+  background: #f8eef1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.tip-flower-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(211, 91, 140, 0.18);
+
+  box-shadow: 0 16px 32px rgba(110, 83, 111, 0.13);
+}
+
+.tip-flower-card:focus-visible {
+  outline: 2px solid #d35b8c;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   FLOWER IMAGE AREA
+========================================================= */
+
+.tip-flower-card-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   TEMPORARY IMAGE PLACEHOLDER
+
+   Keep this until real flower images are added.
+========================================================= */
+
+.tip-flower-image-placeholder {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #f5e4ed, #eadfeb);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+
+  color: #b892a5;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.tip-flower-card:nth-child(4n + 2) .tip-flower-image-placeholder {
+  background: linear-gradient(135deg, #f6e5eb, #eadfe8);
+}
+
+.tip-flower-card:nth-child(4n + 3) .tip-flower-image-placeholder {
+  background: linear-gradient(135deg, #eee4ef, #e5ddea);
+}
+
+.tip-flower-card:nth-child(4n + 4) .tip-flower-image-placeholder {
+  background: linear-gradient(135deg, #f7ead8, #f0dfe2);
+}
+
+.tip-flower-card:hover .tip-flower-image-placeholder {
+  transform: scale(1.035);
+}
+
+/* =========================================================
+   REAL FLOWER IMAGE
+
+   Once you add real images, use:
+   <img src={flower.image} alt={flower.name} />
+========================================================= */
+
+.tip-flower-card-image img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+    Slightly softened / romantic.
+    NOT heavily blurred because users should still
+    recognize the flower.
+  */
+  filter: saturate(0.92) contrast(0.94) brightness(0.98);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.tip-flower-card:hover .tip-flower-card-image img {
+  transform: scale(1.045);
+
+  filter: saturate(0.98) contrast(0.96) brightness(0.97);
+}
+
+/* =========================================================
+   FLOWER IMAGE GRADIENT
+========================================================= */
+
+.tip-flower-card-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(68, 43, 62, 0.02) 0%,
+    rgba(68, 43, 62, 0.03) 34%,
+    rgba(68, 43, 62, 0.13) 48%,
+    rgba(68, 43, 62, 0.38) 63%,
+    rgba(67, 42, 60, 0.69) 79%,
+    rgba(55, 34, 50, 0.9) 100%
+  );
+
+  transition: background 0.3s ease;
+}
+
+.tip-flower-card:hover .tip-flower-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(68, 43, 62, 0.02) 0%,
+    rgba(68, 43, 62, 0.04) 32%,
+    rgba(68, 43, 62, 0.16) 47%,
+    rgba(68, 43, 62, 0.42) 63%,
+    rgba(67, 42, 60, 0.73) 79%,
+    rgba(55, 34, 50, 0.92) 100%
+  );
+}
+
+/* =========================================================
+   FLOWER TEXT ON IMAGE
+========================================================= */
+
+.tip-flower-card-info {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 25px 22px 24px;
+
+  color: #ffffff;
+}
+
+.tip-flower-name {
+  margin: 0 0 7px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #f7c3d6;
+}
+
+.tip-flower-card h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 400;
+
+  color: #ffffff;
+}
+
+.tip-flower-description {
+  max-width: 96%;
+
+  margin: 11px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/*
+   Old card elements are intentionally hidden.
+   The whole card is clickable now.
+*/
+
+/* =========================================================
+   VIEW MORE FLOWERS
+========================================================= */
+
+.tip-explore-all-wrap {
+  margin-top: 34px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tip-explore-all-btn {
+  min-height: 40px;
+
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid rgba(211, 91, 140, 0.35);
+  border-radius: 999px;
+
+  background: #fff8f8;
+
+  color: #d35b8c;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tip-explore-all-btn:hover {
+  transform: translateY(-2px);
+
+  background: #d35b8c;
+  color: #ffffff;
+
+  box-shadow: 0 8px 18px rgba(211, 91, 140, 0.16);
+}
+
+.tip-flower-count {
+  margin: 9px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+
+  color: #9b8797;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.tip-flower-cta {
+  width: min(1280px, calc(100% - 80px));
+
+  margin: 0 auto 82px;
+  padding: 42px 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  border: 1px solid rgba(110, 83, 111, 0.05);
+  border-radius: 22px;
+
+  background: linear-gradient(115deg, #fff7f7 0%, #f8eef3 100%);
+}
+
+.tip-flower-cta > div:first-child {
+  max-width: 620px;
+}
+
+.tip-flower-cta h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-flower-cta > div:first-child > p:last-child {
+  margin: 14px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #806a7d;
+}
+
+.tip-flower-cta-actions {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tip-flower-cta-actions button {
+  min-height: 40px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid rgba(211, 91, 140, 0.28);
+  border-radius: 999px;
+
+  background: #fffaf7;
+
+  color: #d35b8c;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.tip-flower-cta-actions button:first-child {
+  border-color: #d35b8c;
+
+  background: #d35b8c;
+  color: #ffffff;
+}
+
+.tip-flower-cta-actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.tip-coming-soon {
+  width: min(900px, calc(100% - 64px));
+
+  min-height: 420px;
+
+  margin: 60px auto;
+  padding: 60px;
+
+  border-radius: 22px;
+
+  background: #fffaf7;
+}
+
+.tip-coming-soon h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 40px;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-coming-soon > p:last-child {
+  margin-top: 15px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+
+  color: #806a7d;
+}
+
+.tip-back-btn {
+  margin-bottom: 40px;
+
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #806a7d;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.tip-back-btn:hover {
+  color: #d35b8c;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .tip-detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-detail-hero-placeholder {
+    min-height: 280px;
+  }
+
+  .tip-flower-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tip-flower-card {
+    height: 410px;
+  }
+
+  .tip-flower-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .tip-detail-breadcrumb-wrap {
+    padding: 0 18px;
+  }
+
+  .tip-detail-hero,
+  .tip-detail-section,
+  .tip-flower-cta {
+    width: calc(100% - 36px);
+  }
+
+  .tip-detail-hero-content {
+    padding: 48px 28px;
+  }
+
+  .tip-detail-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .tip-detail-intro {
+    padding: 60px 0;
+  }
+
+  .tip-detail-intro h2,
+  .tip-detail-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .tip-flower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-flower-card {
+    height: 440px;
+  }
+
+  .tip-flower-card-info {
+    padding: 26px 22px;
+  }
+
+  .tip-flower-card h3 {
+    font-size: 26px;
+  }
+
+  .tip-flower-description {
+    max-width: 100%;
+
+    font-size: 11px;
+  }
+
+  .tip-flower-cta {
+    padding: 32px 26px;
+  }
+
+  .tip-flower-cta h2 {
+    font-size: 28px;
+  }
+
+  .tip-flower-cta-actions {
+    width: 100%;
+
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tip-flower-cta-actions button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   CANDLE GUIDE
+========================================================= */
+
+.tip-candle-hero-image {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.tip-candle-hero-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   CANDLE SCENT GUIDE
+========================================================= */
+
+.tip-candle-guide {
+  padding: 20px 0 76px;
+}
+
+.tip-candle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tip-candle-card {
+  min-height: 230px;
+  padding: 30px 28px;
+
+  border: 1px solid rgba(110, 83, 111, 0.08);
+  border-radius: 18px;
+
+  background: #fffaf7;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.tip-candle-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(211, 91, 140, 0.18);
+
+  box-shadow: 0 14px 28px rgba(110, 83, 111, 0.09);
+}
+
+.tip-candle-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  background: #f8e9ef;
+  color: #d35b8c;
+}
+
+.tip-candle-name {
+  margin: 0 0 8px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color: #d35b8c;
+}
+
+.tip-candle-card h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-candle-description {
+  margin: 13px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #806a7d;
+}
+
+/* =========================================================
+   CANDLE MOOD GUIDE
+========================================================= */
+
+.tip-candle-mood-section {
+  padding: 8px 0 76px;
+}
+
+.tip-candle-mood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tip-candle-mood-card {
+  padding: 25px 24px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #fff7f7 0%, #f8eef3 100%);
+}
+
+.tip-candle-mood-card span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color: #d35b8c;
+}
+
+.tip-candle-mood-card h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-candle-mood-card p {
+  margin: 10px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  line-height: 1.65;
+
+  color: #806a7d;
+}
+
+/* =========================================================
+   CANDLE RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .tip-candle-hero-image {
+    min-height: 300px;
+  }
+
+  .tip-candle-grid,
+  .tip-candle-mood-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .tip-candle-hero-image {
+    min-height: 260px;
+  }
+
+  .tip-candle-grid,
+  .tip-candle-mood-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-candle-card {
+    min-height: auto;
+    padding: 26px 24px;
+  }
+}
+
+/* =========================================================
+   GIFT GIVING
+========================================================= */
+
+.tip-gift-hero-image {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.tip-gift-hero-image img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* GIFT STEPS */
+
+.tip-gift-guide {
+  padding: 20px 0 76px;
+}
+
+.tip-gift-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tip-gift-step-card {
+  min-height: 215px;
+  padding: 28px;
+
+  background: #fffaf7;
+
+  border: 1px solid rgba(110, 83, 111, 0.08);
+  border-radius: 18px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tip-gift-step-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 14px 28px rgba(110, 83, 111, 0.09);
+}
+
+.tip-gift-step-number {
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+
+  color: #d35b8c;
+}
+
+.tip-gift-step-card h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-gift-step-card p {
+  margin: 12px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  line-height: 1.7;
+
+  color: #806a7d;
+}
+
+/* GIFT IDEAS */
+
+.tip-gift-ideas-section {
+  padding: 8px 0 76px;
+}
+
+.tip-gift-ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tip-gift-idea-card {
+  padding: 30px 28px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #fff7f7 0%, #f8eef3 100%);
+}
+
+.tip-gift-idea-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 250, 247, 0.8);
+  color: #d35b8c;
+}
+
+.tip-gift-idea-card h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-gift-idea-card p {
+  margin: 12px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  line-height: 1.7;
+
+  color: #806a7d;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .tip-gift-hero-image {
+    min-height: 300px;
+  }
+
+  .tip-gift-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .tip-gift-hero-image {
+    min-height: 260px;
+  }
+
+  .tip-gift-step-grid,
+  .tip-gift-ideas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-gift-step-card {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   REUSABLE PETALIA ARTICLE GUIDE
+========================================================= */
+
+.tip-article-hero {
+  width: min(1120px, calc(100% - 80px));
+  min-height: 390px;
+
+  margin: 24px auto 70px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #fffaf7;
+}
+
+.tip-article-hero-image {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.tip-article-hero-image img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.tip-article-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 54px 58px;
+}
+
+.tip-article-hero-content h1 {
+  max-width: 480px;
+
+  margin: 12px 0 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 3.4vw, 53px);
+  line-height: 1.03;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-article-hero-content > p:not(.tip-detail-eyebrow) {
+  max-width: 480px;
+
+  margin: 0 0 27px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.75;
+
+  color: #806a7d;
+}
+
+/* ARTICLE LIST */
+
+.tip-article-guide {
+  padding: 10px 0 78px;
+}
+
+.tip-article-list {
+  max-width: 900px;
+  margin: 0 auto;
+
+  border-top: 1px solid rgba(110, 83, 111, 0.12);
+}
+
+.tip-article-row {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  gap: 25px;
+
+  padding: 30px 12px;
+
+  border-bottom: 1px solid rgba(110, 83, 111, 0.12);
+}
+
+.tip-article-number {
+  padding-top: 3px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 400;
+
+  color: #d35b8c;
+}
+
+.tip-article-row-content h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-article-row-content p {
+  max-width: 650px;
+
+  margin: 10px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.75;
+
+  color: #806a7d;
+}
+
+/* REMINDER */
+
+.tip-article-reminder {
+  width: min(820px, calc(100% - 80px));
+
+  margin: 0 auto 78px;
+  padding: 44px 55px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #fff7f7 0%, #f8eef3 100%);
+}
+
+.tip-article-reminder-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 250, 247, 0.85);
+  color: #d35b8c;
+}
+
+.tip-article-reminder h2 {
+  margin: 10px auto 12px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  line-height: 1.2;
+  font-weight: 400;
+
+  color: #6e536f;
+}
+
+.tip-article-reminder > p:not(.tip-detail-eyebrow) {
+  max-width: 590px;
+
+  margin: 0 auto;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.75;
+
+  color: #806a7d;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .tip-article-hero {
+    width: min(100% - 40px, 1120px);
+    grid-template-columns: 1fr;
+  }
+
+  .tip-article-hero-image {
+    min-height: 310px;
+  }
+
+  .tip-article-hero-content {
+    padding: 42px;
+  }
+
+  .tip-article-row {
+    grid-template-columns: 85px 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .tip-article-hero {
+    width: calc(100% - 28px);
+    margin-bottom: 50px;
+  }
+
+  .tip-article-hero-image {
+    min-height: 250px;
+  }
+
+  .tip-article-hero-content {
+    padding: 32px 25px;
+  }
+
+  .tip-article-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .tip-article-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    padding: 25px 4px;
+  }
+
+  .tip-article-number {
+    font-size: 15px;
+  }
+
+  .tip-article-reminder {
+    width: calc(100% - 28px);
+    padding: 36px 24px;
+  }
+}
