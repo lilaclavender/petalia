@@ -3,12 +3,11 @@ import { Link, Navigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import petaliaLogo from "../assets/petalia-logo.png";
 import "../styles/AdminDashboard.css";
-
 const PAGE_SIZE = 20;
 const SECTIONS = ["overview", "shops", "products", "orders"];
 const COLUMNS = {
   shops: "id,name,category,location,business_email",
-  products: "id,name,category,price,stock,shop_id",
+  products: "id,name,category,price,stock,shop_id,is_hidden",
   orders: "id,order_reference,created_at,customer_name,total,payment_status,status,shop_id",
 };
 const money = (value) => value == null ? "—" : new Intl.NumberFormat("en-US", {
@@ -20,19 +19,17 @@ const date = (value) => {
     ? parsed.toLocaleString("en-GB", { timeZone: "Asia/Phnom_Penh" }) : "—";
 };
 const label = (value) => value ? String(value).replaceAll("_", " ") : "—";
-
 function Status({ value }) {
-  const tone = ["paid", "completed", "delivered"].includes(value) ? "good"
-    : ["failed", "cancelled", "canceled", "refunded"].includes(value) ? "muted" : "waiting";
+  const tone = ["paid", "completed", "delivered", "visible"].includes(value) ? "good"
+    : ["failed", "cancelled", "canceled", "refunded", "hidden"].includes(value) ? "muted" : "waiting";
   return <span className={`pa-status pa-status-${tone}`}>{label(value)}</span>;
 }
-
-function DataTable({ section, rows, shopNames }) {
+function DataTable({ section, rows, shopNames, onModerate, moderationBusy }) {
   const shop = (id) => id == null ? "Not assigned" : shopNames[id] || `Shop #${id}`;
   const titles = section === "shops"
     ? ["Shop", "Category", "Location", "Contact"]
     : section === "products"
-      ? ["Product", "Shop", "Category", "Price", "Stock"]
+      ? ["Product", "Shop", "Category", "Price", "Stock", "Visibility", "Action"]
       : ["Order", "Date (Cambodia)", "Customer", "Shop", "Total", "Payment", "Fulfillment"];
   return <div className="pa-table-scroll" tabIndex={0} aria-label={`${section} table, scroll horizontally if needed`}>
     <table className="pa-table">
@@ -47,6 +44,12 @@ function DataTable({ section, rows, shopNames }) {
           </> : section === "products" ? <>
             <td><Link to={`/product/${row.id}`} target="_blank" rel="noreferrer">{row.name || `Product #${row.id}`}</Link></td>
             <td>{shop(row.shop_id)}</td><td>{row.category || "—"}</td><td>{money(row.price)}</td><td>{row.stock ?? "—"}</td>
+            <td><Status value={row.is_hidden ? "hidden" : "visible"} /></td>
+            <td><button type="button" disabled={moderationBusy !== null}
+              onClick={() => onModerate(row)}
+              aria-label={`${row.is_hidden ? "Restore" : "Hide"} ${row.name || "product"}`}>
+              {moderationBusy === row.id ? "Saving…" : row.is_hidden ? "Restore" : "Hide"}
+            </button></td>
           </> : <>
             <td>{row.order_reference || `Order #${row.id}`}</td><td>{date(row.created_at)}</td>
             <td>{row.customer_name || "—"}</td><td>{shop(row.shop_id)}</td><td>{money(row.total)}</td>
@@ -56,7 +59,6 @@ function DataTable({ section, rows, shopNames }) {
     </table>
   </div>;
 }
-
 export default function AdminDashboard() {
   const [access, setAccess] = useState({ status: "checking", user: null, error: "" });
   const [authVersion, setAuthVersion] = useState(0);
@@ -67,9 +69,11 @@ export default function AdminDashboard() {
   const [refresh, setRefresh] = useState(0);
   const [busy, setBusy] = useState(true);
   const [error, setError] = useState("");
+  const [moderationBusy, setModerationBusy] = useState(null);
+  const [moderationMessage, setModerationMessage] = useState("");
+  const [moderationError, setModerationError] = useState("");
   const [logoutBusy, setLogoutBusy] = useState(false);
   const [data, setData] = useState({ rows: [], count: 0, counts: {}, shopNames: {} });
-
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_OUT" || event === "SIGNED_IN" || event === "USER_UPDATED") {
@@ -80,7 +84,6 @@ export default function AdminDashboard() {
     });
     return () => subscription.unsubscribe();
   }, []);
-
   useEffect(() => {
     let active = true;
     async function checkAccess() {
@@ -101,12 +104,10 @@ export default function AdminDashboard() {
     checkAccess();
     return () => { active = false; };
   }, [authVersion]);
-
   useEffect(() => {
     const timer = setTimeout(() => { setFilter(search.trim()); setPage(0); }, 300);
     return () => clearTimeout(timer);
   }, [search]);
-
   useEffect(() => {
     if (access.status !== "allowed") return;
     let active = true;
@@ -161,12 +162,32 @@ export default function AdminDashboard() {
     load();
     return () => { active = false; };
   }, [access.status, access.user, section, filter, page, refresh]);
-
+  async function moderateProduct(product) {
+    if (moderationBusy !== null) return;
+    const hidden = !product.is_hidden;
+    const description = hidden
+      ? `Hide "${product.name}"? Customers will not see it or place new orders for it. Existing orders remain unchanged.`
+      : `Restore "${product.name}" to the public shop?`;
+    if (!window.confirm(description)) return;
+    setModerationBusy(product.id);
+    setModerationMessage(""); setModerationError("");
+    try {
+      const { error: changeError } = await supabase.rpc("petalia_set_product_hidden", {
+        p_product_id: product.id, p_hidden: hidden,
+      });
+      if (changeError) throw changeError;
+      setData((previous) => ({ ...previous, rows: previous.rows.map((row) =>
+        row.id === product.id ? { ...row, is_hidden: hidden } : row) }));
+      setModerationMessage(`${product.name} ${hidden ? "hidden from customers" : "restored to the shop"}.`);
+    } catch (problem) {
+      setModerationError(problem.message || "Could not update product visibility.");
+    } finally { setModerationBusy(null); }
+  }
   function changeSection(next) {
     if (next === section) return;
+    setModerationMessage(""); setModerationError("");
     setBusy(true); setSection(next); setSearch(""); setFilter(""); setPage(0);
   }
-
   async function logout() {
     setLogoutBusy(true);
     try {
@@ -177,7 +198,6 @@ export default function AdminDashboard() {
     } catch (problem) { setError(problem.message || "Could not sign out. Please try again."); }
     finally { setLogoutBusy(false); }
   }
-
   if (access.status === "signedout") return <Navigate to="/sign-in" replace />;
   if (access.status !== "allowed") return <main className="pa-page pa-access">
     <img src={petaliaLogo} alt="Petalia" width="140" />
@@ -187,7 +207,6 @@ export default function AdminDashboard() {
     {access.status === "error" && <button onClick={() => setAuthVersion((previous) => previous + 1)}>Try again</button>}
     {access.status !== "checking" && <Link to="/">Back to Petalia</Link>}
   </main>;
-
   return <div className="pa-page">
     <header className="pa-header">
       <Link to="/" aria-label="Petalia homepage"><img src={petaliaLogo} alt="Petalia" /></Link>
@@ -197,11 +216,14 @@ export default function AdminDashboard() {
     <div className="pa-layout">
       <nav className="pa-nav" aria-label="Admin sections">
         <p>MARKETPLACE</p>
-        {SECTIONS.map((item) => <button key={item} className={section === item ? "pa-active" : ""} aria-current={section === item ? "page" : undefined} onClick={() => changeSection(item)}>{label(item)}</button>)}
+        {SECTIONS.map((item) => <button key={item} className={section === item ? "pa-active" : ""} aria-current={section === item ? "page" : undefined} disabled={moderationBusy !== null} onClick={() => changeSection(item)}>{label(item)}</button>)}
         <Link to="/">View Petalia ↗</Link>
       </nav>
       <main className="pa-main">
-        <div className="pa-heading"><div><p className="pa-eyebrow">PETALIA ADMIN</p><h1>{section === "overview" ? "Marketplace overview" : label(section)}</h1><p>View your marketplace’s shops, products, and orders.</p></div><button onClick={() => { setBusy(true); setRefresh((previous) => previous + 1); }} disabled={busy}>Refresh</button></div>
+        <div className="pa-heading"><div><p className="pa-eyebrow">PETALIA ADMIN</p><h1>{section === "overview" ? "Marketplace overview" : label(section)}</h1><p>View your marketplace’s shops, products, and orders.</p></div><button onClick={() => { setBusy(true); setRefresh((previous) => previous + 1); }} disabled={busy || moderationBusy !== null}>Refresh</button></div>
+        {section === "products" && <p>Hide removes a listing from customer browsing and new orders. Restore makes it available again. Existing orders stay intact.</p>}
+        {moderationMessage && <p role="status">{moderationMessage}</p>}
+        {moderationError && <p className="pa-error" role="alert">{moderationError}</p>}
         {error && <div className="pa-error" role="alert">Could not load data: {error}<button onClick={() => setRefresh((previous) => previous + 1)}>Try again</button></div>}
         {busy ? <p className="pa-loading" role="status">Loading marketplace data…</p> : !error && <>
           {section === "overview" && <div className="pa-stats">{Object.entries(data.counts).map(([name, count]) => <article key={name}><span>{name}</span><strong>{count}</strong></article>)}</div>}
@@ -209,8 +231,8 @@ export default function AdminDashboard() {
         {section !== "overview" && <div className="pa-tools"><label htmlFor="pa-search">{section === "orders" ? "Search customer name" : `Search ${section}`}</label><input id="pa-search" type="search" value={search} placeholder={section === "orders" ? "Customer name…" : "Name…"} onChange={(event) => setSearch(event.target.value)} /></div>}
         {!busy && !error && <section className="pa-panel">
           <div className="pa-panel-heading"><h2>{section === "overview" ? "Recent orders" : label(section)}</h2><span>{section === "overview" ? "Latest 5 orders" : `${data.count} results`}</span></div>
-          <DataTable section={section === "overview" ? "orders" : section} rows={data.rows} shopNames={data.shopNames} />
-          {section !== "overview" && <div className="pa-pagination"><span>Page {page + 1} of {Math.max(1, Math.ceil(data.count / PAGE_SIZE))}</span><div><button disabled={page === 0} onClick={() => { setBusy(true); setPage((previous) => previous - 1); }}>Previous</button><button disabled={(page + 1) * PAGE_SIZE >= data.count} onClick={() => { setBusy(true); setPage((previous) => previous + 1); }}>Next</button></div></div>}
+          <DataTable section={section === "overview" ? "orders" : section} rows={data.rows} shopNames={data.shopNames} onModerate={moderateProduct} moderationBusy={moderationBusy} />
+          {section !== "overview" && <div className="pa-pagination"><span>Page {page + 1} of {Math.max(1, Math.ceil(data.count / PAGE_SIZE))}</span><div><button disabled={page === 0 || moderationBusy !== null} onClick={() => { setBusy(true); setPage((previous) => previous - 1); }}>Previous</button><button disabled={(page + 1) * PAGE_SIZE >= data.count || moderationBusy !== null} onClick={() => { setBusy(true); setPage((previous) => previous + 1); }}>Next</button></div></div>}
         </section>}
         <footer className="pa-footer">Petalia · Admin Center</footer>
       </main>
