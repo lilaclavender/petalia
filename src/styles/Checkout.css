@@ -2594,3 +2594,245 @@
   font-size: 10px;
   line-height: 1.55;
 }
+
+/* =========================================================
+   PETALIA CHECKOUT — FINAL RESPONSIVE OVERRIDES
+========================================================= */
+
+/* =========================
+   TABLET / IPAD
+========================= */
+
+@media (max-width: 980px) {
+  .checkout-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .checkout-container {
+    width: calc(100% - 40px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .checkout-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .checkout-form,
+  .checkout-summary {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+
+  .checkout-intro {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .checkout-intro h1 {
+    font-size: 40px;
+  }
+
+  .checkout-progress {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .checkout-section {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .checkout-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Decorative journey should not create overflow */
+  .checkout-journey,
+  .checkout-growing-journey {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 640px) {
+  .checkout-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 26px 0 50px;
+    overflow-x: hidden;
+  }
+
+  .checkout-container {
+    width: calc(100% - 28px);
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .checkout-breadcrumb {
+    margin-bottom: 24px;
+    font-size: 9px;
+  }
+
+  .checkout-intro {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .checkout-intro h1 {
+    font-size: 32px;
+    line-height: 1.08;
+    overflow-wrap: break-word;
+  }
+
+  .checkout-intro p {
+    max-width: 100%;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .checkout-progress {
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .checkout-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .checkout-form,
+  .checkout-summary {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .checkout-section {
+    width: 100%;
+    padding: 18px 14px;
+    box-sizing: border-box;
+    border-radius: 15px;
+  }
+
+  .checkout-section h2 {
+    font-size: 20px;
+  }
+
+  .checkout-section p {
+    font-size: 10px;
+  }
+
+  .checkout-form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .checkout-field,
+  .checkout-field-full {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .checkout-field input,
+  .checkout-field select,
+  .checkout-field textarea,
+  .checkout-field-full input,
+  .checkout-field-full select,
+  .checkout-field-full textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .checkout-date-options,
+  .checkout-time-options,
+  .payment-method-options {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .checkout-summary {
+    position: static;
+    padding: 18px 14px;
+    border-radius: 15px;
+  }
+
+  .checkout-summary h2 {
+    font-size: 21px;
+  }
+
+  .checkout-summary-item {
+    min-width: 0;
+  }
+
+  .checkout-summary-item img {
+    flex-shrink: 0;
+  }
+
+  .checkout-summary-item-info {
+    min-width: 0;
+  }
+
+  .checkout-summary-item-info h3,
+  .checkout-summary-item-info p {
+    overflow-wrap: anywhere;
+  }
+
+  .checkout-total-row {
+    width: 100%;
+  }
+
+  .checkout-continue-button,
+  .checkout-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hide decorative journey on phone */
+  .checkout-journey,
+  .checkout-growing-journey {
+    display: none;
+  }
+}
+
+
+/* =========================
+   EXTRA SMALL PHONE
+========================= */
+
+@media (max-width: 420px) {
+  .checkout-container {
+    width: calc(100% - 24px);
+  }
+
+  .checkout-intro h1 {
+    font-size: 29px;
+  }
+
+  .checkout-section,
+  .checkout-summary {
+    padding: 16px 12px;
+  }
+}

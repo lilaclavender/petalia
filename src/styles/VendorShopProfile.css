@@ -684,3 +684,104 @@
     width: 100%;
   }
 }
+
+/* =========================================================
+   VENDOR SHOP PROFILE — FINAL RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+  .vendor-profile-main {
+    width: 100%;
+    min-width: 0;
+    padding: 28px 24px 48px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .shop-profile-form {
+    max-width: 100%;
+  }
+
+  .shop-profile-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .shop-profile-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shop-profile-card,
+  .shop-overview-card,
+  .shop-profile-details-card {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 640px) {
+  .vendor-profile-main {
+    padding: 22px 14px 40px;
+  }
+
+  .shop-profile-heading h1 {
+    font-size: 26px;
+  }
+
+  .shop-profile-heading p {
+    font-size: 11px;
+  }
+
+  .shop-profile-layout {
+    gap: 15px;
+  }
+
+  .shop-profile-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .shop-profile-card,
+  .shop-overview-card,
+  .shop-profile-details-card {
+    width: 100%;
+    padding: 17px 14px;
+  }
+
+  .shop-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-profile-section-heading {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .shop-cover-preview {
+    height: 155px;
+  }
+
+  .shop-cover-actions,
+  .shop-logo-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .shop-secondary-button,
+  .shop-save-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .shop-profile-actions {
+    align-items: stretch;
+  }
+
+  .shop-profile-field input,
+  .shop-profile-field select,
+  .shop-profile-field textarea {
+    max-width: 100%;
+  }
+}

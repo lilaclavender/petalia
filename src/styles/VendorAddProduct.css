@@ -1447,3 +1447,114 @@
     display: none;
   }
 }
+
+/* =========================================================
+   VENDOR ADD PRODUCT — FINAL RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+  .vendor-add-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .vendor-add-main {
+    width: calc(100% - 40px);
+    max-width: 1180px;
+    box-sizing: border-box;
+  }
+
+  .vendor-add-top {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vendor-add-card,
+  .vendor-image-section,
+  .vendor-basic-fields {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .vendor-image-upload {
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .vendor-add-main {
+    width: calc(100% - 28px);
+    padding: 25px 0 45px;
+  }
+
+  .vendor-add-heading h1 {
+    font-size: 29px;
+  }
+
+  .vendor-add-heading p {
+    font-size: 11px;
+  }
+
+  .vendor-add-card {
+    padding: 16px 14px;
+    border-radius: 15px;
+  }
+
+  .vendor-image-upload {
+    height: 240px;
+  }
+
+  .vendor-field-row,
+  .vendor-four-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-badge-field {
+    width: 100%;
+  }
+
+  .vendor-field input,
+  .vendor-field select,
+  .vendor-field textarea {
+    max-width: 100%;
+  }
+
+  .vendor-flower-section,
+  .vendor-personalization-block,
+  .vendor-matching-section {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+  }
+
+  .vendor-match-row {
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-form-actions {
+    flex-direction: column-reverse;
+    gap: 9px;
+  }
+
+  .vendor-cancel-product,
+  .vendor-submit-product,
+  .vendor-suggest-button,
+  .vendor-adjust-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .vendor-add-flower-decoration {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .vendor-add-main {
+    width: calc(100% - 24px);
+  }
+}

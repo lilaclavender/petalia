@@ -33,6 +33,10 @@ function Shop() {
     loadProducts();
   }, []);
 
+  // =====================================================
+  // URL SEARCH PARAMETERS
+  // =====================================================
+
   const flowerSearch = searchParams.get("flower") || "";
   const categorySearch = searchParams.get("category") || "";
   const searchQuery = searchParams.get("search") || "";
@@ -45,27 +49,32 @@ function Shop() {
     return "All Gifts";
   };
 
-  /* =========================
-     STATE
-  ========================= */
+  // =====================================================
+  // STATE
+  // =====================================================
 
   const [currentPage, setCurrentPage] = useState(1);
 
   const [maxPrice, setMaxPrice] = useState(100);
 
-  const [selectedCategory, setSelectedCategory] = useState(getInitialCategory);
+  const [selectedCategory, setSelectedCategory] =
+    useState(getInitialCategory);
 
   const [sortBy, setSortBy] = useState("recommended");
 
-  const [selectedEmotions, setSelectedEmotions] = useState([]);
+  const [selectedEmotions, setSelectedEmotions] =
+    useState([]);
 
-  const [selectedOccasions, setSelectedOccasions] = useState([]);
+  const [selectedOccasions, setSelectedOccasions] =
+    useState([]);
 
-  const [showMoreEmotions, setShowMoreEmotions] = useState(false);
+  const [showMoreEmotions, setShowMoreEmotions] =
+    useState(false);
 
-  const [showMoreOccasions, setShowMoreOccasions] = useState(false);
+  const [showMoreOccasions, setShowMoreOccasions] =
+    useState(false);
 
-  /* COLLAPSE / EXPAND */
+  // Collapse / Expand
 
   const [emotionOpen, setEmotionOpen] = useState(true);
 
@@ -73,9 +82,9 @@ function Shop() {
 
   const [priceOpen, setPriceOpen] = useState(true);
 
-  /* =========================
-     FILTER OPTIONS
-  ========================= */
+  // =====================================================
+  // FILTER OPTIONS
+  // =====================================================
 
   const emotionOptions = [
     "Love",
@@ -115,14 +124,16 @@ function Shop() {
     ? occasionOptions
     : occasionOptions.slice(0, 5);
 
-  /* =========================
-     FILTER FUNCTIONS
-  ========================= */
+  // =====================================================
+  // FILTER FUNCTIONS
+  // =====================================================
 
   const toggleEmotion = (emotion) => {
     setSelectedEmotions((previous) => {
       if (previous.includes(emotion)) {
-        return previous.filter((item) => item !== emotion);
+        return previous.filter(
+          (item) => item !== emotion
+        );
       }
 
       return [...previous, emotion];
@@ -134,7 +145,9 @@ function Shop() {
   const toggleOccasion = (occasion) => {
     setSelectedOccasions((previous) => {
       if (previous.includes(occasion)) {
-        return previous.filter((item) => item !== occasion);
+        return previous.filter(
+          (item) => item !== occasion
+        );
       }
 
       return [...previous, occasion];
@@ -145,80 +158,98 @@ function Shop() {
 
   const clearAllFilters = () => {
     setSelectedEmotions([]);
-
     setSelectedOccasions([]);
-
     setSelectedCategory("All Gifts");
-
     setMaxPrice(100);
-
     setCurrentPage(1);
-
     setShowMoreEmotions(false);
-
     setShowMoreOccasions(false);
 
-    /*
-      IMPORTANT:
-      We do NOT reset sortBy here.
-
-      Sorting is not a filter.
-      If user chose Most Popular,
-      it stays Most Popular.
-    */
+    // Sorting is not a filter, so we keep sortBy.
   };
 
-  /* =========================
-     FILTER PRODUCTS
-  ========================= */
-
-  /* =========================
-   FILTER PRODUCTS
-========================= */
+  // =====================================================
+  // FILTER PRODUCTS
+  // =====================================================
 
   const filteredProducts = products.filter((product) => {
-    /* CATEGORY */
+    // Normalize emotion
+    const productEmotions = Array.isArray(
+      product.emotion
+    )
+      ? product.emotion
+      : product.emotion
+        ? [product.emotion]
+        : [];
 
+    // Normalize occasion
+    const productOccasions = Array.isArray(
+      product.occasion
+    )
+      ? product.occasion
+      : product.occasion
+        ? [product.occasion]
+        : [];
+
+    // Category
     const categoryMatch =
-      selectedCategory === "All Gifts" || product.category === selectedCategory;
+      selectedCategory === "All Gifts" ||
+      product.category === selectedCategory;
 
-    /* EMOTION */
-
+    // Emotion
     const emotionMatch =
       selectedEmotions.length === 0 ||
-      selectedEmotions.some((emotion) => product.emotion?.includes(emotion));
-
-    /* OCCASION */
-
-    const occasionMatch =
-      selectedOccasions.length === 0 ||
-      selectedOccasions.some((occasion) =>
-        product.occasion?.includes(occasion),
+      selectedEmotions.some((selectedEmotion) =>
+        productEmotions.some(
+          (productEmotion) =>
+            String(productEmotion).toLowerCase() ===
+            selectedEmotion.toLowerCase()
+        )
       );
 
-    /* PRICE */
+    // Occasion
+    const occasionMatch =
+      selectedOccasions.length === 0 ||
+      selectedOccasions.some((selectedOccasion) =>
+        productOccasions.some(
+          (productOccasion) =>
+            String(productOccasion).toLowerCase() ===
+            selectedOccasion.toLowerCase()
+        )
+      );
 
-    const priceMatch = product.price <= maxPrice;
+    // Price
+    const priceMatch =
+      Number(product.price) <= maxPrice;
 
-    /* FLOWER FROM PETALIA TIPS */
-
+    // Flower search from Petalia Tips
     const flowerMatch =
       !flowerSearch ||
-      product.name.toLowerCase().includes(flowerSearch.toLowerCase());
+      String(product.name || "")
+        .toLowerCase()
+        .includes(flowerSearch.toLowerCase());
 
-    /* HEADER SEARCH */
-
-    const normalizedSearch = searchQuery.trim().toLowerCase();
+    // Header search
+    const normalizedSearch =
+      searchQuery.trim().toLowerCase();
 
     const searchMatch =
       !normalizedSearch ||
-      product.name?.toLowerCase().includes(normalizedSearch) ||
-      product.category?.toLowerCase().includes(normalizedSearch) ||
-      product.emotion?.some((emotion) =>
-        emotion.toLowerCase().includes(normalizedSearch),
+      String(product.name || "")
+        .toLowerCase()
+        .includes(normalizedSearch) ||
+      String(product.category || "")
+        .toLowerCase()
+        .includes(normalizedSearch) ||
+      productEmotions.some((emotion) =>
+        String(emotion)
+          .toLowerCase()
+          .includes(normalizedSearch)
       ) ||
-      product.occasion?.some((occasion) =>
-        occasion.toLowerCase().includes(normalizedSearch),
+      productOccasions.some((occasion) =>
+        String(occasion)
+          .toLowerCase()
+          .includes(normalizedSearch)
       );
 
     return (
@@ -231,60 +262,118 @@ function Shop() {
     );
   });
 
-  /* =========================
-     SORT PRODUCTS
-  ========================= */
+  // =====================================================
+  // SORT PRODUCTS
+  // =====================================================
 
   const sortedProducts = [...filteredProducts];
 
   if (sortBy === "popular") {
-    sortedProducts.sort((a, b) => b.reviews - a.reviews);
+    sortedProducts.sort(
+      (a, b) =>
+        Number(b.reviews || 0) -
+        Number(a.reviews || 0)
+    );
   }
 
   if (sortBy === "low-high") {
-    sortedProducts.sort((a, b) => a.price - b.price);
+    sortedProducts.sort(
+      (a, b) =>
+        Number(a.price || 0) -
+        Number(b.price || 0)
+    );
   }
 
   if (sortBy === "high-low") {
-    sortedProducts.sort((a, b) => b.price - a.price);
+    sortedProducts.sort(
+      (a, b) =>
+        Number(b.price || 0) -
+        Number(a.price || 0)
+    );
   }
 
-  /* =========================
-     PAGINATION
-  ========================= */
+  // =====================================================
+  // REMOVE REPEATED IMAGES INSIDE A CATEGORY
+  // =====================================================
+  //
+  // All Gifts:
+  // Keep every product.
+  //
+  // Flowers / Candles / Gift Sets:
+  // If several products use the exact same image,
+  // only show the first one.
+  //
+  // Nothing is deleted from Supabase.
+  // =====================================================
+
+  const productsToDisplay =
+    selectedCategory === "All Gifts"
+      ? sortedProducts
+      : sortedProducts.filter(
+          (product, index, array) =>
+            index ===
+            array.findIndex(
+              (item) =>
+                item.image === product.image
+            )
+        );
+
+  // =====================================================
+  // PAGINATION
+  // =====================================================
 
   const productsPerPage = 8;
 
-  const totalPages = Math.max(
-    1,
-    Math.ceil(sortedProducts.length / productsPerPage),
+  const totalPages = Math.ceil(
+    productsToDisplay.length / productsPerPage
   );
 
-  const startIndex = (currentPage - 1) * productsPerPage;
+  const startIndex =
+    (currentPage - 1) * productsPerPage;
 
-  const endIndex = startIndex + productsPerPage;
+  const endIndex =
+    startIndex + productsPerPage;
 
-  const displayedProducts = sortedProducts.slice(startIndex, endIndex);
+  const displayedProducts =
+    productsToDisplay.slice(
+      startIndex,
+      endIndex
+    );
 
-  const firstProductNumber = sortedProducts.length === 0 ? 0 : startIndex + 1;
+  const firstProductNumber =
+    productsToDisplay.length === 0
+      ? 0
+      : startIndex + 1;
 
-  const lastProductNumber = Math.min(endIndex, sortedProducts.length);
+  const lastProductNumber = Math.min(
+    endIndex,
+    productsToDisplay.length
+  );
+
+  // =====================================================
+  // PAGE
+  // =====================================================
 
   return (
     <main className="shop-page">
       <div className="shop-container">
-        {/* =========================
+
+        {/* =================================================
             SHOP INTRO
-        ========================= */}
+        ================================================= */}
 
         <div className="shop-intro">
           <div className="shop-header">
             <h1>Shop</h1>
 
-            <p>Find a meaningful gift for every feeling and special moment.</p>
+            <p>
+              Find a meaningful gift for every feeling
+              and special moment.
+            </p>
           </div>
 
           <div className="shop-benefits">
+
             <div className="shop-benefit">
               <div className="shop-benefit-icon">
                 <Heart />
@@ -292,7 +381,6 @@ function Shop() {
 
               <div>
                 <h3>Thoughtful Gifts</h3>
-
                 <p>Curated with meaning</p>
               </div>
             </div>
@@ -304,7 +392,6 @@ function Shop() {
 
               <div>
                 <h3>Local Sellers</h3>
-
                 <p>Supporting local shops</p>
               </div>
             </div>
@@ -316,27 +403,33 @@ function Shop() {
 
               <div>
                 <h3>Secure Checkout</h3>
-
                 <p>Safe & easy payment</p>
               </div>
             </div>
+
           </div>
         </div>
 
-        {/* =========================
+        {/* =================================================
             CATEGORY TABS
-        ========================= */}
+        ================================================= */}
 
         <div className="shop-category-tabs">
-          {["All Gifts", "Flowers", "Candles", "Gift Sets"].map((category) => (
+          {[
+            "All Gifts",
+            "Flowers",
+            "Candles",
+            "Gift Sets",
+          ].map((category) => (
             <button
               key={category}
               className={`shop-category-tab ${
-                selectedCategory === category ? "active" : ""
+                selectedCategory === category
+                  ? "active"
+                  : ""
               }`}
               onClick={() => {
                 setSelectedCategory(category);
-
                 setCurrentPage(1);
               }}
             >
@@ -345,43 +438,49 @@ function Shop() {
           ))}
         </div>
 
-        {/* =========================
+        {/* =================================================
             SHOP CONTENT
-        ========================= */}
+        ================================================= */}
 
         <div className="shop-content">
-          {/* =========================
+
+          {/* =================================================
               FILTER SIDEBAR
-          ========================= */}
+          ================================================= */}
 
           <aside className="shop-filter">
-            {/* FILTER HEADER */}
 
             <div className="filter-heading">
               <div>
                 <SlidersHorizontal />
-
                 <h2>Filter by</h2>
               </div>
 
-              <button type="button" onClick={clearAllFilters}>
+              <button
+                type="button"
+                onClick={clearAllFilters}
+              >
                 Clear all
               </button>
             </div>
 
-            {/* =========================
-                EMOTION
-            ========================= */}
+            {/* EMOTION */}
 
             <div className="filter-section">
               <button
                 type="button"
                 className="filter-title filter-title-button"
-                onClick={() => setEmotionOpen(!emotionOpen)}
+                onClick={() =>
+                  setEmotionOpen(!emotionOpen)
+                }
               >
                 <h3>By Emotion</h3>
 
-                {emotionOpen ? <ChevronUp /> : <ChevronDown />}
+                {emotionOpen ? (
+                  <ChevronUp />
+                ) : (
+                  <ChevronDown />
+                )}
               </button>
 
               {emotionOpen && (
@@ -390,8 +489,12 @@ function Shop() {
                     <label key={emotion}>
                       <input
                         type="checkbox"
-                        checked={selectedEmotions.includes(emotion)}
-                        onChange={() => toggleEmotion(emotion)}
+                        checked={selectedEmotions.includes(
+                          emotion
+                        )}
+                        onChange={() =>
+                          toggleEmotion(emotion)
+                        }
                       />
 
                       {emotion}
@@ -401,67 +504,93 @@ function Shop() {
                   <button
                     type="button"
                     className="filter-see-more"
-                    onClick={() => setShowMoreEmotions(!showMoreEmotions)}
+                    onClick={() =>
+                      setShowMoreEmotions(
+                        !showMoreEmotions
+                      )
+                    }
                   >
-                    {showMoreEmotions ? "See less" : "See more"}
+                    {showMoreEmotions
+                      ? "See less"
+                      : "See more"}
                   </button>
                 </div>
               )}
             </div>
 
-            {/* =========================
-                OCCASION
-            ========================= */}
+            {/* OCCASION */}
 
             <div className="filter-section">
               <button
                 type="button"
                 className="filter-title filter-title-button"
-                onClick={() => setOccasionOpen(!occasionOpen)}
+                onClick={() =>
+                  setOccasionOpen(!occasionOpen)
+                }
               >
                 <h3>By Occasion</h3>
 
-                {occasionOpen ? <ChevronUp /> : <ChevronDown />}
+                {occasionOpen ? (
+                  <ChevronUp />
+                ) : (
+                  <ChevronDown />
+                )}
               </button>
 
               {occasionOpen && (
                 <div className="filter-options">
-                  {visibleOccasions.map((occasion) => (
-                    <label key={occasion}>
-                      <input
-                        type="checkbox"
-                        checked={selectedOccasions.includes(occasion)}
-                        onChange={() => toggleOccasion(occasion)}
-                      />
+                  {visibleOccasions.map(
+                    (occasion) => (
+                      <label key={occasion}>
+                        <input
+                          type="checkbox"
+                          checked={selectedOccasions.includes(
+                            occasion
+                          )}
+                          onChange={() =>
+                            toggleOccasion(occasion)
+                          }
+                        />
 
-                      {occasion}
-                    </label>
-                  ))}
+                        {occasion}
+                      </label>
+                    )
+                  )}
 
                   <button
                     type="button"
                     className="filter-see-more"
-                    onClick={() => setShowMoreOccasions(!showMoreOccasions)}
+                    onClick={() =>
+                      setShowMoreOccasions(
+                        !showMoreOccasions
+                      )
+                    }
                   >
-                    {showMoreOccasions ? "See less" : "See more"}
+                    {showMoreOccasions
+                      ? "See less"
+                      : "See more"}
                   </button>
                 </div>
               )}
             </div>
 
-            {/* =========================
-                PRICE RANGE
-            ========================= */}
+            {/* PRICE RANGE */}
 
             <div className="filter-section filter-price">
               <button
                 type="button"
                 className="filter-title filter-title-button"
-                onClick={() => setPriceOpen(!priceOpen)}
+                onClick={() =>
+                  setPriceOpen(!priceOpen)
+                }
               >
                 <h3>Price Range</h3>
 
-                {priceOpen ? <ChevronUp /> : <ChevronDown />}
+                {priceOpen ? (
+                  <ChevronUp />
+                ) : (
+                  <ChevronDown />
+                )}
               </button>
 
               {priceOpen && (
@@ -473,7 +602,9 @@ function Shop() {
                     step="5"
                     value={maxPrice}
                     onChange={(e) => {
-                      setMaxPrice(Number(e.target.value));
+                      setMaxPrice(
+                        Number(e.target.value)
+                      );
 
                       setCurrentPage(1);
                     }}
@@ -481,14 +612,11 @@ function Shop() {
 
                   <div className="price-values">
                     <span>$0</span>
-
                     <span>${maxPrice}</span>
                   </div>
                 </div>
               )}
             </div>
-
-            {/* CLEAR ALL FILTERS */}
 
             <button
               type="button"
@@ -497,78 +625,91 @@ function Shop() {
             >
               Clear all filters
             </button>
+
           </aside>
 
-          {/* =========================
+          {/* =================================================
               PRODUCT AREA
-          ========================= */}
+          ================================================= */}
 
           <section className="shop-products">
+
             {/* PRODUCT TOP BAR */}
 
             <div className="shop-products-top">
               <p>
                 Showing{" "}
                 <strong>
-                  {firstProductNumber}–{lastProductNumber}
+                  {firstProductNumber}–
+                  {lastProductNumber}
                 </strong>{" "}
-                of {sortedProducts.length} gifts
+                of {productsToDisplay.length} gifts
               </p>
 
               <select
                 value={sortBy}
                 onChange={(e) => {
                   setSortBy(e.target.value);
-
                   setCurrentPage(1);
                 }}
               >
-                <option value="recommended">Recommended</option>
+                <option value="recommended">
+                  Recommended
+                </option>
 
-                <option value="popular">Most Popular</option>
+                <option value="popular">
+                  Most Popular
+                </option>
 
-                <option value="low-high">Price: Low to High</option>
+                <option value="low-high">
+                  Price: Low to High
+                </option>
 
-                <option value="high-low">Price: High to Low</option>
+                <option value="high-low">
+                  Price: High to Low
+                </option>
               </select>
             </div>
 
-            {/* =========================
-                PRODUCT GRID
-            ========================= */}
+            {/* PRODUCT GRID */}
 
             <div className="shop-product-grid">
               {displayedProducts.length > 0 ? (
-                displayedProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    image={product.image}
-                    name={product.name}
-                    price={product.price}
-                    rating={product.rating}
-                    reviews={product.reviews}
-                    badge={product.badge}
-                  />
-                ))
+                displayedProducts.map(
+                  (product) => (
+                    <ProductCard
+                      key={product.id}
+                      id={product.id}
+                      image={product.image}
+                      name={product.name}
+                      price={product.price}
+                      rating={product.rating}
+                      reviews={product.reviews}
+                      badge={product.badge}
+                    />
+                  )
+                )
               ) : (
                 <div className="shop-no-results">
                   <h3>No gifts found</h3>
 
-                  <p>Try changing your filters.</p>
+                  <p>
+                    Try changing your filters.
+                  </p>
                 </div>
               )}
             </div>
 
-            {/* =========================
-                PAGINATION
-            ========================= */}
+            {/* PAGINATION */}
 
             {totalPages > 1 && (
               <div className="shop-pagination">
+
                 <button
                   onClick={() =>
-                    setCurrentPage((page) => Math.max(1, page - 1))
+                    setCurrentPage((page) =>
+                      Math.max(1, page - 1)
+                    )
                   }
                   disabled={currentPage === 1}
                 >
@@ -576,15 +717,19 @@ function Shop() {
                 </button>
 
                 {Array.from(
-                  {
-                    length: totalPages,
-                  },
-                  (_, index) => index + 1,
+                  { length: totalPages },
+                  (_, index) => index + 1
                 ).map((pageNumber) => (
                   <button
                     key={pageNumber}
-                    className={currentPage === pageNumber ? "active" : ""}
-                    onClick={() => setCurrentPage(pageNumber)}
+                    className={
+                      currentPage === pageNumber
+                        ? "active"
+                        : ""
+                    }
+                    onClick={() =>
+                      setCurrentPage(pageNumber)
+                    }
                   >
                     {pageNumber}
                   </button>
@@ -592,14 +737,23 @@ function Shop() {
 
                 <button
                   onClick={() =>
-                    setCurrentPage((page) => Math.min(totalPages, page + 1))
+                    setCurrentPage((page) =>
+                      Math.min(
+                        totalPages,
+                        page + 1
+                      )
+                    )
                   }
-                  disabled={currentPage === totalPages}
+                  disabled={
+                    currentPage === totalPages
+                  }
                 >
                   ›
                 </button>
+
               </div>
             )}
+
           </section>
         </div>
       </div>

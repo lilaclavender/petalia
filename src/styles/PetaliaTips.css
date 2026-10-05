@@ -941,3 +941,128 @@
     height: 200px;
   }
 }
+/* =========================================================
+   PETALIA TIPS — FINAL RESPONSIVE SAFETY
+========================================================= */
+
+/* =========================
+   TABLET / IPAD
+========================= */
+
+@media (max-width: 980px) {
+  .petalia-tips-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .tips-section,
+  .tips-hero-inner,
+  .tips-container {
+    width: calc(100% - 40px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .tips-grid,
+  .tips-featured-grid,
+  .tips-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tips-card,
+  .tips-featured-card {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .tips-card img,
+  .tips-featured-card img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 640px) {
+  .petalia-tips-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .tips-section,
+  .tips-hero-inner,
+  .tips-container {
+    width: calc(100% - 28px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tips-hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .tips-hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .tips-hero-content h1 {
+    max-width: 330px;
+    font-size: 36px;
+    line-height: 1.08;
+  }
+
+  .tips-hero-content p {
+    max-width: 320px;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .tips-grid,
+  .tips-featured-grid,
+  .tips-card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tips-card,
+  .tips-featured-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .tips-primary-btn {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================
+   EXTRA SMALL PHONE
+========================= */
+
+@media (max-width: 420px) {
+  .tips-section,
+  .tips-hero-inner,
+  .tips-container {
+    width: calc(100% - 24px);
+  }
+
+  .tips-hero-content h1 {
+    font-size: 33px;
+  }
+}

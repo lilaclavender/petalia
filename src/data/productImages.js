@@ -4,11 +4,22 @@ import sunflower from "../assets/sunflower.png";
 import pinkTulip from "../assets/pink-tulip.png";
 import lily from "../assets/lily.png";
 
+// NEW FLOWER IMAGES
+import orchid from "../assets/orchid.png";
+import gerberaDaisy from "../assets/gerbera-daisy.png";
+import babysBreath from "../assets/babys-breath.png";
+import lisianthus from "../assets/lisianthus.png";
 import lavenderCandle from "../assets/lavender-candle.png";
 import jasmineCandle from "../assets/jasmine-candle.png";
 import vanillaCandle from "../assets/vanilla-candle.png";
 import mintCandle from "../assets/mint-candle.png";
 import citrusCandle from "../assets/citrus-candle.png";
+import warmVanillaCandle from "../assets/warm-vanilla-candle.png";
+import blushCandle from "../assets/blush-candle.png";
+import cinnamonCandle from "../assets/cinnamon-candle.png";
+import peonyCandle from "../assets/peony-candle.png";
+import amberCandle from "../assets/amber-candle.png";
+import sandalwoodCandle from "../assets/sandalwood-candle.png";
 
 import pinkRoseVanilla from "../assets/pink-rose-vanilla.png";
 import sunflowerCandle from "../assets/sunflower-candle.png";
@@ -54,6 +65,18 @@ const productImages = {
   22: roseCandleImg,
   23: sunflowerCandle,
   24: jasmineCandle,
+  25: orchid,
+  26: gerberaDaisy,
+  27: babysBreath,
+  28: lisianthus,
+    // EXTRA CANDLE IMAGES
+  29: warmVanillaCandle,
+  30: blushCandle,
+  31: cinnamonCandle,
+  32: peonyCandle,
+  33: amberCandle,
+  34: sandalwoodCandle,
+
 };
 
 export default productImages;

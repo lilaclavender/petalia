@@ -1645,3 +1645,740 @@
     width: 100%;
   }
 }
+
+/* =========================================================
+   PETALIA PRODUCT DETAIL — FINAL RESPONSIVE
+   Desktop remains unchanged
+========================================================= */
+
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media (max-width: 980px) {
+
+  .product-detail-page {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 30px 0 60px;
+
+    overflow-x: hidden;
+  }
+
+  .product-detail-container {
+    width: calc(100% - 40px);
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ---------- BREADCRUMB ---------- */
+
+  .product-detail-breadcrumb {
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    font-size: 10px;
+  }
+
+
+  /* ---------- MAIN PRODUCT ---------- */
+
+  .product-main-section {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 32px;
+  }
+
+
+  /* ---------- GALLERY ---------- */
+
+  .product-gallery {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .product-main-image-wrapper {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  .product-main-image {
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+  }
+
+  .product-thumbnails {
+    width: 100%;
+
+    flex-direction: row;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .product-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-thumbnail {
+    width: 78px;
+    height: 78px;
+
+    flex: 0 0 78px;
+  }
+
+
+  /* ---------- PRODUCT INFO ---------- */
+
+  .product-detail-info {
+    width: 100%;
+
+    padding-top: 0;
+  }
+
+  .product-detail-info h1 {
+    font-size: 36px;
+  }
+
+  .detail-description {
+    max-width: 650px;
+  }
+
+
+  /* ---------- PERSONALIZATION ---------- */
+
+  .personalize-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+
+  /* ---------- GIFT SUMMARY ---------- */
+
+  .gift-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+
+  .summary-item {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(110, 83, 111, 0.08);
+  }
+
+  .add-gift-basket-button {
+    width: 100%;
+  }
+
+
+  /* ---------- WHY / GOOD TO KNOW ---------- */
+
+  .why-gift-grid,
+  .good-to-know-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+
+  /* ---------- SELLER ---------- */
+
+  .detail-seller-section {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    flex-wrap: wrap;
+  }
+
+
+  /* ---------- RELATED ---------- */
+
+  .related-gifts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .product-detail-page {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 22px 0 45px;
+
+    overflow-x: hidden;
+  }
+
+  .product-detail-container {
+    width: calc(100% - 28px);
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     BREADCRUMB
+  ========================================================= */
+
+  .product-detail-breadcrumb {
+    margin-bottom: 16px;
+
+    gap: 5px;
+
+    font-size: 8px;
+  }
+
+
+  /* =========================================================
+     MAIN PRODUCT
+  ========================================================= */
+
+  .product-main-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+
+    margin-bottom: 26px;
+  }
+
+
+  /* =========================================================
+     PRODUCT IMAGE
+  ========================================================= */
+
+  .product-gallery {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .product-main-image-wrapper {
+    width: 100%;
+
+    min-height: 0;
+    height: 390px;
+
+    border-radius: 15px;
+  }
+
+  .product-main-image {
+    width: 100%;
+    height: 390px;
+
+    object-fit: cover;
+  }
+
+  .detail-product-badge {
+    top: 12px;
+    left: 12px;
+
+    padding: 5px 9px;
+
+    font-size: 8px;
+  }
+
+  .detail-wishlist-button {
+    top: 11px;
+    right: 11px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .detail-wishlist-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gallery-arrow {
+    width: 31px;
+    height: 31px;
+  }
+
+  .gallery-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .gallery-arrow-left {
+    left: 9px;
+  }
+
+  .gallery-arrow-right {
+    right: 9px;
+  }
+
+
+  /* THUMBNAILS */
+
+  .product-thumbnails {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .product-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-thumbnail {
+    width: 62px;
+    height: 62px;
+
+    flex: 0 0 62px;
+  }
+
+
+  /* =========================================================
+     PRODUCT INFO
+  ========================================================= */
+
+  .product-detail-info {
+    width: 100%;
+
+    padding-top: 0;
+  }
+
+  .product-detail-info h1 {
+    margin-bottom: 10px;
+
+    font-size: 29px;
+    line-height: 1.08;
+  }
+
+  .detail-rating {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+  }
+
+  .detail-rating svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .detail-price {
+    margin-bottom: 13px;
+
+    font-size: 21px;
+  }
+
+  .detail-seller {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+  }
+
+  .detail-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 14px;
+
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .detail-tags {
+    margin-bottom: 15px;
+
+    gap: 6px;
+  }
+
+  .detail-tags span {
+    padding: 5px 9px;
+
+    font-size: 8px;
+  }
+
+
+  /* =========================================================
+     MEANING CARD
+  ========================================================= */
+
+  .detail-meaning-card {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 17px;
+
+    box-sizing: border-box;
+  }
+
+  .detail-meaning-card > svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .detail-meaning-card strong {
+    font-size: 10px;
+  }
+
+  .detail-meaning-card p {
+    font-size: 9px;
+  }
+
+
+  /* =========================================================
+     QUANTITY
+  ========================================================= */
+
+  .detail-quantity-area {
+    margin-bottom: 16px;
+
+    gap: 12px;
+  }
+
+
+  /* =========================================================
+     ACTION BUTTONS
+  ========================================================= */
+
+  .detail-main-actions {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .personalize-button,
+  .detail-secondary-wishlist {
+    width: 100%;
+    min-height: 42px;
+
+    box-sizing: border-box;
+
+    font-size: 11px;
+  }
+
+
+  /* =========================================================
+     COMMON CARDS
+  ========================================================= */
+
+  .personalize-section,
+  .gift-summary-section,
+  .why-gift-section,
+  .good-to-know-section,
+  .related-gifts-section {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 18px 14px;
+
+    box-sizing: border-box;
+
+    border-radius: 13px;
+  }
+
+  .section-heading {
+    margin-bottom: 17px;
+  }
+
+  .section-heading h2,
+  .gift-summary-heading h2,
+  .small-section-heading h2,
+  .related-gifts-heading h2 {
+    font-size: 21px;
+  }
+
+  .section-heading p,
+  .small-section-heading p,
+  .gift-summary-heading > span {
+    font-size: 10px;
+  }
+
+
+  /* =========================================================
+     PERSONALIZATION
+  ========================================================= */
+
+  .personalize-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .customization-card {
+    width: 100%;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+  }
+
+  .customization-heading h3 {
+    font-size: 13px;
+  }
+
+
+  /* WRAPPING */
+
+  .wrapping-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .wrapping-preview {
+    height: 55px;
+  }
+
+  .wrapping-option > span {
+    font-size: 9px;
+  }
+
+
+  /* MESSAGE CARD */
+
+  .card-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 5px;
+  }
+
+  .message-card-option {
+    min-width: 0;
+    min-height: 70px;
+
+    padding: 5px;
+
+    font-size: 9px;
+  }
+
+  .message-card-option small {
+    font-size: 8px;
+  }
+
+  .gift-message-area textarea {
+    box-sizing: border-box;
+
+    font-size: 10px;
+  }
+
+
+  /* ADD-ONS */
+
+  .addon-option {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     GIFT SUMMARY
+  ========================================================= */
+
+  .gift-summary-heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-bottom: 14px;
+  }
+
+  .gift-summary-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .summary-item {
+    width: 100%;
+
+    padding: 10px 0;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(110, 83, 111, 0.08);
+
+    box-sizing: border-box;
+  }
+
+  .summary-message {
+    max-width: 220px;
+  }
+
+  .summary-total {
+    width: 100%;
+
+    padding: 13px 0;
+
+    box-sizing: border-box;
+  }
+
+  .summary-total strong {
+    font-size: 19px;
+  }
+
+  .add-gift-basket-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+
+    box-sizing: border-box;
+
+    font-size: 10px;
+  }
+
+
+  /* =========================================================
+     WHY THIS GIFT / GOOD TO KNOW
+  ========================================================= */
+
+  .why-gift-grid,
+  .good-to-know-grid {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .why-gift-item,
+  .good-to-know-item {
+    width: 100%;
+
+    padding: 11px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     SELLER
+  ========================================================= */
+
+  .detail-seller-section {
+    width: 100%;
+
+    margin-top: 16px;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    gap: 11px;
+
+    box-sizing: border-box;
+  }
+
+  .seller-section-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .seller-section-content {
+    min-width: 0;
+  }
+
+  .seller-section-content h2 {
+    font-size: 16px;
+  }
+
+  .seller-section-content p {
+    font-size: 9px;
+  }
+
+  .view-shop-button {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     RELATED GIFTS
+  ========================================================= */
+
+  .related-gifts-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .product-detail-container {
+    width: calc(100% - 24px);
+  }
+
+  .product-main-image-wrapper,
+  .product-main-image {
+    height: 360px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 27px;
+  }
+
+  .personalize-section,
+  .gift-summary-section,
+  .why-gift-section,
+  .good-to-know-section,
+  .related-gifts-section {
+    padding: 16px 12px;
+  }
+
+  .related-gifts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -16,6 +16,7 @@ import {
 
 import ProductCard from "../components/ProductCard";
 import { supabase } from "../lib/supabase";
+import productImages from "../data/productImages";
 import lavenderCorner1 from "../assets/lavender-corner1.png";
 
 import localShop1Img from "../assets/local-shop-1.jpg";
@@ -442,13 +443,183 @@ const localShops = [
 ];
 
 
-/* =====================================================
-   LOCAL SHOP DETAIL PAGE
-===================================================== */
-
 function LocalShopDetail() {
   const navigate = useNavigate();
   const { id } = useParams();
+
+  /* =====================================================
+     LOCAL PRODUCT IMAGE FALLBACK
+  ===================================================== */
+
+  const getLocalProductImage = (product) => {
+    const name = String(product.name || "").toLowerCase();
+    const category = String(product.category || "").toLowerCase();
+
+    // =====================================================
+    // FLOWERS
+    // =====================================================
+
+    if (category === "flowers") {
+      if (
+        name.includes("red rose") ||
+        name.includes("crimson") ||
+        name.includes("deep red")
+      ) {
+        return productImages[1];
+      }
+
+      if (name.includes("orchid")) {
+        return productImages[25];
+      }
+
+      if (
+        name.includes("gerbera") ||
+        name.includes("daisy")
+      ) {
+        return productImages[26];
+      }
+
+      if (
+        name.includes("baby's breath") ||
+        name.includes("babys breath") ||
+        name.includes("baby breath")
+      ) {
+        return productImages[27];
+      }
+
+      if (name.includes("lisianthus")) {
+        return productImages[28];
+      }
+
+      if (name.includes("tulip")) {
+        return productImages[4];
+      }
+
+      if (name.includes("lily")) {
+        return productImages[5];
+      }
+
+      if (name.includes("sunflower")) {
+        return productImages[3];
+      }
+
+      if (name.includes("lotus")) {
+        return productImages[15];
+      }
+
+      if (name.includes("jasmine")) {
+        return productImages[16];
+      }
+
+      if (name.includes("lavender")) {
+        return productImages[19];
+      }
+
+      if (
+        name.includes("white") ||
+        name.includes("harmony")
+      ) {
+        return productImages[17];
+      }
+
+      if (
+        name.includes("golden") ||
+        name.includes("yellow")
+      ) {
+        return productImages[18];
+      }
+
+      if (
+        name.includes("pink") ||
+        name.includes("blush") ||
+        name.includes("rose")
+      ) {
+        return productImages[2];
+      }
+
+      return productImages[3];
+    }
+
+    // =====================================================
+    // CANDLES
+    // =====================================================
+
+    if (category === "candles") {
+      if (name.includes("lavender")) {
+        return productImages[6];
+      }
+
+      if (name.includes("jasmine")) {
+        return productImages[7];
+      }
+
+      if (name.includes("vanilla")) {
+        return productImages[8];
+      }
+
+      if (
+        name.includes("mint") ||
+        name.includes("fresh")
+      ) {
+        return productImages[9];
+      }
+
+      if (
+        name.includes("citrus") ||
+        name.includes("orange") ||
+        name.includes("lemon")
+      ) {
+        return productImages[10];
+      }
+
+      if (name.includes("rose")) {
+        return productImages[22];
+      }
+
+      return productImages[8];
+    }
+
+    // =====================================================
+    // GIFT SETS
+    // =====================================================
+
+    if (
+      category === "gift sets" ||
+      category === "gift set"
+    ) {
+      if (name.includes("sunflower")) {
+        return productImages[12];
+      }
+
+      if (name.includes("lavender")) {
+        return productImages[14];
+      }
+
+      if (name.includes("amber")) {
+        return productImages[13];
+      }
+
+      if (
+        name.includes("comfort") ||
+        name.includes("care")
+      ) {
+        return productImages[21];
+      }
+
+      if (
+        name.includes("rose") ||
+        name.includes("pink") ||
+        name.includes("vanilla")
+      ) {
+        return productImages[11];
+      }
+
+      return productImages[11];
+    }
+
+    return productImages[1];
+  };
+
 
   /* =====================================================
      FIND CURRENT SHOP
@@ -458,46 +629,55 @@ function LocalShopDetail() {
     (shopItem) => shopItem.id === Number(id)
   );
 
-  const [shopData, setShopData] = useState(null);
-  const [shopLoading, setShopLoading] = useState(true);
 
   /* =====================================================
      STATES
   ===================================================== */
 
-  const [isShopSaved, setIsShopSaved] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [showAllProducts, setShowAllProducts] = useState(false);
+  const [shopData, setShopData] = useState(null);
+  const [shopLoading, setShopLoading] = useState(true);
 
-  const [shopProductsData, setShopProductsData] = useState([]);
-  const [productsLoading, setProductsLoading] = useState(true);
+  const [isShopSaved, setIsShopSaved] = useState(false);
+
+  const [activeCategory, setActiveCategory] =
+    useState("All");
+
+  const [showAllProducts, setShowAllProducts] =
+    useState(false);
+
+  const [shopProductsData, setShopProductsData] =
+    useState([]);
+
+  const [productsLoading, setProductsLoading] =
+    useState(true);
+
 
   /* =====================================================
-     LOAD SHOP FROM SUPABASE
-  ===================================================== */
+   LOAD SHOP FROM SUPABASE
+===================================================== */
 
-  useEffect(() => {
-    const loadShop = async () => {
-      setShopLoading(true);
+useEffect(() => {
+  const loadShop = async () => {
+    setShopLoading(true);
 
-      const { data, error } = await supabase
-        .from("shops")
-        .select("*")
-        .eq("id", Number(id))
-        .single();
+    const { data, error } = await supabase
+      .from("shops")
+      .select("*")
+      .eq("id", Number(id))
+      .single();
 
-      if (error) {
-        console.error("Error loading shop:", error);
-        setShopData(null);
-      } else {
-        setShopData(data);
-      }
+    if (error) {
+      console.error("Error loading shop:", error);
+      setShopData(null);
+    } else {
+      setShopData(data);
+    }
 
-      setShopLoading(false);
-    };
+    setShopLoading(false);
+  };
 
-    loadShop();
-  }, [id]);
+  loadShop();
+}, [id]);
 
   /* =====================================================
      MERGE SUPABASE SHOP + EXISTING DESIGN DATA
@@ -508,21 +688,31 @@ function LocalShopDetail() {
         ...staticShop,
         ...shopData,
 
-        // Seller-uploaded cover image from Supabase
         image:
           shopData.cover_image ||
+          shopData.image ||
           staticShop?.image ||
           "",
 
-        // Keep existing design/demo information
-        rating: staticShop?.rating || 0,
-        reviews: staticShop?.reviews || 0,
+        rating:
+          staticShop?.rating ??
+          shopData.rating ??
+          0,
+
+        reviews:
+          staticShop?.reviews ??
+          shopData.reviews ??
+          0,
 
         specialties:
           staticShop?.specialties ||
           [shopData.category].filter(Boolean),
 
-        // Seller description becomes the main About text
+        description:
+          shopData.description ||
+          staticShop?.description ||
+          "",
+
         about:
           shopData.description ||
           staticShop?.about ||
@@ -542,6 +732,7 @@ function LocalShopDetail() {
           staticShop?.supportText || "",
       }
     : null;
+
 
   /* =====================================================
      LOAD SHOP PRODUCTS
@@ -570,32 +761,69 @@ function LocalShopDetail() {
         );
 
         setShopProductsData([]);
-      } else {
-        setShopProductsData(data || []);
+        setProductsLoading(false);
+        return;
       }
 
+      const productsWithImages = (data || []).map(
+        (product) => {
+          const databaseImage = product.image;
+
+          const hasRealImageUrl =
+            typeof databaseImage === "string" &&
+            (
+              databaseImage.startsWith("http://") ||
+              databaseImage.startsWith("https://")
+            );
+
+          return {
+            ...product,
+
+            image: hasRealImageUrl
+              ? databaseImage
+              : getLocalProductImage(product),
+
+            giftStyles:
+              product.gift_styles || [],
+
+            flowerColor:
+              product.flower_color || null,
+          };
+        }
+      );
+
+      setShopProductsData(productsWithImages);
       setProductsLoading(false);
     };
 
     loadShopProducts();
   }, [id]);
 
+
   /* =====================================================
-     SHOP PRODUCTS
+     FILTER SHOP PRODUCTS
   ===================================================== */
 
   const shopProducts = useMemo(() => {
-    let result = shopProductsData;
-
-    if (activeCategory !== "All") {
-      result = result.filter(
-        (product) =>
-          product.category === activeCategory
-      );
+    if (activeCategory === "All") {
+      return shopProductsData;
     }
 
-    return result;
+    return shopProductsData.filter(
+      (product) =>
+        String(product.category || "")
+          .trim()
+          .toLowerCase() ===
+        String(activeCategory || "")
+          .trim()
+          .toLowerCase()
+    );
   }, [shopProductsData, activeCategory]);
+
+
+  /* =====================================================
+     PRODUCT CATEGORIES
+  ===================================================== */
 
   const productCategories = useMemo(() => {
     return [
@@ -607,9 +835,15 @@ function LocalShopDetail() {
     ];
   }, [shopProductsData]);
 
+
+  /* =====================================================
+     PRODUCTS TO DISPLAY
+  ===================================================== */
+
   const visibleProducts = showAllProducts
     ? shopProducts
     : shopProducts.slice(0, 4);
+
 
   /* =====================================================
      BUSINESS HOURS
@@ -631,6 +865,7 @@ function LocalShopDetail() {
     });
   };
 
+
   const businessHours =
     shop?.opening_time && shop?.closing_time
       ? `Daily, ${formatTime(
@@ -639,6 +874,7 @@ function LocalShopDetail() {
           shop.closing_time
         )}`
       : shop?.hours || "Hours not provided";
+
 
   /* =====================================================
      SHOP LOADING
@@ -653,6 +889,7 @@ function LocalShopDetail() {
       </main>
     );
   }
+
 
   /* =====================================================
      SHOP NOT FOUND
@@ -687,9 +924,7 @@ function LocalShopDetail() {
   ===================================================== */
 
   return (
-
     <main className="local-detail-page">
-
 
       {/* =================================================
           BREADCRUMB
@@ -698,16 +933,12 @@ function LocalShopDetail() {
       <div className="local-detail-breadcrumb">
 
         <span
-          onClick={() =>
-            navigate("/")
-          }
+          onClick={() => navigate("/")}
         >
           Home
         </span>
 
-        <small>
-          /
-        </small>
+        <small>/</small>
 
         <span
           onClick={() =>
@@ -717,9 +948,7 @@ function LocalShopDetail() {
           Local Shops
         </span>
 
-        <small>
-          /
-        </small>
+        <small>/</small>
 
         <strong>
           {shop.name}
@@ -734,16 +963,12 @@ function LocalShopDetail() {
 
       <section className="local-detail-profile">
 
-
-        {/* DECORATIVE FLOWER */}
-
         <img
           src={lavenderCorner1}
           alt=""
           className="local-detail-lavender"
         />
 
-        {/* REAL SHOP IMAGE */}
 
         <div className="local-detail-shop-photo">
 
@@ -756,25 +981,18 @@ function LocalShopDetail() {
         </div>
 
 
-        {/* SHOP INFORMATION */}
-
         <div className="local-detail-shop-profile">
-
 
           <p className="local-detail-eyebrow">
             Local Petalia Partner
           </p>
-
 
           <h1>
             {shop.name}
           </h1>
 
 
-          {/* RATING + LOCATION */}
-
           <div className="local-detail-rating-location">
-
 
             <div className="local-detail-rating">
 
@@ -801,49 +1019,36 @@ function LocalShopDetail() {
 
             </div>
 
-
           </div>
 
 
-          {/* SPECIALTIES */}
-
           <div className="local-detail-tags">
 
-            {shop.specialties.map(
+            {(shop.specialties || []).map(
               (specialty) => (
-
                 <span key={specialty}>
                   {specialty}
                 </span>
-
               )
             )}
 
           </div>
 
 
-          {/* DESCRIPTION */}
-
           <p className="local-detail-description">
             {shop.description}
           </p>
 
 
-          {/* SAVE SHOP */}
-
           <button
             type="button"
-
             className={`local-detail-save ${
               isShopSaved
                 ? "saved"
                 : ""
             }`}
-
             onClick={() =>
-              setIsShopSaved(
-                !isShopSaved
-              )
+              setIsShopSaved(!isShopSaved)
             }
           >
 
@@ -861,7 +1066,6 @@ function LocalShopDetail() {
 
           </button>
 
-
         </div>
 
       </section>
@@ -873,9 +1077,7 @@ function LocalShopDetail() {
 
       <section className="local-detail-collection">
 
-
         <div className="local-detail-section-heading">
-
 
           <div>
 
@@ -899,16 +1101,13 @@ function LocalShopDetail() {
 
           <div className="local-detail-filters">
 
-
             <button
               type="button"
-
               className={
                 activeCategory === "All"
                   ? "active"
                   : ""
               }
-
               onClick={() => {
                 setActiveCategory("All");
                 setShowAllProducts(false);
@@ -923,15 +1122,12 @@ function LocalShopDetail() {
 
                 <button
                   type="button"
-
                   key={category}
-
                   className={
                     activeCategory === category
                       ? "active"
                       : ""
                   }
-
                   onClick={() => {
                     setActiveCategory(category);
                     setShowAllProducts(false);
@@ -953,44 +1149,64 @@ function LocalShopDetail() {
         ================================================= */}
 
         {productsLoading ? (
+
           <div className="local-detail-empty-products">
             Loading products...
           </div>
+
         ) : visibleProducts.length > 0 ? (
+
           <>
+
             <div className="local-detail-products">
-              {visibleProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  {...product}
-                />
-              ))}
+
+              {visibleProducts.map(
+                (product) => (
+
+                  <ProductCard
+                    key={product.id}
+                    {...product}
+                  />
+
+                )
+              )}
+
             </div>
 
-            {/* VIEW MORE */}
 
             {shopProducts.length > 4 && (
+
               <div className="local-detail-view-more-wrap">
+
                 <button
                   type="button"
                   className="local-detail-view-more"
                   onClick={() =>
-                    setShowAllProducts(!showAllProducts)
+                    setShowAllProducts(
+                      !showAllProducts
+                    )
                   }
                 >
+
                   {showAllProducts
                     ? "Show Less"
                     : "View More Products"}
+
                 </button>
+
               </div>
+
             )}
+
           </>
+
         ) : (
+
           <div className="local-detail-empty-products">
             No products are available in this category yet.
           </div>
-        )}
 
+        )}
 
       </section>
 
@@ -1001,34 +1217,34 @@ function LocalShopDetail() {
 
       <section className="local-detail-about-section">
 
-
         {/* ABOUT THIS SHOP */}
 
         <div className="local-detail-about">
-
 
           <p className="local-detail-section-label">
             Meet the maker
           </p>
 
-
           <h2>
             About This Shop
           </h2>
-
 
           <p className="local-detail-about-text">
             {shop.about}
           </p>
 
 
-          <blockquote>
-            “{shop.quote}”
-          </blockquote>
-          <p className="local-detail-quote-author">
-            — {shop.name}, {shop.location}
-          </p>
+          {shop.quote && (
+            <>
+              <blockquote>
+                “{shop.quote}”
+              </blockquote>
 
+              <p className="local-detail-quote-author">
+                — {shop.name}, {shop.location}
+              </p>
+            </>
+          )}
 
         </div>
 
@@ -1037,11 +1253,9 @@ function LocalShopDetail() {
 
         <div className="local-detail-information">
 
-
           <p className="local-detail-section-label">
             Good to know
           </p>
-
 
           <h2>
             Shop Information
@@ -1053,16 +1267,23 @@ function LocalShopDetail() {
             {/* LOCATION */}
 
             <div className="local-detail-info-item">
+
               <div className="local-detail-info-icon">
                 <MapPin />
               </div>
 
               <div>
-                <strong>Location</strong>
 
-                <span>{shop.location}</span>
+                <strong>
+                  Location
+                </strong>
+
+                <span>
+                  {shop.location}
+                </span>
 
                 {shop.map_url && (
+
                   <a
                     href={shop.map_url}
                     target="_blank"
@@ -1071,58 +1292,77 @@ function LocalShopDetail() {
                   >
                     View on Google Maps
                   </a>
+
                 )}
+
               </div>
+
             </div>
+
 
             {/* OPENING HOURS */}
 
             <div className="local-detail-info-item">
+
               <div className="local-detail-info-icon">
-                <div className="local-detail-info-icon">
-                <Clock/>
-              </div>
+                <Clock />
               </div>
 
               <div>
-                <strong>Opening Hours</strong>
+
+                <strong>
+                  Opening Hours
+                </strong>
 
                 <span>
                   {businessHours}
                 </span>
+
               </div>
+
             </div>
+
 
             {/* CONTACT */}
 
-              {/* CONTACT */}
+            {(shop.phone ||
+              shop.business_email) && (
 
-              {(shop.phone || shop.business_email) && (
-                <div className="local-detail-info-item">
+              <div className="local-detail-info-item">
 
-                  <div className="local-detail-info-icon">
-                    <Contact />
-                  </div>
+                <div className="local-detail-info-icon">
+                  <Contact />
+                </div>
 
-                  <div>
-                    <strong>Contact</strong>
+                <div>
 
-                    {shop.phone && (
-                      <span>{shop.phone}</span>
-                    )}
+                  <strong>
+                    Contact
+                  </strong>
 
-                    {shop.business_email && (
-                      <a
-                        href={`mailto:${shop.business_email}`}
-                        className="local-detail-contact-link"
-                      >
-                        {shop.business_email}
-                      </a>
-                    )}
-                  </div>
+                  {shop.phone && (
+                    <span>
+                      {shop.phone}
+                    </span>
+                  )}
+
+                  {shop.business_email && (
+
+                    <a
+                      href={`mailto:${shop.business_email}`}
+                      className="local-detail-contact-link"
+                    >
+                      {shop.business_email}
+                    </a>
+
+                  )}
 
                 </div>
-              )}
+
+              </div>
+
+            )}
+
 
             {/* DELIVERY */}
 
@@ -1156,11 +1396,15 @@ function LocalShopDetail() {
               </div>
 
               <div>
-                <strong>Specialties</strong>
+
+                <strong>
+                  Specialties
+                </strong>
 
                 <span>
-                  {shop.specialties.join(", ")}
+                  {(shop.specialties || []).join(", ")}
                 </span>
+
               </div>
 
             </div>
@@ -1168,35 +1412,38 @@ function LocalShopDetail() {
 
             {/* LOCAL SUPPORT */}
 
-            <div className="local-detail-info-item">
+            {shop.supportTitle && (
 
-              <div className="local-detail-info-icon">
-                <Leaf />
+              <div className="local-detail-info-item">
+
+                <div className="local-detail-info-icon">
+                  <Leaf />
+                </div>
+
+                <div>
+
+                  <strong>
+                    {shop.supportTitle}
+                  </strong>
+
+                  <span>
+                    {shop.supportText}
+                  </span>
+
+                </div>
+
               </div>
 
-              <div>
-                <strong>
-                  {shop.supportTitle}
-                </strong>
+            )}
 
-                <span>
-                  {shop.supportText}
-                </span>
-              </div>
-
-            </div>
-
-            </div>
+          </div>
 
         </div>
 
       </section>
 
     </main>
-
   );
-
 }
-
 
 export default LocalShopDetail;

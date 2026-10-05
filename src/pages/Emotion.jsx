@@ -253,7 +253,7 @@ function Emotion() {
             <div className="emotion-decor-circle emotion-decor-circle-two" />
 
             <Flower2 className="emotion-decor-flower emotion-decor-flower-one" />
-
+           
             <Heart className="emotion-decor-heart" />
 
             <Sparkles className="emotion-decor-sparkle" />

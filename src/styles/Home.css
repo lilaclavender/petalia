@@ -2994,3 +2994,943 @@
     display: none;
   }
 }
+
+/* =========================================================
+   PETALIA HOME — FINAL RESPONSIVE OVERRIDES
+   Desktop design remains unchanged
+========================================================= */
+
+/* =========================================================
+   TABLET — iPad / smaller laptop
+========================================================= */
+
+@media (max-width: 980px) {
+  /* ---------- GLOBAL HOME CONTAINERS ---------- */
+
+  .hero-container,
+  .gift-finder-container,
+  .discover-categories-container,
+  .trending-container,
+  .curated-container,
+  .featured-shops-container,
+  .why-petalia-container,
+  .testimonials-container {
+    width: calc(100% - 40px);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero-container {
+    min-height: auto;
+    padding: 55px 0;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+    gap: 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+
+    left: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .hero-benefits {
+    width: 100%;
+
+    margin-left: 0;
+
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 12px 20px;
+
+    white-space: normal;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  /* ---------- GIFT FINDER ---------- */
+
+  .gift-finder-container {
+    padding: 40px 32px;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 45px;
+  }
+
+  .gift-finder-intro {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .gift-finder-steps {
+    width: 100%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px 16px;
+  }
+
+  .finder-step {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+  }
+
+  /* ---------- EMOTION / OCCASION ---------- */
+
+  .discover-categories-container {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .category-items {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  /* ---------- TRENDING ---------- */
+
+  .trending-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  /* ---------- CURATED SETS ---------- */
+
+  .curated-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .curated-card {
+    min-width: 0;
+  }
+
+  /* ---------- LOCAL SHOPS ---------- */
+
+  .featured-shops-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  /* ---------- PETALIA TIPS ---------- */
+
+  .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  /* ---------- WHY PETALIA ---------- */
+
+  .why-petalia-container {
+    grid-template-columns: 1fr;
+
+    padding: 40px 32px;
+
+    gap: 35px;
+  }
+
+  .why-petalia-left {
+    padding-right: 0;
+  }
+
+  .why-petalia-right {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .why-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px 20px;
+  }
+
+  .why-visual {
+    width: 100%;
+    max-width: 245px;
+
+    margin: 0 auto;
+  }
+
+  .why-gift-path,
+  .why-journey-line {
+    display: none;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .testimonials-header {
+    padding-left: 0;
+  }
+}
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 640px) {
+  /* ---------- SAFETY ---------- */
+
+  .hero-section,
+  .gift-finder-preview,
+  .discover-categories,
+  .trending-section,
+  .curated-section,
+  .featured-shops-section,
+  .why-petalia-section,
+  .testimonials-section {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+
+  .hero-container,
+  .gift-finder-container,
+  .discover-categories-container,
+  .trending-container,
+  .curated-container,
+  .featured-shops-container,
+  .why-petalia-container,
+  .testimonials-container {
+    width: calc(100% - 28px);
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+  }
+
+  /* =========================================================
+     HERO
+  ========================================================= */
+
+  .hero-container {
+    min-height: auto;
+
+    padding: 42px 0 36px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+  }
+
+  .hero-content {
+    position: relative;
+
+    left: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    text-align: left;
+  }
+
+  .hero-label {
+    margin-bottom: 12px;
+
+    font-size: 12px;
+  }
+
+  .hero-content h1 {
+    width: 100%;
+
+    font-size: clamp(34px, 10vw, 42px);
+    line-height: 1.08;
+
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .hero-buttons {
+    width: 100%;
+
+    margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    min-height: 44px;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+  }
+
+  .hero-benefits {
+    width: 100%;
+
+    margin-top: 24px;
+    margin-left: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    justify-items: start;
+
+    gap: 10px;
+
+    white-space: normal;
+
+    font-size: 11px;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    min-width: 0;
+
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: min(100%, 340px);
+    max-width: 100%;
+
+    margin: 0 auto;
+  }
+
+  /* =========================================================
+     GIFT FINDER
+  ========================================================= */
+
+  .gift-finder-preview {
+    padding: 42px 0;
+  }
+
+  .gift-finder-container {
+    padding: 32px 18px;
+
+    gap: 38px;
+
+    border-radius: 16px;
+  }
+
+  .gift-finder-intro {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .gift-finder-intro h2 {
+    font-size: 27px;
+  }
+
+  .gift-finder-description {
+    font-size: 12px;
+  }
+
+  .gift-finder-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .gift-finder-steps {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+  }
+
+  .finder-step {
+    width: 100%;
+    min-width: 0;
+    min-height: 190px;
+
+    box-sizing: border-box;
+  }
+
+  .gift-finder-flower {
+    width: 65px;
+  }
+
+  /* =========================================================
+     SHOP BY EMOTION / OCCASION
+  ========================================================= */
+
+  .discover-categories {
+    padding: 10px 0 45px;
+  }
+
+  .discover-categories-container {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .category-panel {
+    width: 100%;
+
+    padding: 18px 14px;
+
+    box-sizing: border-box;
+  }
+
+  .category-panel-header {
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  .category-panel-header h2 {
+    font-size: 20px;
+  }
+
+  .category-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .category-image-box {
+    height: 115px;
+  }
+
+  /* =========================================================
+     TRENDING
+  ========================================================= */
+
+  .trending-section {
+    padding-bottom: 48px;
+  }
+
+  .trending-header,
+  .curated-header,
+  .featured-shops-header {
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .trending-header h2,
+  .curated-header h2,
+  .featured-shops-header h2 {
+    font-size: 23px;
+  }
+
+  .trending-header p,
+  .curated-header p,
+  .featured-shops-header p {
+    font-size: 11px;
+  }
+
+  .trending-view-all,
+  .curated-view-all,
+  .shops-view-all {
+    flex-shrink: 0;
+
+    font-size: 11px;
+  }
+
+  .trending-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .product-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-card-content {
+    padding: 11px;
+  }
+
+  .product-card-content h3 {
+    min-height: 38px;
+
+    font-size: 12px;
+  }
+
+  .product-price {
+    font-size: 14px;
+  }
+
+  /* =========================================================
+     CURATED GIFT SETS
+  ========================================================= */
+
+  .curated-section {
+    padding-bottom: 48px;
+  }
+
+  .curated-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .curated-card {
+    width: 100%;
+    min-width: 0;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 190px;
+  }
+
+  .curated-content {
+    padding: 14px;
+  }
+
+  .curated-content h3 {
+    font-size: 16px;
+  }
+
+  .curated-content p {
+    font-size: 11px;
+  }
+
+  /* =========================================================
+     LOCAL SHOPS
+  ========================================================= */
+
+  .featured-shops-section {
+    padding-bottom: 48px;
+  }
+
+  .featured-shops-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .home-local-shop-card {
+    width: 100%;
+    min-width: 0;
+
+    height: 300px;
+  }
+
+  /* =========================================================
+     PETALIA TIPS
+  ========================================================= */
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .tip-card {
+    width: 100%;
+    height: 330px;
+  }
+
+  .tip-content {
+    padding: 22px 18px 18px;
+  }
+
+  .tip-content h3 {
+    font-size: 20px;
+  }
+
+  .tip-content p {
+    max-width: 100%;
+
+    font-size: 12px;
+  }
+
+  /* =========================================================
+     WHY CHOOSE PETALIA
+  ========================================================= */
+
+  .why-petalia-section {
+    padding: 35px 0 48px;
+  }
+
+  .why-petalia-container {
+    padding: 30px 18px;
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    border-radius: 20px;
+  }
+
+  .why-petalia-left {
+    width: 100%;
+    max-width: 100%;
+
+    padding-right: 0;
+  }
+
+  .why-petalia-left h2 {
+    font-size: 29px;
+  }
+
+  .why-petalia-left > p {
+    max-width: 100%;
+
+    font-size: 12px;
+  }
+
+  .why-petalia-btn {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .why-petalia-right {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+  }
+
+  .why-steps {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .why-step {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .why-visual {
+    width: min(100%, 245px);
+
+    margin: 0 auto;
+  }
+
+  .why-bloom-image {
+    max-width: 100%;
+  }
+
+  .why-gift-path,
+  .why-journey-line {
+    display: none;
+  }
+
+  /* =========================================================
+     TESTIMONIALS
+  ========================================================= */
+
+  .testimonials-section {
+    padding: 45px 0 55px;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .testimonials-header {
+    padding-left: 0;
+  }
+
+  .testimonials-header h2 {
+    font-size: 30px;
+  }
+
+  .testimonial-carousel {
+    width: 100%;
+    max-width: 100%;
+
+    height: 350px;
+
+    overflow: hidden;
+  }
+
+  .testimonial-card-stack {
+    width: 100%;
+    max-width: 100%;
+
+    height: 290px;
+  }
+
+  .testimonial-slide {
+    width: 92%;
+    max-width: 92%;
+
+    min-height: 255px;
+  }
+
+  .testimonial-card-content {
+    min-height: 255px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-copy {
+    padding: 25px 22px;
+  }
+
+  .testimonial-gift-image {
+    display: none;
+  }
+
+  .testimonial-previous,
+  .testimonial-next {
+    opacity: 0.25;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+  .hero-container,
+  .gift-finder-container,
+  .discover-categories-container,
+  .trending-container,
+  .curated-container,
+  .featured-shops-container,
+  .why-petalia-container,
+  .testimonials-container {
+    width: calc(100% - 24px);
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .category-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trending-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .curated-card {
+    grid-template-columns: 1fr;
+  }
+
+  .curated-image-wrapper {
+    height: 210px;
+  }
+
+  .home-local-shop-card {
+    height: 285px;
+  }
+
+  .tip-card {
+    height: 315px;
+  }
+}
+
+/* =========================================================
+   PETALIA — MOBILE HERO POLISH
+========================================================= */
+
+@media (max-width: 640px) {
+
+  /* HERO */
+  .hero-section {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    width: calc(100% - 32px);
+
+    padding: 34px 0 28px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  /* TEXT */
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+
+    left: 0;
+
+    text-align: left;
+  }
+
+  .hero-label {
+    margin-bottom: 9px;
+
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-content h1 {
+    max-width: 330px;
+
+    margin: 0;
+
+    font-size: 38px;
+    line-height: 1.03;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-description {
+    max-width: 330px;
+
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+
+  /* BUTTONS */
+  .hero-buttons {
+    width: 100%;
+
+    margin-top: 19px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 39px;
+
+    padding: 9px 10px;
+
+    font-size: 10px;
+
+    justify-content: center;
+  }
+
+
+  /* BENEFITS */
+  .hero-benefits {
+    width: 100%;
+
+    margin: 17px 0 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 9px 12px;
+
+    white-space: normal;
+  }
+
+  .hero-benefit {
+    min-width: 0;
+
+    font-size: 9px;
+    line-height: 1.3;
+  }
+
+  .hero-benefit svg {
+    width: 12px;
+    height: 12px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* BOUQUET */
+  .hero-image-wrapper {
+    width: 100%;
+    height: auto;
+
+    margin-top: -2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image {
+    width: min(86%, 310px);
+    max-width: 310px;
+    height: auto;
+
+    margin: 0 auto;
+
+    display: block;
+  }
+}
+
+
+/* SMALLER PHONES */
+@media (max-width: 420px) {
+
+  .hero-container {
+    width: calc(100% - 28px);
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  .hero-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

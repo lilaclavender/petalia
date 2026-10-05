@@ -160,3 +160,93 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   VENDOR SETTINGS + ORDERS — FINAL RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+  .vendor-settings-layout {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .vendor-settings-main {
+    width: 100%;
+    min-width: 0;
+    padding: 28px 24px 50px;
+    box-sizing: border-box;
+  }
+
+  .vendor-settings-grid {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-settings-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vendor-settings-card {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .vendor-orders-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .vendor-order-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+
+  .vendor-orders-section {
+    padding: 16px 14px;
+  }
+
+  .vendor-orders-heading,
+  .vendor-order-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .vendor-order-statuses {
+    justify-content: flex-start;
+  }
+
+  .vendor-order-card {
+    padding: 15px 13px;
+  }
+
+  .vendor-order-details {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .vendor-order-item {
+    min-width: 0;
+  }
+
+  .vendor-order-item img {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+  }
+
+  .vendor-order-item > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .vendor-order-toggle {
+    width: 100%;
+  }
+}

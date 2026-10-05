@@ -1142,3 +1142,114 @@ button:hover {
     font-size: 29px;
   }
 }
+
+/* =========================================================
+   PETALIA SIGN IN — FINAL RESPONSIVE
+   KEEP THIS AT ABSOLUTE END OF FILE
+========================================================= */
+
+@media (max-width: 980px) {
+  .signin-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .signin-shell {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .signin-visual-side,
+  .signin-form-side {
+    min-width: 0;
+  }
+
+  .signin-form-side {
+    padding: 70px 40px 50px;
+    box-sizing: border-box;
+  }
+
+  .signin-form-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .signin-story-content {
+    width: min(300px, calc(100% - 40px));
+    right: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .signin-page {
+    padding: 18px;
+  }
+
+  .signin-shell {
+    display: block;
+    max-width: 520px;
+    min-height: 0;
+  }
+
+  .signin-visual-side {
+    display: none;
+  }
+
+  .signin-form-side {
+    width: 100%;
+    min-height: 680px;
+    padding: 75px 32px 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-page {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .signin-shell {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .signin-form-side {
+    width: 100%;
+    min-height: 100vh;
+    padding: 72px 20px 36px;
+  }
+
+  .signin-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .signin-heading {
+    margin-bottom: 27px;
+  }
+
+  .signin-heading h1 {
+    font-size: 27px;
+  }
+
+  .signin-language {
+    top: 20px;
+    right: 20px;
+  }
+
+  .signin-field > input,
+  .signin-password-box,
+  .signin-submit,
+  .signin-google {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}

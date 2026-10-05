@@ -608,6 +608,14 @@ function PetaliaTipDetail() {
                 <article
                   className="tip-candle-card"
                   key={scent.name}
+                  onClick={() => navigate("/shop?category=candles")}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      navigate("/shop?category=candles");
+                    }
+                  }}
                 >
                   <div className="tip-candle-icon">
                     <Icon

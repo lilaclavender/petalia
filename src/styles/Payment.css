@@ -1915,22 +1915,71 @@
 ========================================================= */
 
 @media (max-width: 980px) {
+  .payment-page {
+    overflow-x: hidden;
+  }
+
+  .payment-container {
+    width: min(100% - 40px, 760px);
+  }
+
   .payment-intro {
     align-items: flex-start;
     flex-direction: column;
+    gap: 28px;
+  }
+
+  .payment-intro-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .payment-intro h1 {
+    font-size: clamp(38px, 7vw, 48px);
+    overflow-wrap: break-word;
+  }
+
+  .payment-intro p {
+    max-width: 100%;
   }
 
   .payment-intro-progress {
     width: 100%;
     max-width: 360px;
+    min-width: 0;
   }
 
   .payment-layout {
-    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .payment-experience,
+  .payment-summary {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .payment-summary {
     position: static;
+  }
+
+  .khqr-payment,
+  .card-payment {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .khqr-instruction,
+  .payment-waiting,
+  .khqr-ready-section,
+  .complete-payment-button,
+  .payment-security,
+  .payment-reference-row {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -2128,5 +2177,179 @@
     opacity: 1;
 
     transform: scale(1) rotate(-5deg);
+  }
+}
+
+/* =========================================================
+   PETALIA PAYMENT — FINAL RESPONSIVE SAFETY
+========================================================= */
+
+@media (max-width: 980px) {
+  .payment-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .payment-container {
+    width: min(calc(100% - 40px), 760px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .payment-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .payment-experience,
+  .payment-summary {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .payment-summary {
+    position: static;
+  }
+
+  .khqr-payment,
+  .card-payment,
+  .khqr-ready-section,
+  .payment-waiting,
+  .payment-security,
+  .payment-reference-row {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .payment-container {
+    width: calc(100% - 28px);
+  }
+
+  .payment-intro {
+    width: 100%;
+    gap: 22px;
+  }
+
+  .payment-intro-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .payment-intro h1 {
+    font-size: 32px;
+    line-height: 1.08;
+    overflow-wrap: break-word;
+  }
+
+  .payment-intro p {
+    max-width: 100%;
+    font-size: 11px;
+  }
+
+  .payment-intro-progress {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .payment-layout {
+    gap: 18px;
+  }
+
+  .payment-experience {
+    width: 100%;
+    padding: 20px 14px;
+    box-sizing: border-box;
+  }
+
+  .payment-experience-header {
+    align-items: flex-start;
+  }
+
+  .payment-experience-header h2 {
+    font-size: 22px;
+  }
+
+  .khqr-frame {
+    width: min(100%, 220px);
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .khqr-code-placeholder {
+    width: min(155px, 100%);
+    max-width: 155px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .khqr-instruction,
+  .payment-waiting,
+  .khqr-ready-section,
+  .complete-payment-button,
+  .payment-security {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .payment-reference-row {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .payment-reference-row > div:first-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(110, 83, 111, 0.08);
+  }
+
+  .card-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-summary {
+    width: 100%;
+    padding: 18px 14px;
+    box-sizing: border-box;
+  }
+
+  .payment-summary-item,
+  .payment-summary-row {
+    min-width: 0;
+  }
+
+  .payment-customization {
+    padding-left: 0;
+  }
+
+  .payment-tiny-butterfly {
+    display: none;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .payment-container {
+    width: calc(100% - 24px);
+  }
+
+  .payment-intro h1 {
+    font-size: 29px;
+  }
+
+  .payment-experience,
+  .payment-summary {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

@@ -317,3 +317,100 @@
     padding-left: 0;
   }
 }
+
+/* =========================================================
+   VENDOR SETTINGS + ORDERS — FINAL RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+  .vendor-settings-layout {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .vendor-settings-main {
+    width: 100%;
+    min-width: 0;
+    padding: 28px 24px 50px;
+    box-sizing: border-box;
+  }
+
+  .vendor-settings-grid {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-settings-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vendor-settings-card {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .vendor-orders-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .vendor-order-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .vendor-settings-main {
+    padding: 22px 14px 40px;
+  }
+
+  .vendor-settings-heading h1 {
+    font-size: 28px;
+  }
+
+  .vendor-settings-heading > p:last-child {
+    font-size: 11px;
+  }
+
+  .vendor-settings-grid,
+  .vendor-settings-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vendor-settings-card {
+    width: 100%;
+    padding: 18px 14px;
+  }
+
+  .vendor-settings-card-heading {
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 20px;
+  }
+
+  .vendor-settings-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vendor-settings-card-heading h2 {
+    font-size: 18px;
+  }
+
+  .vendor-settings-help-text {
+    padding-left: 0;
+  }
+
+  .vendor-settings-actions {
+    width: 100%;
+  }
+
+  .vendor-settings-primary-btn {
+    width: 100%;
+  }
+}

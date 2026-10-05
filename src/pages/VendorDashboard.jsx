@@ -22,6 +22,7 @@ import VendorHeader from "../components/VendorHeader";
 import VendorSidebar from "../components/VendorSidebar";
 import productImages from "../data/productImages";
 import localShop1 from "../assets/local-shop-1.jpg";
+import VendorFooter from "../components/VendorFooter";
 
 function VendorDashboard() {
   const vendorProductImages = {
@@ -564,9 +565,6 @@ function VendorDashboard() {
               <table className="vendor-product-table">
                 <thead>
                   <tr>
-                    <th className="checkbox-column">
-                      <input type="checkbox" />
-                    </th>
 
                     <th>Image</th>
                     <th>Product Name</th>
@@ -589,9 +587,6 @@ function VendorDashboard() {
                     filteredProducts.map((product) => (
                       <tr key={product.id}>
                         {/* Checkbox */}
-                        <td className="checkbox-column">
-                          <input type="checkbox" />
-                        </td>
 
                         {/* Product Image */}
                         <td>
@@ -643,13 +638,13 @@ function VendorDashboard() {
                           <div className="vendor-actions">
                             <button
                               type="button"
-                              className="vendor-product-action-btn"
+                              className="vendor-product-edit-btn"
                               onClick={() =>
                                 navigate(`/vendor/products/edit/${product.id}`)
                               }
                             >
-                              <Pencil size={14} />
-                              Edit
+                              <Pencil size={14} strokeWidth={1.8} />
+                              <span>Edit</span>
                             </button>
 
                             <button
@@ -692,10 +687,12 @@ function VendorDashboard() {
               </div>
             </div>
           </section>
+          <VendorFooter />
         </main>
       </div>
     </div>
   );
 }
+<VendorFooter />
 
 export default VendorDashboard;

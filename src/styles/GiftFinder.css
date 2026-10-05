@@ -15,7 +15,6 @@
   margin: 0 auto;
 }
 
-
 /* =========================================================
    INTRO
 ========================================================= */
@@ -46,7 +45,6 @@
   font-size: 14px;
   line-height: 1.7;
 }
-
 
 /* =========================================================
    PROGRESS
@@ -83,16 +81,9 @@
 
   border-radius: 999px;
 
-  background: linear-gradient(
-    90deg,
-    #d35b8c,
-    #e58aae
-  );
+  background: linear-gradient(90deg, #d35b8c, #e58aae);
 
-  transition:
-    width
-    0.6s
-    cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gf-page-progress-glow {
@@ -119,13 +110,8 @@
 
   opacity: 0.6;
 
-  animation:
-    gfLineGlow
-    4.5s
-    ease-in-out
-    infinite;
+  animation: gfLineGlow 4.5s ease-in-out infinite;
 }
-
 
 /* =========================================================
    PROGRESS STEPS
@@ -137,8 +123,7 @@
 
   display: grid;
 
-  grid-template-columns:
-    repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .gf-page-progress-step {
@@ -177,9 +162,7 @@
 
   font-weight: 500;
 
-  box-shadow:
-    0 3px 10px
-    rgba(110, 83, 111, 0.05);
+  box-shadow: 0 3px 10px rgba(110, 83, 111, 0.05);
 
   transition:
     background 0.35s ease,
@@ -193,52 +176,37 @@
   font-weight: 600;
 }
 
-.gf-page-progress-step.active
-.gf-page-step-number {
+.gf-page-progress-step.active .gf-page-step-number {
   background: #d35b8c;
   color: #ffffff;
 
-  box-shadow:
-    0 5px 14px
-    rgba(211, 91, 140, 0.2);
+  box-shadow: 0 5px 14px rgba(211, 91, 140, 0.2);
 
-  animation:
-    gfActiveStepEnter
-    0.45s
-    ease;
+  animation: gfActiveStepEnter 0.45s ease;
 }
 
-.gf-page-progress-step.active
-.gf-page-step-number::after {
+.gf-page-progress-step.active .gf-page-step-number::after {
   content: "";
 
   position: absolute;
 
   inset: -5px;
 
-  border:
-    1px solid
-    rgba(211, 91, 140, 0.23);
+  border: 1px solid rgba(211, 91, 140, 0.23);
 
   border-radius: 50%;
 
-  animation:
-    gfStepBreath
-    2.8s
-    ease-in-out
-    infinite;
+  animation: gfStepBreath 2.8s ease-in-out infinite;
 }
 
 .gf-page-progress-step.completed {
   color: #a36f7e;
 }
 
-.gf-page-progress-step.completed
-.gf-page-step-number {
+.gf-page-progress-step.completed .gf-page-step-number {
   background: #cdaac4;
   color: #ffffff;
 }
-
 
 /* =========================================================
    QUESTION CARD
@@ -251,25 +219,17 @@
 
   padding: 48px 56px 42px;
 
-  border:
-    1px solid
-    rgba(163, 111, 126, 0.13);
+  border: 1px solid rgba(163, 111, 126, 0.13);
 
   border-radius: 20px;
 
   background: #fffaf7;
 
-  box-shadow:
-    0 18px 44px
-    rgba(110, 83, 111, 0.08);
+  box-shadow: 0 18px 44px rgba(110, 83, 111, 0.08);
 
   text-align: center;
 
-  animation:
-    gfCardEnter
-    0.45s
-    ease
-    both;
+  animation: gfCardEnter 0.45s ease both;
 }
 
 .gf-page-step-label {
@@ -301,9 +261,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 34px;
 
@@ -320,7 +278,6 @@
   font-size: 13px;
 }
 
-
 /* =========================================================
    OPTION GRID
 ========================================================= */
@@ -328,8 +285,7 @@
 .gf-page-options {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 14px;
 
@@ -339,8 +295,7 @@
 }
 
 .gf-page-options.four-options {
-  grid-template-columns:
-    repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   max-width: 520px;
 }
@@ -353,11 +308,9 @@
   justify-content: center;
 }
 
-.gf-page-options.five-options
-.gf-page-option {
+.gf-page-options.five-options .gf-page-option {
   width: 205px;
 }
-
 
 /* =========================================================
    OPTION CARD
@@ -378,20 +331,15 @@
 
   gap: 11px;
 
-  border:
-    1px solid
-    #e3d7df;
+  border: 1px solid #e3d7df;
 
   border-radius: 14px;
 
-  background:
-    rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.72);
 
   color: #6e536f;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   cursor: pointer;
 
@@ -406,14 +354,11 @@
 .gf-page-option:hover {
   transform: translateY(-2px);
 
-  border-color:
-    rgba(211, 91, 140, 0.44);
+  border-color: rgba(211, 91, 140, 0.44);
 
   background: #ffffff;
 
-  box-shadow:
-    0 8px 20px
-    rgba(110, 83, 111, 0.07);
+  box-shadow: 0 8px 20px rgba(110, 83, 111, 0.07);
 }
 
 .gf-page-option.selected {
@@ -423,11 +368,8 @@
 
   color: #d35b8c;
 
-  box-shadow:
-    0 8px 18px
-    rgba(211, 91, 140, 0.08);
+  box-shadow: 0 8px 18px rgba(211, 91, 140, 0.08);
 }
-
 
 /* =========================================================
    OPTION ICON
@@ -475,13 +417,11 @@
   font-weight: 600;
 }
 
-.gf-page-option.selected
-.gf-page-option-icon {
+.gf-page-option.selected .gf-page-option-icon {
   color: #d35b8c;
 
   transform: scale(1.06);
 }
-
 
 /* =========================================================
    SOFT BLOOM
@@ -496,8 +436,7 @@
   width: 78px;
   height: 54px;
 
-  transform:
-    translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   z-index: 1;
 
@@ -510,12 +449,9 @@
   width: 42px;
   height: 27px;
 
-  background:
-    rgba(196, 157, 190, 0.22);
+  background: rgba(196, 157, 190, 0.22);
 
-  border-radius:
-    70% 30% 65% 35% /
-    60% 45% 55% 40%;
+  border-radius: 70% 30% 65% 35% / 60% 45% 55% 40%;
 
   opacity: 0;
 
@@ -528,18 +464,14 @@
   top: 13px;
   left: 2px;
 
-  transform:
-    rotate(-12deg)
-    scale(0.3);
+  transform: rotate(-12deg) scale(0.3);
 }
 
 .gf-page-bloom .petal-b {
   top: 12px;
   right: 2px;
 
-  transform:
-    rotate(12deg)
-    scale(0.3);
+  transform: rotate(12deg) scale(0.3);
 }
 
 .gf-page-bloom .petal-c {
@@ -549,9 +481,7 @@
   width: 38px;
   height: 29px;
 
-  transform:
-    rotate(80deg)
-    scale(0.3);
+  transform: rotate(80deg) scale(0.3);
 }
 
 .gf-page-bloom .petal-d {
@@ -561,52 +491,28 @@
   width: 38px;
   height: 27px;
 
-  transform:
-    rotate(100deg)
-    scale(0.3);
+  transform: rotate(100deg) scale(0.3);
 }
 
-.gf-page-option.selected
-.gf-page-bloom-petal {
+.gf-page-option.selected .gf-page-bloom-petal {
   opacity: 1;
 }
 
-.gf-page-option.selected
-.gf-page-bloom .petal-a {
-  animation:
-    bloomSoftLeft
-    0.45s
-    ease
-    both;
+.gf-page-option.selected .gf-page-bloom .petal-a {
+  animation: bloomSoftLeft 0.45s ease both;
 }
 
-.gf-page-option.selected
-.gf-page-bloom .petal-b {
-  animation:
-    bloomSoftRight
-    0.48s
-    ease
-    both;
+.gf-page-option.selected .gf-page-bloom .petal-b {
+  animation: bloomSoftRight 0.48s ease both;
 }
 
-.gf-page-option.selected
-.gf-page-bloom .petal-c {
-  animation:
-    bloomSoftTop
-    0.5s
-    ease
-    both;
+.gf-page-option.selected .gf-page-bloom .petal-c {
+  animation: bloomSoftTop 0.5s ease both;
 }
 
-.gf-page-option.selected
-.gf-page-bloom .petal-d {
-  animation:
-    bloomSoftBottom
-    0.52s
-    ease
-    both;
+.gf-page-option.selected .gf-page-bloom .petal-d {
+  animation: bloomSoftBottom 0.52s ease both;
 }
-
 
 /* =========================================================
    NOTE
@@ -633,7 +539,6 @@
 
   font-size: 14px;
 }
-
 
 /* =========================================================
    QUESTION ACTION BUTTONS
@@ -669,9 +574,7 @@
 
   border-radius: 999px;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 13px;
 
@@ -689,9 +592,7 @@
 .gf-page-back {
   min-width: 130px;
 
-  border:
-    1px solid
-    #d9c8d5;
+  border: 1px solid #d9c8d5;
 
   background: transparent;
 
@@ -699,8 +600,7 @@
 }
 
 .gf-page-back:hover {
-  background:
-    rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.6);
 
   border-color: #c9b3c3;
 
@@ -716,23 +616,17 @@
 
   color: #ffffff;
 
-  box-shadow:
-    0 9px 20px
-    rgba(211, 91, 140, 0.18);
+  box-shadow: 0 9px 20px rgba(211, 91, 140, 0.18);
 }
 
 .gf-page-continue:not(:disabled):hover {
   transform: translateY(-2px);
 
-  box-shadow:
-    0 12px 23px
-    rgba(211, 91, 140, 0.22);
+  box-shadow: 0 12px 23px rgba(211, 91, 140, 0.22);
 }
 
 .gf-page-continue i {
-  transition:
-    transform
-    0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .gf-page-continue:not(:disabled):hover i {
@@ -746,7 +640,6 @@
 
   box-shadow: none;
 }
-
 
 /* =========================================================
    FINDING SCREEN
@@ -771,17 +664,13 @@
 
   text-align: center;
 
-  border:
-    1px solid
-    rgba(163, 111, 126, 0.13);
+  border: 1px solid rgba(163, 111, 126, 0.13);
 
   border-radius: 24px;
 
   background: #fffaf7;
 
-  box-shadow:
-    0 18px 45px
-    rgba(110, 83, 111, 0.08);
+  box-shadow: 0 18px 45px rgba(110, 83, 111, 0.08);
 }
 
 .gf-finding-label {
@@ -801,9 +690,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 40px;
 
@@ -843,42 +730,27 @@
   width: 52px;
   height: 32px;
 
-  border-radius:
-    70% 30% 65% 35% /
-    60% 45% 55% 40%;
+  border-radius: 70% 30% 65% 35% / 60% 45% 55% 40%;
 
-  background:
-    rgba(196, 157, 190, 0.25);
+  background: rgba(196, 157, 190, 0.25);
 
-  animation:
-    gfFindingBloom
-    1.5s
-    ease-in-out
-    infinite;
+  animation: gfFindingBloom 1.5s ease-in-out infinite;
 }
 
 .gf-finding-flower span:nth-child(1) {
-  transform:
-    translateX(-20px)
-    rotate(-15deg);
+  transform: translateX(-20px) rotate(-15deg);
 }
 
 .gf-finding-flower span:nth-child(2) {
-  transform:
-    translateX(20px)
-    rotate(15deg);
+  transform: translateX(20px) rotate(15deg);
 }
 
 .gf-finding-flower span:nth-child(3) {
-  transform:
-    translateY(-15px)
-    rotate(80deg);
+  transform: translateY(-15px) rotate(80deg);
 }
 
 .gf-finding-flower span:nth-child(4) {
-  transform:
-    translateY(15px)
-    rotate(100deg);
+  transform: translateY(15px) rotate(100deg);
 }
 
 .gf-finding-flower i {
@@ -907,11 +779,7 @@
 
   background: #d35b8c;
 
-  animation:
-    gfFindingDot
-    1.2s
-    ease-in-out
-    infinite;
+  animation: gfFindingDot 1.2s ease-in-out infinite;
 }
 
 .gf-finding-dots span:nth-child(2) {
@@ -922,7 +790,6 @@
   animation-delay: 0.3s;
 }
 
-
 /* =========================================================
    RESULTS INTRO
 ========================================================= */
@@ -932,11 +799,7 @@
 
   margin-bottom: 42px;
 
-  animation:
-    gfCardEnter
-    0.5s
-    ease
-    both;
+  animation: gfCardEnter 0.5s ease both;
 }
 
 .gf-results-eyebrow {
@@ -954,12 +817,9 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
-  font-size:
-    clamp(40px, 5vw, 58px);
+  font-size: clamp(40px, 5vw, 58px);
 
   font-weight: 500;
 
@@ -984,7 +844,6 @@
   line-height: 1.7;
 }
 
-
 /* =========================================================
    STORY CARD
 ========================================================= */
@@ -992,17 +851,13 @@
 .gf-story-card {
   padding: 30px;
 
-  border:
-    1px solid
-    rgba(163, 111, 126, 0.13);
+  border: 1px solid rgba(163, 111, 126, 0.13);
 
   border-radius: 20px;
 
   background: #fffaf7;
 
-  box-shadow:
-    0 14px 35px
-    rgba(110, 83, 111, 0.06);
+  box-shadow: 0 14px 35px rgba(110, 83, 111, 0.06);
 }
 
 .gf-story-heading {
@@ -1030,9 +885,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 25px;
 
@@ -1048,8 +901,7 @@
 .gf-story-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
   gap: 10px;
 }
@@ -1078,7 +930,6 @@
   font-size: 12px;
 }
 
-
 /* =========================================================
    MATCH SECTION
 ========================================================= */
@@ -1104,9 +955,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 32px;
 
@@ -1118,7 +967,6 @@
 
   font-size: 12px;
 }
-
 
 /* =========================================================
    FILTER TOOLBAR
@@ -1137,14 +985,11 @@
 
   padding: 16px 18px;
 
-  border:
-    1px solid
-    rgba(163, 111, 126, 0.11);
+  border: 1px solid rgba(163, 111, 126, 0.11);
 
   border-radius: 14px;
 
-  background:
-    rgba(255, 250, 247, 0.65);
+  background: rgba(255, 250, 247, 0.65);
 }
 
 .gf-result-filter,
@@ -1168,15 +1013,9 @@
   min-width: 180px;
   height: 40px;
 
-  padding:
-    0
-    34px
-    0
-    13px;
+  padding: 0 34px 0 13px;
 
-  border:
-    1px solid
-    #dfd0da;
+  border: 1px solid #dfd0da;
 
   border-radius: 10px;
 
@@ -1184,9 +1023,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 12px;
 
@@ -1198,7 +1035,6 @@
 .gf-result-toolbar select:focus {
   border-color: #d35b8c;
 }
-
 
 /* =========================================================
    RESULTS LAYOUT
@@ -1216,7 +1052,6 @@
   align-items: start;
 }
 
-
 /* =========================================================
    RESULT PRODUCT GRID
 ========================================================= */
@@ -1224,8 +1059,7 @@
 .gf-product-results {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 16px;
 }
@@ -1233,9 +1067,7 @@
 .gf-result-product-card {
   overflow: hidden;
 
-  border:
-    1px solid
-    #e3d7df;
+  border: 1px solid #e3d7df;
 
   border-radius: 15px;
 
@@ -1252,48 +1084,30 @@
 .gf-result-product-card:hover {
   transform: translateY(-3px);
 
-  border-color:
-    rgba(211, 91, 140, 0.35);
+  border-color: rgba(211, 91, 140, 0.35);
 
-  box-shadow:
-    0 12px 25px
-    rgba(110, 83, 111, 0.08);
+  box-shadow: 0 12px 25px rgba(110, 83, 111, 0.08);
 }
 
 .gf-result-product-image {
   position: relative;
-
-  height: 185px;
-
-  display: grid;
-
-  place-items: center;
-
+  width: 100%;
+  height: 260px;
   overflow: hidden;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f5e7ee,
-      #eee7f1
-    );
+  background: #f8eef1;
 }
 
-.gf-result-product-image > i {
-  color: #b48fa8;
-
-  font-size: 44px;
-
-  opacity: 0.7;
-
-  transition:
-    transform
-    0.3s ease;
+.gf-result-product-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s ease;
 }
 
-.gf-result-product-card:hover
-.gf-result-product-image > i {
-  transform: scale(1.07);
+.gf-result-product-card:hover .gf-result-product-image img {
+  transform: scale(1.04);
 }
 
 .gf-result-heart {
@@ -1309,14 +1123,11 @@
 
   place-items: center;
 
-  border:
-    1px solid
-    rgba(163, 111, 126, 0.18);
+  border: 1px solid rgba(163, 111, 126, 0.18);
 
   border-radius: 50%;
 
-  background:
-    rgba(255, 250, 247, 0.88);
+  background: rgba(255, 250, 247, 0.88);
 
   color: #a36f7e;
 
@@ -1359,9 +1170,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 18px;
 
@@ -1392,7 +1201,6 @@
   font-size: 9px;
 }
 
-
 /* =========================================================
    WHY THESE GIFTS
 ========================================================= */
@@ -1404,17 +1212,13 @@
 
   padding: 24px;
 
-  border:
-    1px solid
-    rgba(163, 111, 126, 0.13);
+  border: 1px solid rgba(163, 111, 126, 0.13);
 
   border-radius: 18px;
 
   background: #fffaf7;
 
-  box-shadow:
-    0 12px 30px
-    rgba(110, 83, 111, 0.06);
+  box-shadow: 0 12px 30px rgba(110, 83, 111, 0.06);
 }
 
 .gf-match-reason-title {
@@ -1442,9 +1246,7 @@
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 22px;
 
@@ -1468,16 +1270,11 @@
 }
 
 .gf-match-reason-card h4 {
-  margin:
-    0
-    0
-    14px;
+  margin: 0 0 14px;
 
   color: #6e536f;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 16px;
 
@@ -1529,9 +1326,7 @@
 
   padding-top: 18px;
 
-  border-top:
-    1px solid
-    #eadde5;
+  border-top: 1px solid #eadde5;
 }
 
 .gf-match-tip i {
@@ -1549,7 +1344,6 @@
 
   line-height: 1.6;
 }
-
 
 /* =========================================================
    RESULTS ACTIONS
@@ -1580,9 +1374,7 @@
 
   border-radius: 999px;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 12px;
 
@@ -1603,15 +1395,11 @@
 
   color: #ffffff;
 
-  box-shadow:
-    0 8px 18px
-    rgba(211, 91, 140, 0.16);
+  box-shadow: 0 8px 18px rgba(211, 91, 140, 0.16);
 }
 
 .gf-results-secondary {
-  border:
-    1px solid
-    #d9c8d5;
+  border: 1px solid #d9c8d5;
 
   background: transparent;
 
@@ -1624,16 +1412,12 @@
 }
 
 .gf-results-primary:hover {
-  box-shadow:
-    0 11px 22px
-    rgba(211, 91, 140, 0.2);
+  box-shadow: 0 11px 22px rgba(211, 91, 140, 0.2);
 }
 
 .gf-results-secondary:hover {
-  background:
-    rgba(255, 250, 247, 0.6);
+  background: rgba(255, 250, 247, 0.6);
 }
-
 
 /* =========================================================
    ANIMATIONS
@@ -1643,15 +1427,13 @@
   from {
     opacity: 0;
 
-    transform:
-      translateY(12px);
+    transform: translateY(12px);
   }
 
   to {
     opacity: 1;
 
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -1683,30 +1465,26 @@
   from {
     opacity: 0.7;
 
-    transform:
-      scale(0.88);
+    transform: scale(0.88);
   }
 
   to {
     opacity: 1;
 
-    transform:
-      scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes gfStepBreath {
   0%,
   100% {
-    transform:
-      scale(0.96);
+    transform: scale(0.96);
 
     opacity: 0.25;
   }
 
   50% {
-    transform:
-      scale(1.08);
+    transform: scale(1.08);
 
     opacity: 0.7;
   }
@@ -1716,19 +1494,13 @@
   from {
     opacity: 0;
 
-    transform:
-      translateX(12px)
-      rotate(-12deg)
-      scale(0.25);
+    transform: translateX(12px) rotate(-12deg) scale(0.25);
   }
 
   to {
     opacity: 1;
 
-    transform:
-      translateX(0)
-      rotate(-12deg)
-      scale(1);
+    transform: translateX(0) rotate(-12deg) scale(1);
   }
 }
 
@@ -1736,19 +1508,13 @@
   from {
     opacity: 0;
 
-    transform:
-      translateX(-12px)
-      rotate(12deg)
-      scale(0.25);
+    transform: translateX(-12px) rotate(12deg) scale(0.25);
   }
 
   to {
     opacity: 1;
 
-    transform:
-      translateX(0)
-      rotate(12deg)
-      scale(1);
+    transform: translateX(0) rotate(12deg) scale(1);
   }
 }
 
@@ -1756,19 +1522,13 @@
   from {
     opacity: 0;
 
-    transform:
-      translateY(10px)
-      rotate(80deg)
-      scale(0.25);
+    transform: translateY(10px) rotate(80deg) scale(0.25);
   }
 
   to {
     opacity: 1;
 
-    transform:
-      translateY(0)
-      rotate(80deg)
-      scale(1);
+    transform: translateY(0) rotate(80deg) scale(1);
   }
 }
 
@@ -1776,19 +1536,13 @@
   from {
     opacity: 0;
 
-    transform:
-      translateY(-8px)
-      rotate(100deg)
-      scale(0.25);
+    transform: translateY(-8px) rotate(100deg) scale(0.25);
   }
 
   to {
     opacity: 1;
 
-    transform:
-      translateY(0)
-      rotate(100deg)
-      scale(0.9);
+    transform: translateY(0) rotate(100deg) scale(0.9);
   }
 }
 
@@ -1808,18 +1562,15 @@
   100% {
     opacity: 0.3;
 
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
 
   50% {
     opacity: 1;
 
-    transform:
-      translateY(-3px);
+    transform: translateY(-3px);
   }
 }
-
 
 /* =========================================================
    RESPONSIVE
@@ -1835,33 +1586,23 @@
   }
 }
 
-
 @media (max-width: 900px) {
   .gf-story-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gf-product-results {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
 @media (max-width: 760px) {
   .gf-page {
-    padding:
-      42px
-      16px
-      70px;
+    padding: 42px 16px 70px;
   }
 
   .gf-page-card {
-    padding:
-      36px
-      20px
-      30px;
+    padding: 36px 20px 30px;
   }
 
   .gf-page-card h2 {
@@ -1869,19 +1610,15 @@
   }
 
   .gf-page-options {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gf-page-options.four-options {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .gf-page-options.five-options
-  .gf-page-option {
-    width:
-      calc(50% - 8px);
+  .gf-page-options.five-options .gf-page-option {
+    width: calc(50% - 8px);
   }
 
   .gf-page-step-number {
@@ -1893,7 +1630,6 @@
     top: 19px;
   }
 }
-
 
 @media (max-width: 620px) {
   .gf-result-toolbar {
@@ -1917,7 +1653,6 @@
   }
 }
 
-
 @media (max-width: 500px) {
   .gf-page-intro h1 {
     font-size: 39px;
@@ -1928,8 +1663,7 @@
     grid-template-columns: 1fr;
   }
 
-  .gf-page-options.five-options
-  .gf-page-option {
+  .gf-page-options.five-options .gf-page-option {
     width: 100%;
   }
 
@@ -1938,8 +1672,7 @@
   }
 
   .gf-page-actions {
-    flex-direction:
-      column-reverse;
+    flex-direction: column-reverse;
   }
 
   .gf-page-back,
@@ -1965,4 +1698,35 @@
   .gf-results-secondary {
     width: 100%;
   }
+}
+.gf-result-product-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #f8eef1;
+}
+
+.gf-result-product-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gf-result-image-fallback {
+  position: absolute;
+  inset: 0;
+  place-items: center;
+  background: linear-gradient(
+    145deg,
+    #f8eef1,
+    #eee7f1
+  );
+  color: #b48fa8;
+}
+
+.gf-result-image-fallback i {
+  font-size: 38px;
 }
