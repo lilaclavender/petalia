@@ -108,22 +108,22 @@ function Checkout() {
     setCheckingAvailability(true);
     try {
       await assertProductsAvailable(cartItems);
-    const checkoutData = {
-      recipientName,
-      phone,
-      isForMe,
-      address,
-      deliveryArea,
-      deliveryDate,
-      timeSlot,
-      instructions,
-      paymentMethod,
-      subtotal,
-      deliveryFee,
-      total,
-    };
-    localStorage.setItem("petaliaCheckout", JSON.stringify(checkoutData));
-    navigate("/payment");
+      const checkoutData = {
+        recipientName,
+        phone,
+        isForMe,
+        address,
+        deliveryArea,
+        deliveryDate,
+        timeSlot,
+        instructions,
+        paymentMethod,
+        subtotal,
+        deliveryFee,
+        total,
+      };
+      localStorage.setItem("petaliaCheckout", JSON.stringify(checkoutData));
+      navigate("/payment");
     } catch (problem) {
       alert(problem.message || "Could not check product availability.");
     } finally {
@@ -414,8 +414,11 @@ function Checkout() {
                 <div className="step-heading">
                   <div>
                     <span className="step-kicker">Payment</span>
-                    <h2>How would you like to pay?</h2>
-                    <p>Choose your preferred secure payment method.</p>
+                    <h2>Pay with KHQR</h2>
+                    <p>
+                      Generate a QR code on the next step, then scan it with
+                      your banking app to pay.
+                    </p>
                   </div>
                   <div className="step-heading-icon">
                     <ShieldCheck />
@@ -513,8 +516,8 @@ function Checkout() {
               <div>
                 <strong>Delivery arranged separately</strong>
                 <span>
-                  The seller will confirm the delivery fee based on
-                  the recipient's location.
+                  The seller will confirm the delivery fee based on the
+                  recipient's location.
                 </span>
               </div>
             </div>
@@ -532,7 +535,9 @@ function Checkout() {
                 form?.requestSubmit();
               }}
             >
-              {checkingAvailability ? "Checking availability…" : "Continue to Payment"}
+              {checkingAvailability
+                ? "Checking availability…"
+                : "Continue to Payment"}
               <ChevronRight />
             </button>
             <div className="summary-secure">
