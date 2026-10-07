@@ -15,6 +15,7 @@ import {
 import { supabase } from "../lib/supabase";
 import VendorSidebar from "../components/VendorSidebar";
 import "../styles/VendorSettings.css";
+import "../styles/VendorDashboard.css";
 
 function VendorSettings() {
   const navigate = useNavigate();

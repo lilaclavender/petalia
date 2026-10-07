@@ -125,8 +125,6 @@ function Account() {
           className="account-sakura-branch"
           aria-hidden="true"
         />
-
-        <div className="account-container"></div>
         
         {/* PAGE HEADING */}
         <div className="account-heading">

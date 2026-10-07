@@ -699,7 +699,7 @@ function OccasionShop() {
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="occasion-shop-product-grid">
+          <div className="occasion-shop-product-grid shop-product-grid">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}

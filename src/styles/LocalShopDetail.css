@@ -989,3 +989,275 @@
   text-decoration: underline;
 }
 
+/* Local shop detail: responsive improvements */
+.local-detail-page,
+.local-detail-page *,
+.local-detail-page *::before,
+.local-detail-page *::after {
+  box-sizing: border-box;
+}
+
+.local-detail-page .local-detail-shop-profile,
+.local-detail-page .local-detail-about,
+.local-detail-page .local-detail-information,
+.local-detail-page .local-detail-info-item > div:last-child {
+  min-width: 0;
+}
+
+.local-detail-page .local-detail-shop-profile h1,
+.local-detail-page .local-detail-info-item span,
+.local-detail-page .local-detail-contact-link {
+  overflow-wrap: anywhere;
+}
+
+.local-detail-page .local-detail-shop-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.local-detail-page .local-detail-breadcrumb {
+  height: auto;
+  min-height: 44px;
+  flex-wrap: wrap;
+  padding-block: 10px;
+}
+
+.local-detail-page button:focus-visible,
+.local-detail-page a:focus-visible {
+  outline: 3px solid #6e536f;
+  outline-offset: 3px;
+}
+
+/* iPad and smaller laptops */
+@media (max-width: 1100px) {
+  .local-detail-page .local-detail-profile,
+  .local-detail-page .local-detail-collection,
+  .local-detail-page .local-detail-about-section {
+    width: calc(100% - 40px);
+    margin-inline: auto;
+  }
+
+  .local-detail-page .local-detail-profile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .local-detail-page .local-detail-shop-profile {
+    padding-right: 0;
+  }
+
+  .local-detail-page .local-detail-description {
+    max-width: 650px;
+  }
+
+  .local-detail-page .local-detail-products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .local-detail-page .local-detail-products .product-card {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .local-detail-page .local-detail-about-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .local-detail-page .local-detail-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .local-detail-page .local-detail-filters button,
+  .local-detail-page .local-detail-save,
+  .local-detail-page .local-detail-view-more {
+    height: auto;
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .local-detail-page .local-detail-filters button {
+    padding: 10px 18px;
+  }
+
+  .local-detail-page .local-detail-lavender {
+    display: none;
+  }
+
+  .local-detail-page .product-heart,
+  .local-detail-page .product-cart-btn {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .local-detail-page .local-detail-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phones */
+@media (max-width: 650px) {
+  .local-detail-page .local-detail-profile,
+  .local-detail-page .local-detail-collection,
+  .local-detail-page .local-detail-about-section {
+    width: calc(100% - 32px);
+  }
+
+  .local-detail-page .local-detail-breadcrumb {
+    padding-inline: 16px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .local-detail-page .local-detail-profile {
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
+
+  .local-detail-page .local-detail-shop-photo {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+  }
+
+  .local-detail-page .local-detail-shop-profile h1 {
+    font-size: clamp(30px, 8vw, 38px);
+    line-height: 1.2;
+  }
+
+  .local-detail-page .local-detail-rating-location {
+    gap: 12px;
+  }
+
+  .local-detail-page .local-detail-rating,
+  .local-detail-page .local-detail-location {
+    font-size: 13px;
+  }
+
+  .local-detail-page .local-detail-description,
+  .local-detail-page .local-detail-about-text,
+  .local-detail-page .local-detail-heading-description {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .local-detail-page .local-detail-tags span {
+    max-width: 100%;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .local-detail-page .local-detail-save {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .local-detail-page .local-detail-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 10px;
+  }
+
+  .local-detail-page .local-detail-filters button {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .local-detail-page .local-detail-products {
+    gap: 14px;
+  }
+
+  .local-detail-page .product-card-content {
+    padding: 14px 12px;
+  }
+
+  .local-detail-page .product-card-content h3 {
+    min-height: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .local-detail-page .product-card-bottom {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .local-detail-page .product-card-actions {
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .local-detail-page .product-rating {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+
+  .local-detail-page .product-rating small {
+    font-size: 11px;
+  }
+
+  .local-detail-page .local-detail-collection {
+    margin-bottom: 40px;
+  }
+
+  .local-detail-page .local-detail-information {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .local-detail-page .local-detail-info-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .local-detail-page .local-detail-info-item strong {
+    font-size: 14px;
+  }
+
+  .local-detail-page .local-detail-info-item span,
+  .local-detail-page .local-detail-contact-link {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .local-detail-page .local-detail-map-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .local-detail-page .local-detail-empty-products {
+    padding: 28px 18px;
+    font-size: 14px;
+  }
+
+  .local-detail-page .local-detail-not-found {
+    padding: 40px 20px;
+  }
+
+  .local-detail-page .local-detail-not-found p {
+    font-size: 14px;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  .local-detail-page .local-detail-products {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

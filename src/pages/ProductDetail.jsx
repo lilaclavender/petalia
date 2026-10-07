@@ -93,7 +93,8 @@ function ProductDetail() {
       try {
         const { data, error } = await supabase
           .from("product_customization_options")
-          .select(`
+          .select(
+            `
             option_id,
             shop_id,
             shop_customization_options (
@@ -104,7 +105,8 @@ function ProductDetail() {
               image_url,
               is_available
             )
-          `)
+          `,
+          )
           .eq("product_id", Number(id));
 
         if (error) {
@@ -115,17 +117,11 @@ function ProductDetail() {
           .map((item) => item.shop_customization_options)
           .filter(Boolean);
 
-        console.log(
-          "CUSTOMIZATION OPTIONS FROM SUPABASE:",
-          options,
-        );
+        console.log("CUSTOMIZATION OPTIONS FROM SUPABASE:", options);
 
         setCustomizationOptions(options);
       } catch (error) {
-        console.error(
-          "Error loading customization options:",
-          error,
-        );
+        console.error("Error loading customization options:", error);
 
         setCustomizationOptions([]);
       } finally {
@@ -136,9 +132,44 @@ function ProductDetail() {
     loadCustomizations();
   }, [id]);
 
-  const product = products.find(
-    (item) => Number(item.id) === Number(id),
-  );
+  const product = products.find((item) => Number(item.id) === Number(id));
+  const [sellerShop, setSellerShop] = useState(null);
+
+  const sellerShopId = product?.shop_id;
+
+  useEffect(() => {
+    if (sellerShopId == null) return;
+
+    let cancelled = false;
+
+    const loadSeller = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("shops")
+          .select("id, name")
+          .eq("id", sellerShopId)
+          .maybeSingle();
+
+        if (error) throw error;
+
+        if (!cancelled) {
+          setSellerShop(data);
+        }
+      } catch (error) {
+        console.error("Could not load the product's shop:", error);
+
+        if (!cancelled) {
+          setSellerShop(null);
+        }
+      }
+    };
+
+    loadSeller();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [sellerShopId]);
   console.log("CURRENT PRODUCT:", product);
   console.log("PRODUCT IMAGE:", product?.image);
 
@@ -148,13 +179,10 @@ function ProductDetail() {
 
   const editCartId = searchParams.get("edit");
 
-  const savedCart =
-    JSON.parse(localStorage.getItem("petaliaCart")) || [];
+  const savedCart = JSON.parse(localStorage.getItem("petaliaCart")) || [];
 
   const editingItem = editCartId
-    ? savedCart.find(
-        (item) => String(item.cartId) === String(editCartId),
-      )
+    ? savedCart.find((item) => String(item.cartId) === String(editCartId))
     : null;
 
   const isEditing = Boolean(editingItem);
@@ -222,9 +250,7 @@ function ProductDetail() {
      PAGE STATE
   ========================= */
 
-  const [quantity, setQuantity] = useState(
-    editingItem?.quantity || 1,
-  );
+  const [quantity, setQuantity] = useState(editingItem?.quantity || 1);
 
   const [selectedWrapping, setSelectedWrapping] = useState(
     editingItem?.wrapping || null,
@@ -234,9 +260,7 @@ function ProductDetail() {
     editingItem?.messageCardOptionId || null,
   );
 
-  const [message, setMessage] = useState(
-    editingItem?.message || "",
-  );
+  const [message, setMessage] = useState(editingItem?.message || "");
 
   const [selectedAddon, setSelectedAddon] = useState(
     editingItem?.addon || null,
@@ -246,14 +270,12 @@ function ProductDetail() {
 
   const customizeSectionRef = useRef(null);
 
-
   /* =========================
      CART ICON AUTO-SCROLL
   ========================= */
 
   useEffect(() => {
-    const shouldCustomize =
-      searchParams.get("customize") === "true";
+    const shouldCustomize = searchParams.get("customize") === "true";
 
     if (!shouldCustomize) {
       return;
@@ -350,25 +372,17 @@ function ProductDetail() {
   ========================= */
 
   const wrappingPrice =
-    wrappingOptions.find(
-      (option) => option.name === selectedWrapping,
-    )?.price || 0;
+    wrappingOptions.find((option) => option.name === selectedWrapping)?.price ||
+    0;
 
   const cardPrice =
-    cardOptions.find(
-      (option) => option.id === selectedCard,
-    )?.price || 0;
+    cardOptions.find((option) => option.id === selectedCard)?.price || 0;
 
   const addonPrice =
-    addonOptions.find(
-      (option) => option.id === selectedAddon,
-    )?.price || 0;
+    addonOptions.find((option) => option.id === selectedAddon)?.price || 0;
 
   const singleGiftPrice =
-    Number(product.price) +
-    wrappingPrice +
-    cardPrice +
-    addonPrice;
+    Number(product.price) + wrappingPrice + cardPrice + addonPrice;
 
   const totalPrice = singleGiftPrice * quantity;
 
@@ -392,17 +406,13 @@ function ProductDetail() {
 
   const showPreviousImage = () => {
     setSelectedImage((previous) =>
-      previous === 0
-        ? productImages.length - 1
-        : previous - 1,
+      previous === 0 ? productImages.length - 1 : previous - 1,
     );
   };
 
   const showNextImage = () => {
     setSelectedImage((previous) =>
-      previous === productImages.length - 1
-        ? 0
-        : previous + 1,
+      previous === productImages.length - 1 ? 0 : previous + 1,
     );
   };
 
@@ -424,21 +434,15 @@ function ProductDetail() {
 
   const addGiftToBasket = () => {
     const selectedWrappingData = selectedWrapping
-      ? wrappingOptions.find(
-          (option) => option.name === selectedWrapping,
-        )
+      ? wrappingOptions.find((option) => option.name === selectedWrapping)
       : null;
 
     const selectedCardData = selectedCard
-      ? cardOptions.find(
-          (card) => card.id === selectedCard,
-        )
+      ? cardOptions.find((card) => card.id === selectedCard)
       : null;
 
     const selectedAddonData = selectedAddon
-      ? addonOptions.find(
-          (addon) => addon.id === selectedAddon,
-        )
+      ? addonOptions.find((addon) => addon.id === selectedAddon)
       : null;
 
     const gift = {
@@ -461,42 +465,32 @@ function ProductDetail() {
         instead of trusting prices from the browser.
       */
 
-      wrappingOptionId:
-        selectedWrappingData?.id || null,
+      wrappingOptionId: selectedWrappingData?.id || null,
 
-      wrapping:
-        selectedWrappingData?.name || null,
+      wrapping: selectedWrappingData?.name || null,
 
-      wrappingPrice:
-        selectedWrappingData?.price || 0,
+      wrappingPrice: selectedWrappingData?.price || 0,
 
-      messageCardOptionId:
-        selectedCardData?.id || null,
+      messageCardOptionId: selectedCardData?.id || null,
 
-      messageCard:
-        selectedCardData?.name || null,
+      messageCard: selectedCardData?.name || null,
 
-      messageCardPrice:
-        selectedCardData?.price || 0,
+      messageCardPrice: selectedCardData?.price || 0,
 
       message: message.trim(),
 
-      addonOptionId:
-        selectedAddonData?.id || null,
+      addonOptionId: selectedAddonData?.id || null,
 
-      addon:
-        selectedAddonData?.name || null,
+      addon: selectedAddonData?.name || null,
 
-      addonPrice:
-        selectedAddonData?.price || 0,
+      addonPrice: selectedAddonData?.price || 0,
 
       unitPrice: singleGiftPrice,
 
       total: totalPrice,
     };
 
-    const existingCart =
-      JSON.parse(localStorage.getItem("petaliaCart")) || [];
+    const existingCart = JSON.parse(localStorage.getItem("petaliaCart")) || [];
 
     /* =========================
        UPDATE EXISTING GIFT
@@ -504,9 +498,7 @@ function ProductDetail() {
 
     if (isEditing && editingItem) {
       const updatedCart = existingCart.map((item) => {
-        if (
-          String(item.cartId) === String(editCartId)
-        ) {
+        if (String(item.cartId) === String(editCartId)) {
           return {
             ...gift,
 
@@ -523,9 +515,7 @@ function ProductDetail() {
         JSON.stringify(updatedCart),
       );
 
-      window.dispatchEvent(
-        new Event("petalia-cart-updated"),
-      );
+      window.dispatchEvent(new Event("petalia-cart-updated"));
 
       navigate("/cart");
 
@@ -537,9 +527,7 @@ function ProductDetail() {
     ========================= */
 
     const currentCartCounter =
-      Number(
-        localStorage.getItem("petaliaCartCounter"),
-      ) || 0;
+      Number(localStorage.getItem("petaliaCartCounter")) || 0;
 
     const nextCartCounter = currentCartCounter + 1;
 
@@ -563,9 +551,7 @@ function ProductDetail() {
       JSON.stringify(updatedCart),
     );
 
-    window.dispatchEvent(
-      new Event("petalia-cart-updated"),
-    );
+    window.dispatchEvent(new Event("petalia-cart-updated"));
 
     setAddedToBasket(true);
 
@@ -576,8 +562,12 @@ function ProductDetail() {
      PRODUCT DISPLAY HELPERS
   ========================= */
 
-  const sellerName = "Petalia Local Partner";
+  const actualSeller =
+    sellerShop && String(sellerShop.id) === String(product.shop_id)
+      ? sellerShop
+      : null;
 
+  const sellerName = actualSeller?.name || "Shop unavailable";
   const productTags = [
     ...(product.emotion || []),
 
@@ -621,9 +611,7 @@ function ProductDetail() {
       return (
         item.id !== product.id &&
         (item.category === product.category ||
-          itemEmotions.some((emotion) =>
-            productEmotions.includes(emotion),
-          ))
+          itemEmotions.some((emotion) => productEmotions.includes(emotion)))
       );
     })
     .slice(0, 4);
@@ -679,26 +667,16 @@ function ProductDetail() {
           <div className="product-gallery">
             <div className="product-main-image-wrapper">
               {product.badge && (
-                <span className="detail-product-badge">
-                  {product.badge}
-                </span>
+                <span className="detail-product-badge">{product.badge}</span>
               )}
 
               <button
                 type="button"
-                className={`detail-wishlist-button ${
-                  saved ? "active" : ""
-                }`}
+                className={`detail-wishlist-button ${saved ? "active" : ""}`}
                 onClick={handleWishlist}
-                aria-label={
-                  saved
-                    ? "Remove from wishlist"
-                    : "Add to wishlist"
-                }
+                aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
               >
-                <Heart
-                  fill={saved ? "currentColor" : "none"}
-                />
+                <Heart fill={saved ? "currentColor" : "none"} />
               </button>
 
               <button
@@ -738,10 +716,7 @@ function ProductDetail() {
                   }
                   onClick={() => setSelectedImage(index)}
                 >
-                  <img
-                    src={image}
-                    alt={`${product.name} view ${index + 1}`}
-                  />
+                  <img src={image} alt={`${product.name} view ${index + 1}`} />
                 </button>
               ))}
             </div>
@@ -768,15 +743,21 @@ function ProductDetail() {
 
             <div className="detail-seller">
               <Store />
-
               <span>Sold by</span>
 
-              <strong>{sellerName}</strong>
+              {actualSeller ? (
+                <a
+                  href={`/local-shops/${actualSeller.id}`}
+                  style={{ color: "inherit", fontWeight: 600 }}
+                >
+                  {sellerName}
+                </a>
+              ) : (
+                <strong>{sellerName}</strong>
+              )}
             </div>
 
-            <p className="detail-description">
-              {product.description}
-            </p>
+            <p className="detail-description">{product.description}</p>
 
             <div className="detail-tags">
               {productTags.map((tag) => (
@@ -812,10 +793,7 @@ function ProductDetail() {
 
                 <span>{quantity}</span>
 
-                <button
-                  type="button"
-                  onClick={increaseQuantity}
-                >
+                <button type="button" onClick={increaseQuantity}>
                   <Plus />
                 </button>
               </div>
@@ -830,24 +808,17 @@ function ProductDetail() {
                 onClick={goToCustomization}
               >
                 <Gift />
-
                 Personalize Gift
               </button>
 
               <button
                 type="button"
-                className={`detail-secondary-wishlist ${
-                  saved ? "active" : ""
-                }`}
+                className={`detail-secondary-wishlist ${saved ? "active" : ""}`}
                 onClick={handleWishlist}
               >
-                <Heart
-                  fill={saved ? "currentColor" : "none"}
-                />
+                <Heart fill={saved ? "currentColor" : "none"} />
 
-                {saved
-                  ? "Saved to Wishlist"
-                  : "Add to Wishlist"}
+                {saved ? "Saved to Wishlist" : "Add to Wishlist"}
               </button>
             </div>
           </div>
@@ -857,20 +828,14 @@ function ProductDetail() {
             PERSONALIZE
         ========================= */}
 
-        <section
-          className="personalize-section"
-          ref={customizeSectionRef}
-        >
+        <section className="personalize-section" ref={customizeSectionRef}>
           <div className="section-heading">
-            <span className="section-eyebrow">
-              Make it personal
-            </span>
+            <span className="section-eyebrow">Make it personal</span>
 
             <h2>Personalize Your Gift</h2>
 
             <p>
-              Add thoughtful touches before placing your gift
-              in the basket.
+              Add thoughtful touches before placing your gift in the basket.
             </p>
           </div>
 
@@ -880,20 +845,12 @@ function ProductDetail() {
             {wrappingOptions.length > 0 && (
               <div className="customization-card">
                 <div className="customization-heading">
-                  <span className="customization-number">
-                    01
-                  </span>
+                  <span className="customization-number">01</span>
 
                   <div>
-                    <h3>
-                      {isCandle
-                        ? "Gift Packaging"
-                        : "Wrapping Style"}
-                    </h3>
+                    <h3>{isCandle ? "Gift Packaging" : "Wrapping Style"}</h3>
 
-                    <span className="required-label">
-                      Required
-                    </span>
+                    <span className="required-label">Required</span>
                   </div>
                 </div>
 
@@ -907,9 +864,7 @@ function ProductDetail() {
                           ? "wrapping-option selected"
                           : "wrapping-option"
                       }
-                      onClick={() =>
-                        setSelectedWrapping(option.name)
-                      }
+                      onClick={() => setSelectedWrapping(option.name)}
                     >
                       <div className="wrapping-preview">
                         <Gift />
@@ -918,13 +873,10 @@ function ProductDetail() {
                       <span>{option.name}</span>
 
                       {option.price > 0 && (
-                        <small>
-                          +${option.price.toFixed(2)}
-                        </small>
+                        <small>+${option.price.toFixed(2)}</small>
                       )}
 
-                      {selectedWrapping ===
-                        option.name && (
+                      {selectedWrapping === option.name && (
                         <Check className="selected-check" />
                       )}
                     </button>
@@ -949,17 +901,13 @@ function ProductDetail() {
               <div className="customization-card">
                 <div className="customization-heading">
                   <span className="customization-number">
-                    {wrappingOptions.length > 0
-                      ? "02"
-                      : "01"}
+                    {wrappingOptions.length > 0 ? "02" : "01"}
                   </span>
 
                   <div>
                     <h3>Message Card</h3>
 
-                    <span className="optional-label">
-                      Optional
-                    </span>
+                    <span className="optional-label">Optional</span>
                   </div>
                 </div>
 
@@ -975,9 +923,7 @@ function ProductDetail() {
                       }
                       onClick={() =>
                         setSelectedCard(
-                          selectedCard === card.id
-                            ? null
-                            : card.id,
+                          selectedCard === card.id ? null : card.id,
                         )
                       }
                     >
@@ -986,9 +932,7 @@ function ProductDetail() {
                       <span>{card.name}</span>
 
                       {card.price > 0 && (
-                        <small>
-                          +${card.price.toFixed(2)}
-                        </small>
+                        <small>+${card.price.toFixed(2)}</small>
                       )}
                     </button>
                   ))}
@@ -999,15 +943,11 @@ function ProductDetail() {
                     <textarea
                       maxLength="150"
                       value={message}
-                      onChange={(event) =>
-                        setMessage(event.target.value)
-                      }
+                      onChange={(event) => setMessage(event.target.value)}
                       placeholder="Write your personal message here..."
                     />
 
-                    <span className="message-count">
-                      {message.length}/150
-                    </span>
+                    <span className="message-count">{message.length}/150</span>
                   </div>
                 )}
               </div>
@@ -1019,11 +959,9 @@ function ProductDetail() {
               <div className="customization-card">
                 <div className="customization-heading">
                   <span className="customization-number">
-                    {wrappingOptions.length > 0 &&
-                    cardOptions.length > 0
+                    {wrappingOptions.length > 0 && cardOptions.length > 0
                       ? "03"
-                      : wrappingOptions.length > 0 ||
-                          cardOptions.length > 0
+                      : wrappingOptions.length > 0 || cardOptions.length > 0
                         ? "02"
                         : "01"}
                   </span>
@@ -1031,9 +969,7 @@ function ProductDetail() {
                   <div>
                     <h3>Add Something Extra</h3>
 
-                    <span className="optional-label">
-                      Optional
-                    </span>
+                    <span className="optional-label">Optional</span>
                   </div>
                 </div>
 
@@ -1049,17 +985,12 @@ function ProductDetail() {
                       }
                       onClick={() =>
                         setSelectedAddon(
-                          selectedAddon === addon.id
-                            ? null
-                            : addon.id,
+                          selectedAddon === addon.id ? null : addon.id,
                         )
                       }
                     >
                       {addon.image ? (
-                        <img
-                          src={addon.image}
-                          alt={addon.name}
-                        />
+                        <img src={addon.image} alt={addon.name} />
                       ) : (
                         <div className="addon-image-placeholder">
                           <Gift />
@@ -1069,9 +1000,7 @@ function ProductDetail() {
                       <div>
                         <strong>{addon.name}</strong>
 
-                        <span>
-                          +${addon.price.toFixed(2)}
-                        </span>
+                        <span>+${addon.price.toFixed(2)}</span>
                       </div>
 
                       {selectedAddon === addon.id && (
@@ -1105,28 +1034,21 @@ function ProductDetail() {
           <div className="gift-summary-heading">
             <h2>Your Gift So Far</h2>
 
-            <span>
-              Review before adding it to your basket
-            </span>
+            <span>Review before adding it to your basket</span>
           </div>
 
           <div className="gift-summary-grid">
             {/* PRODUCT */}
 
             <div className="summary-item">
-              <img
-                src={product.image}
-                alt={product.name}
-              />
+              <img src={product.image} alt={product.name} />
 
               <div>
                 <span>Your Gift</span>
 
                 <strong>{product.name}</strong>
 
-                <small>
-                  ${Number(product.price).toFixed(2)}
-                </small>
+                <small>${Number(product.price).toFixed(2)}</small>
               </div>
             </div>
 
@@ -1137,16 +1059,9 @@ function ProductDetail() {
                 <Gift />
 
                 <div>
-                  <span>
-                    {isCandle
-                      ? "Gift Packaging"
-                      : "Wrapping"}
-                  </span>
+                  <span>{isCandle ? "Gift Packaging" : "Wrapping"}</span>
 
-                  <strong>
-                    {selectedWrapping ||
-                      "No packaging selected"}
-                  </strong>
+                  <strong>{selectedWrapping || "No packaging selected"}</strong>
 
                   <small>
                     {wrappingPrice > 0
@@ -1168,23 +1083,17 @@ function ProductDetail() {
 
                   <strong>
                     {selectedCard
-                      ? cardOptions.find(
-                          (card) =>
-                            card.id === selectedCard,
-                        )?.name
+                      ? cardOptions.find((card) => card.id === selectedCard)
+                          ?.name
                       : "No card selected"}
                   </strong>
 
                   {selectedCard && cardPrice > 0 && (
-                    <small>
-                      +${cardPrice.toFixed(2)}
-                    </small>
+                    <small>+${cardPrice.toFixed(2)}</small>
                   )}
 
                   {selectedCard && message && (
-                    <small className="summary-message">
-                      “{message}”
-                    </small>
+                    <small className="summary-message">“{message}”</small>
                   )}
                 </div>
               </div>
@@ -1201,17 +1110,13 @@ function ProductDetail() {
 
                   <strong>
                     {selectedAddon
-                      ? addonOptions.find(
-                          (addon) =>
-                            addon.id === selectedAddon,
-                        )?.name
+                      ? addonOptions.find((addon) => addon.id === selectedAddon)
+                          ?.name
                       : "No add-on"}
                   </strong>
 
                   {selectedAddon && addonPrice > 0 && (
-                    <small>
-                      +${addonPrice.toFixed(2)}
-                    </small>
+                    <small>+${addonPrice.toFixed(2)}</small>
                   )}
                 </div>
               </div>
@@ -1234,9 +1139,7 @@ function ProductDetail() {
             <div className="summary-total">
               <span>Estimated Total</span>
 
-              <strong>
-                ${totalPrice.toFixed(2)}
-              </strong>
+              <strong>${totalPrice.toFixed(2)}</strong>
             </div>
 
             {/* ADD / UPDATE */}
@@ -1248,16 +1151,13 @@ function ProductDetail() {
             >
               <Gift />
 
-              {isEditing
-                ? "Update Gift"
-                : "Add Gift to Basket"}
+              {isEditing ? "Update Gift" : "Add Gift to Basket"}
             </button>
           </div>
 
           {addedToBasket && (
             <div className="basket-success-message">
               <Check />
-
               Gift added to your basket.
             </div>
           )}
@@ -1271,9 +1171,7 @@ function ProductDetail() {
           <div className="small-section-heading">
             <h2>Why This Gift?</h2>
 
-            <p>
-              A thoughtful choice for meaningful moments.
-            </p>
+            <p>A thoughtful choice for meaningful moments.</p>
           </div>
 
           <div className="why-gift-grid">
@@ -1285,10 +1183,7 @@ function ProductDetail() {
               <div>
                 <h3>Meaningful Choice</h3>
 
-                <p>
-                  Selected to help express care,
-                  appreciation, and emotion.
-                </p>
+                <p>Selected to help express care, appreciation, and emotion.</p>
               </div>
             </div>
 
@@ -1300,10 +1195,7 @@ function ProductDetail() {
               <div>
                 <h3>Thoughtfully Prepared</h3>
 
-                <p>
-                  Prepared with care by a Petalia local
-                  partner.
-                </p>
+                <p>Prepared with care by a Petalia local partner.</p>
               </div>
             </div>
 
@@ -1315,10 +1207,7 @@ function ProductDetail() {
               <div>
                 <h3>Personal Touch</h3>
 
-                <p>
-                  Customize the gift to make the moment feel
-                  more personal.
-                </p>
+                <p>Customize the gift to make the moment feel more personal.</p>
               </div>
             </div>
           </div>
@@ -1341,8 +1230,8 @@ function ProductDetail() {
                 <h3>What Is Included</h3>
 
                 <p>
-                  Your gift and any customization options you
-                  choose for this product.
+                  Your gift and any customization options you choose for this
+                  product.
                 </p>
               </div>
             </div>
@@ -1354,8 +1243,8 @@ function ProductDetail() {
                 <h3>Delivery Information</h3>
 
                 <p>
-                  Delivery area, date, and time will be
-                  selected during checkout.
+                  Delivery area, date, and time will be selected during
+                  checkout.
                 </p>
               </div>
             </div>
@@ -1366,10 +1255,7 @@ function ProductDetail() {
               <div>
                 <h3>Quality & Care</h3>
 
-                <p>
-                  Prepared carefully by a local Petalia
-                  partner seller.
-                </p>
+                <p>Prepared carefully by a local Petalia partner seller.</p>
               </div>
             </div>
           </div>
@@ -1390,17 +1276,21 @@ function ProductDetail() {
             <h2>{sellerName}</h2>
 
             <p>
-              Prepared by a Petalia partner seller with care
-              for every order.
+              Prepared by a Petalia partner seller with care for every order.
             </p>
           </div>
 
           <button
             type="button"
             className="view-shop-button"
-            onClick={() => navigate("/local-shops")}
+            disabled={!actualSeller}
+            onClick={() => {
+              if (actualSeller) {
+                navigate(`/local-shops/${actualSeller.id}`);
+              }
+            }}
           >
-            View Shops
+            View Shop
           </button>
         </section>
 
@@ -1414,9 +1304,7 @@ function ProductDetail() {
               <div>
                 <span>You may also like</span>
 
-                <h2>
-                  More Gifts with the Same Feeling
-                </h2>
+                <h2>More Gifts with the Same Feeling</h2>
               </div>
             </div>
 

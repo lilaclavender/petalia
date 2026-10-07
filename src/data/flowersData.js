@@ -1,7 +1,6 @@
+import catalogImages from "./catalogProductImages";
+
 const flowersData = {
-  // =====================================================
-  // 1. ROSE
-  // =====================================================
   rose: {
     id: "rose",
     name: "Rose",
@@ -9,10 +8,8 @@ const flowersData = {
     title: "More than one way to say love.",
     description:
       "Roses can carry different messages depending on their color, making them a meaningful choice for many different moments.",
-    image: null,
-
+    image: catalogImages.redRose,
     feelings: ["Love", "Gratitude", "Friendship", "Affection"],
-
     colors: [
       {
         id: "red",
@@ -23,7 +20,7 @@ const flowersData = {
           "Red roses represent romantic love, passion, and desire.",
         expresses: ["Love", "Passion", "Desire"],
         occasions: ["Valentine's Day", "Anniversary"],
-        image: null,
+        image: catalogImages.redRose,
       },
       {
         id: "pink",
@@ -34,7 +31,7 @@ const flowersData = {
           "Pink roses represent appreciation, affection, and admiration.",
         expresses: ["Gratitude", "Admiration", "Affection"],
         occasions: ["Birthday", "Thank You"],
-        image: null,
+        image: catalogImages.pinkRose,
       },
       {
         id: "white",
@@ -61,9 +58,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 2. TULIP
-  // =====================================================
   tulip: {
     id: "tulip",
     name: "Tulip",
@@ -71,10 +65,8 @@ const flowersData = {
     title: "Perfect Love & New Beginnings",
     description:
       "Tulips represent love, care, happiness, and new beginnings, making them suitable for both romantic and cheerful moments.",
-    image: null,
-
+    image: catalogImages.pinkTulip,
     feelings: ["Love", "Care", "Happiness", "New Beginnings"],
-
     colors: [
       {
         id: "red",
@@ -96,7 +88,7 @@ const flowersData = {
           "Pink tulips represent affection, care, and gentle appreciation.",
         expresses: ["Care", "Affection", "Gratitude"],
         occasions: ["Birthday", "Mother's Day", "Just Because"],
-        image: null,
+        image: catalogImages.pinkTulip,
       },
       {
         id: "white",
@@ -123,9 +115,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 3. LILY
-  // =====================================================
   lily: {
     id: "lily",
     name: "Lily",
@@ -133,10 +122,8 @@ const flowersData = {
     title: "Purity, Comfort & New Beginnings",
     description:
       "Lilies are associated with purity, care, comfort, and renewal, making them meaningful for both joyful and thoughtful occasions.",
-    image: null,
-
+    image: catalogImages.pinkLily,
     feelings: ["Purity", "Comfort", "Care", "New Beginnings"],
-
     colors: [
       {
         id: "white",
@@ -158,7 +145,7 @@ const flowersData = {
           "Pink lilies represent admiration, compassion, and gentle affection.",
         expresses: ["Love", "Admiration", "Compassion"],
         occasions: ["Birthday", "Mother's Day"],
-        image: null,
+        image: catalogImages.pinkLily,
       },
       {
         id: "orange",
@@ -185,9 +172,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 4. ORCHID
-  // =====================================================
   orchid: {
     id: "orchid",
     name: "Orchid",
@@ -195,10 +179,8 @@ const flowersData = {
     title: "Beauty, Elegance & Admiration",
     description:
       "Orchids represent beauty, elegance, admiration, and meaningful affection.",
-    image: null,
-
+    image: catalogImages.purpleOrchid,
     feelings: ["Admiration", "Love", "Gratitude", "Elegance"],
-
     colors: [
       {
         id: "white",
@@ -220,7 +202,7 @@ const flowersData = {
           "Purple orchids symbolize admiration, dignity, respect, and luxury.",
         expresses: ["Admiration", "Respect", "Luxury"],
         occasions: ["Graduation", "Congratulations", "Milestone"],
-        image: null,
+        image: catalogImages.purpleOrchid,
       },
       {
         id: "pink",
@@ -247,9 +229,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 5. SUNFLOWER
-  // =====================================================
   sunflower: {
     id: "sunflower",
     name: "Sunflower",
@@ -257,10 +236,8 @@ const flowersData = {
     title: "Happiness, Loyalty & Positive Energy",
     description:
       "Sunflowers represent happiness, loyalty, warmth, and optimism. Their bright appearance makes them perfect for uplifting gifts.",
-    image: null,
-
+    image: catalogImages.sunflower,
     feelings: ["Happiness", "Joy", "Encouragement", "Friendship"],
-
     colors: [
       {
         id: "yellow",
@@ -276,14 +253,11 @@ const flowersData = {
           "Celebration",
           "Just Because",
         ],
-        image: null,
+        image: catalogImages.sunflower,
       },
     ],
   },
 
-  // =====================================================
-  // 6. GERBERA DAISY
-  // =====================================================
   "gerbera-daisy": {
     id: "gerbera-daisy",
     name: "Gerbera Daisy",
@@ -291,10 +265,8 @@ const flowersData = {
     title: "Cheer, Happiness & Celebration",
     description:
       "Gerbera daisies are bright and cheerful flowers associated with happiness, friendship, appreciation, and celebration.",
-    image: null,
-
+    image: catalogImages.gerbera,
     feelings: ["Happiness", "Celebration", "Friendship", "Joy"],
-
     colors: [
       {
         id: "pink",
@@ -343,9 +315,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 7. BABY'S BREATH
-  // =====================================================
   "babys-breath": {
     id: "babys-breath",
     name: "Baby's Breath",
@@ -354,9 +323,7 @@ const flowersData = {
     description:
       "Baby's Breath is known for its delicate beauty and represents purity, gentle affection, and lasting love.",
     image: null,
-
     feelings: ["Grace", "Purity", "Love", "Appreciation"],
-
     colors: [
       {
         id: "white",
@@ -383,9 +350,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 8. JASMINE
-  // =====================================================
   jasmine: {
     id: "jasmine",
     name: "Jasmine",
@@ -393,10 +357,8 @@ const flowersData = {
     title: "Purity, Grace & Calm",
     description:
       "Jasmine is a delicate and fragrant flower associated with purity, grace, love, calmness, and hope.",
-    image: null,
-
+    image: catalogImages.jasmine,
     feelings: ["Calm", "Love", "Grace", "Hope"],
-
     colors: [
       {
         id: "white",
@@ -417,9 +379,6 @@ const flowersData = {
     ],
   },
 
-  // =====================================================
-  // 9. LOTUS
-  // =====================================================
   lotus: {
     id: "lotus",
     name: "Lotus",
@@ -427,10 +386,8 @@ const flowersData = {
     title: "Purity, Growth & Inner Peace",
     description:
       "The lotus symbolizes purity, personal growth, renewal, persistence, and inner peace.",
-    image: null,
-
+    image: catalogImages.lotus,
     feelings: ["Peace", "Self-Care", "Growth", "Hope"],
-
     colors: [
       {
         id: "pink",

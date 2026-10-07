@@ -1,872 +1,411 @@
+/* Petalia header */
 .site-header {
   width: 100%;
-  background-color: #ffffff;
+  position: relative;
+  background: #ffffff;
   border-bottom: 1px solid #eee7f1;
+  color: #6e536f;
 }
 
-/* =========================
-   HEADER LAYOUT
-========================= */
+.site-header *,
+.site-header *::before,
+.site-header *::after {
+  box-sizing: border-box;
+}
 
-.header-container {
-  width: calc(100% - 100px);
-  max-width: 1800px;
+.site-header .header-container {
+  width: calc(100% - 64px);
+  max-width: 1600px;
   min-height: 100px;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 28px;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-.brand {
-  text-decoration: none;
+/* Logo */
+.site-header .brand {
   flex-shrink: 0;
-
-  /* Space between logo/tagline and Home */
-  margin-right: 250px;
-}
-
-.brand h1 {
   margin: 0;
-
-  font-family: "Playfair Display", serif;
-  font-size: 46px;
-  font-style: italic;
-  font-weight: 600;
-
-  color: #6e536f;
-  line-height: 1;
+  text-decoration: none;
 }
 
-.brand p {
-  margin: 6px 0 0;
+.site-header .brand img {
+  display: block;
+  width: 132px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
 
+.site-header .brand p {
+  margin: 5px 0 0;
   font-family: "Inter", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-
+  font-size: 11px;
+  line-height: 1.5;
   color: #a36f7e;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
-
-.main-nav {
+/* Navigation */
+.site-header .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
-
-  white-space: nowrap;
+  gap: clamp(16px, 1.8vw, 30px);
+  min-width: 0;
 }
 
-.main-nav a,
-.discover-link {
-  position: relative;
-
+.site-header .main-nav a {
+  flex-shrink: 0;
+  padding: 12px 0;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-
-  color: #6e536f;
+  line-height: 1.4;
+  white-space: nowrap;
   text-decoration: none;
-
-  cursor: pointer;
-
+  color: #6e536f;
   transition: color 0.2s ease;
 }
 
-.main-nav a:hover,
-.discover-link:hover {
+.site-header .main-nav a:hover,
+.site-header .main-nav a.active {
   color: #d35b8c;
 }
 
-/* Active page */
-
-.main-nav a.active {
-  color: #d35b8c;
-}
-
-/* =========================
-   RIGHT SIDE
-========================= */
-
-.header-actions {
+/* Search and account actions */
+.site-header .header-actions {
   display: flex;
   align-items: center;
-  gap: 30px;
-
-  /* Push actions to right side */
-  margin-left: auto;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
 }
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-box {
-  width: 300px;
-  height: 40px;
-
+.site-header .search-box {
   display: flex;
   align-items: center;
+  width: clamp(180px, 19vw, 280px);
+  height: 44px;
+  padding: 0 8px 0 15px;
+  margin: 0;
 
-  padding: 0 14px;
-
-  border: 1px solid #d35b8c;
-  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(211, 91, 140, 0.6);
+  border-radius: 999px;
 }
 
-.search-box input {
+.site-header .search-box:focus-within {
+  border-color: #d35b8c;
+  box-shadow: 0 0 0 3px rgba(211, 91, 140, 0.1);
+}
+
+.site-header .search-box input {
+  flex: 1;
   width: 100%;
-
+  min-width: 0;
+  padding: 0;
   border: none;
   outline: none;
   background: transparent;
 
   font-family: "Inter", sans-serif;
-  font-size: 13px;
-
+  font-size: 14px;
   color: #6e536f;
 }
 
-.search-box input::placeholder {
-  color: #b8aeb7;
+.site-header .search-box input::placeholder {
+  color: #a993a7;
 }
 
-.search-icon {
-  width: 18px;
-  height: 18px;
-  color: #d35b8c;
+.site-header .search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  cursor: pointer;
-}
 
-/* =========================
-   WISHLIST / CART
-========================= */
-
-.header-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #6e536f;
-  text-decoration: none;
-}
-
-.header-icon svg {
-  width: 23px;
-  height: 23px;
-  stroke-width: 1.7;
-}
-
-/* =========================
-   ACCOUNT
-========================= */
-
-.account-icon {
-  width: 40px;
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
   border-radius: 50%;
-  background-color: #eee7f1;
-  color: #6e536f;
-
-  text-decoration: none;
-}
-
-.account-icon svg {
-  width: 22px;
-  height: 22px;
-  stroke-width: 1.7;
-}
-
-.header-icon {
-  position: relative;
-}
-
-.header-count {
-  position: absolute;
-
-  top: -6px;
-  right: -7px;
-
-  min-width: 16px;
-  height: 16px;
-
-  padding: 0 4px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-sizing: border-box;
-
-  border: 2px solid #fffaf7;
-  border-radius: 999px;
-
-  background: #d35b8c;
-  color: #ffffff;
-
-  font-family: "Inter", sans-serif;
-  font-size: 8px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.search-submit {
-  padding: 0;
-  border: none;
   background: transparent;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: inherit;
-  cursor: pointer;
-}
-
-/* =========================
-   ACCOUNT MENU
-========================= */
-
-.account-menu {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.account-menu .account-icon {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-/* Dropdown */
-
-.account-dropdown {
-  position: absolute;
-  top: calc(100% + 14px);
-  right: 0;
-
-  width: 220px;
-  padding: 14px;
-
-  background: #fffaf7;
-  border: 1px solid rgba(110, 83, 111, 0.14);
-  border-radius: 14px;
-
-  box-shadow: 0 10px 30px rgba(110, 83, 111, 0.14);
-
-  z-index: 1000;
-}
-
-/* User information */
-
-.account-dropdown-user {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  padding: 4px 6px 12px;
-
-  border-bottom: 1px solid rgba(110, 83, 111, 0.12);
-}
-
-.account-dropdown-user span {
-  font-size: 11px;
-  color: #a36f7e;
-}
-
-.account-dropdown-user strong {
-  font-size: 13px;
-  font-weight: 600;
-  color: #6e536f;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Sign Out */
-
-.account-signout {
-  width: 100%;
-
-  margin-top: 8px;
-  padding: 9px 8px;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  border: none;
-  border-radius: 9px;
-
-  background: transparent;
-  color: #6e536f;
-
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.account-signout:hover {
-  background: #f8eef1;
   color: #d35b8c;
+  cursor: pointer;
 }
 
-/* =========================
-   ACTIVE HEADER ICONS
-========================= */
+.site-header .search-icon {
+  width: 19px;
+  height: 19px;
+}
 
-.header-icon,
-.account-icon {
+/* Wishlist, basket and account */
+.site-header .header-icon,
+.site-header .account-menu .account-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #6e536f;
+  text-decoration: none;
+  cursor: pointer;
+
   transition:
     color 0.2s ease,
     background-color 0.2s ease;
 }
 
-.header-icon:hover {
-  color: #d35b8c;
+.site-header .header-icon svg,
+.site-header .account-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.7;
 }
 
-/* Wishlist / Cart active page */
-
-.header-icon-active {
-  color: #d35b8c;
-}
-
-/* Account active page */
-
-.account-menu .account-icon.account-icon-active {
+.site-header .header-icon:hover,
+.site-header .account-icon:hover,
+.site-header .header-icon-active,
+.site-header .account-menu .account-icon.account-icon-active {
   background: #f8eef1;
   color: #d35b8c;
 }
 
-/* =========================
-   ACCOUNT DROPDOWN LINK
-========================= */
-
-.account-dropdown-link {
-  width: 100%;
-  margin-top: 8px;
-  padding: 9px 8px;
+.site-header .header-count {
+  position: absolute;
+  top: 2px;
+  right: 0;
 
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 
-  box-sizing: border-box;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #d35b8c;
+  color: #ffffff;
 
-  border-radius: 9px;
-
-  color: #6e536f;
-  text-decoration: none;
-
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.account-dropdown-link:hover {
+/* Account dropdown */
+.site-header .account-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header .account-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+
+  width: 250px;
+  max-width: calc(100vw - 32px);
+  padding: 14px;
+  background: #fffaf7;
+  border: 1px solid rgba(110, 83, 111, 0.14);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(110, 83, 111, 0.14);
+}
+
+.site-header .account-dropdown-user {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px 6px 12px;
+  border-bottom: 1px solid rgba(110, 83, 111, 0.12);
+}
+
+.site-header .account-dropdown-user span {
+  font-size: 12px;
+  color: #a36f7e;
+}
+
+.site-header .account-dropdown-user strong {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #6e536f;
+  overflow-wrap: anywhere;
+}
+
+.site-header .account-dropdown-link,
+.site-header .account-signout {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: 100%;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 14px;
+  color: #6e536f;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.site-header .account-dropdown-link:hover,
+.site-header .account-signout:hover {
   background: #f8eef1;
   color: #d35b8c;
 }
 
-/* =========================================================
-   RESPONSIVE HEADER — TABLET
-========================================================= */
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 2px solid #d35b8c;
+  outline-offset: 3px;
+}
 
-/* =========================================================
-   RESPONSIVE HEADER — TABLET / IPAD
-========================================================= */
+/* Small laptops and iPads:
+   logo/actions on the first row, navigation below */
+@media (max-width: 1180px) {
+  .site-header .header-container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px 20px;
 
-@media (max-width: 980px) {
-  .site-header {
+    width: calc(100% - 40px);
+    min-height: 0;
+    padding: 16px 0 8px;
+  }
+
+  .site-header .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .site-header .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    gap: 8px;
+  }
+
+  .site-header .search-box {
+    width: clamp(180px, 28vw, 280px);
+  }
+
+  .site-header .main-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: 28px;
     width: 100%;
-    max-width: 100%;
-
-    background: #ffffff;
-
-    overflow: visible;
   }
 
-  .header-container {
-    width: calc(100% - 32px);
-    max-width: 100%;
-
-    min-height: 78px;
-
-    margin: 0 auto;
-
+  .site-header .main-nav a {
+    min-height: 44px;
     display: flex;
     align-items: center;
-
-    gap: 16px;
-
-    box-sizing: border-box;
-  }
-
-  /* LOGO */
-
-  .brand {
-    margin-right: 0;
-
-    flex-shrink: 0;
-  }
-
-  .brand h1 {
-    font-size: 32px;
-  }
-
-  .brand p {
-    margin-top: 4px;
-
-    font-size: 8px;
-  }
-
-  /* DESKTOP NAV */
-
-  .main-nav {
-    display: none;
-  }
-
-  /* RIGHT SIDE */
-
-  .header-actions {
-    min-width: 0;
-
-    margin-left: auto;
-
-    display: flex;
-    align-items: center;
-
-    gap: 13px;
-
-    flex-shrink: 1;
-  }
-
-  /* SEARCH */
-
-  .search-box {
-    width: clamp(150px, 28vw, 210px);
-    height: 36px;
-
-    padding: 0 11px;
-
-    box-sizing: border-box;
-
-    flex-shrink: 1;
-  }
-
-  .search-box input {
-    min-width: 0;
-
-    font-size: 10px;
-  }
-
-  .search-icon {
-    width: 15px;
-    height: 15px;
-  }
-
-  /* WISHLIST + CART */
-
-  .header-icon {
-    flex-shrink: 0;
-  }
-
-  .header-icon svg {
-    width: 19px;
-    height: 19px;
-  }
-
-  /* ACCOUNT */
-
-  .account-menu {
-    flex-shrink: 0;
-  }
-
-  .account-icon {
-    width: 31px;
-    height: 31px;
-
-    flex-shrink: 0;
-  }
-
-  .account-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  /* DROPDOWN */
-
-  .account-dropdown {
-    right: 0;
   }
 }
 
-/* =========================================================
-   RESPONSIVE HEADER — PHONE
-========================================================= */
-
+/* Phones:
+   logo/icons, full-width search, then navigation */
 @media (max-width: 640px) {
-  .header-container {
+  .site-header .header-container {
     width: calc(100% - 28px);
-    min-height: 72px;
-
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) repeat(3, 44px);
+    gap: 10px 3px;
+    padding: 12px 0 6px;
   }
 
-  .brand {
-    margin-right: 0;
-  }
-
-  .brand h1 {
-    font-size: 29px;
-  }
-
-  .brand p {
-    display: none;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .header-actions {
-    margin-left: auto;
-    gap: 14px;
-  }
-
-  /* Search takes too much room on phones */
-  .search-box {
-    display: none;
-  }
-
-  .header-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .account-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .account-icon svg {
-    width: 19px;
-    height: 19px;
-  }
-
-  .header-count {
-    top: -5px;
-    right: -6px;
-  }
-
-  .account-dropdown {
-    position: fixed;
-
-    top: 78px;
-    right: 14px;
-
-    width: min(220px, calc(100vw - 28px));
-
-    box-sizing: border-box;
-  }
-}
-
-/* =========================================================
-   PETALIA HEADER — RESPONSIVE NAVIGATION FIX
-========================================================= */
-
-/* =========================
-   IPAD / TABLET
-========================= */
-
-@media (min-width: 641px) and (max-width: 980px) {
-  .header-container {
-    width: calc(100% - 32px);
-    min-height: 74px;
-    gap: 14px;
-  }
-
-  .brand {
-    margin-right: 0;
-    flex-shrink: 0;
-  }
-
-  .brand h1 {
-    font-size: 29px;
-  }
-
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 13px;
+  .site-header .brand {
+    grid-column: 1;
+    grid-row: 1;
     min-width: 0;
-    margin-left: auto;
   }
 
-  .main-nav a {
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-size: 9px;
+  .site-header .brand img {
+    width: 110px;
   }
 
-  .header-actions {
-    margin-left: 4px;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-
-  /* Search takes too much room when navigation is visible */
-  .search-box {
+  .site-header .brand p {
     display: none;
   }
 
-  .header-icon svg {
-    width: 18px;
-    height: 18px;
+  .site-header .header-actions {
+    display: contents;
   }
 
-  .account-icon {
-    width: 30px;
-    height: 30px;
+  .site-header .header-actions > a[href="/wishlist"] {
+    grid-column: 2;
+    grid-row: 1;
   }
-}
 
-/* =========================
-   PHONE
-========================= */
+  .site-header .header-actions > a[href="/cart"] {
+    grid-column: 3;
+    grid-row: 1;
+  }
 
-@media (max-width: 640px) {
-  .site-header {
+  .site-header .account-menu {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .site-header .search-box {
+    grid-column: 1 / -1;
+    grid-row: 2;
     width: 100%;
-    max-width: 100%;
-    overflow: visible;
+    height: 44px;
   }
 
-  .header-container {
-    width: calc(100% - 28px);
-    min-height: 62px;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    box-sizing: border-box;
+  .site-header .search-box input {
+    font-size: 16px;
   }
 
-  .brand {
-    margin-right: 0;
-  }
+  .site-header .main-nav {
+    grid-column: 1 / -1;
+    grid-row: 3;
 
-  .brand h1 {
-    font-size: 26px;
-  }
-
-  .brand p {
-    display: none;
-  }
-
-  .header-actions {
-    margin-left: auto;
-    gap: 11px;
-  }
-
-  .search-box {
-    display: none;
-  }
-
-  /*
-     Navigation becomes a second row.
-     Users can swipe horizontally if needed.
-  */
-  .main-nav {
-    position: absolute;
-
-    top: 62px;
-    left: 0;
-
-    width: 100%;
-    height: 40px;
-
-    padding: 0 14px;
-
-    display: flex;
-    align-items: center;
-    gap: 22px;
-
+    justify-content: flex-start;
+    gap: 20px;
     overflow-x: auto;
-    overflow-y: hidden;
-
-    background: #ffffff;
-    border-top: 1px solid rgba(110, 83, 111, 0.06);
-    border-bottom: 1px solid rgba(110, 83, 111, 0.08);
-
-    box-sizing: border-box;
-
-    scrollbar-width: none;
-    z-index: 100;
+    padding: 0 2px 3px;
+    scrollbar-width: thin;
+    scrollbar-color: #e7d4e2 transparent;
   }
 
-  .main-nav::-webkit-scrollbar {
-    display: none;
+  .site-header .main-nav a {
+    font-size: 13px;
+    min-height: 44px;
   }
 
-  .main-nav a {
-    flex: 0 0 auto;
-
-    white-space: nowrap;
-
-    font-size: 10px;
-    color: #6e536f;
-  }
-
-  .main-nav a.active {
-    color: #d35b8c;
-  }
-
-  /*
-     Navigation is 40px tall,
-     so give the page room below the header.
-  */
-  .site-header {
-    margin-bottom: 40px;
-  }
-
-  .header-icon {
-    flex-shrink: 0;
-  }
-
-  .header-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .account-icon {
-    width: 29px;
-    height: 29px;
+  .site-header .account-dropdown {
+    top: calc(100% + 8px);
+    right: 0;
+    width: 240px;
   }
 }
 
-/* =========================
-   EXTRA SMALL PHONE
-========================= */
-
-@media (max-width: 420px) {
-  .header-container {
-    width: calc(100% - 24px);
-  }
-
-  .brand h1 {
-    font-size: 24px;
-  }
-
-  .main-nav {
-    padding: 0 12px;
-    gap: 19px;
-  }
-
-  .main-nav a {
-    font-size: 9px;
-  }
-}
-
-/* =========================================================
-   PHONE HEADER — SHOW SEARCH BAR
-========================================================= */
-
-@media (max-width: 640px) {
-  /* Show search again */
-  .search-box {
-    display: flex !important;
-
-    position: absolute;
-    top: 102px;
-    left: 14px;
-
-    width: calc(100% - 28px);
-    height: 36px;
-
-    margin: 0;
-    box-sizing: border-box;
-
-    background: #fff;
-    border: 1px solid rgba(211, 91, 140, 0.45);
-    border-radius: 999px;
-
-    z-index: 100;
-  }
-
-  .search-box input {
-    width: 100%;
-    min-width: 0;
-
-    padding: 0 38px 0 15px;
-
-    border: none;
-    outline: none;
-    background: transparent;
-
-    font-size: 10px;
-    color: #6e536f;
-  }
-
-  .search-box input::placeholder {
-    color: #b9a7b7;
-  }
-
-  .search-box svg {
-    position: absolute;
-    right: 13px;
-    top: 50%;
-
-    width: 15px;
-    height: 15px;
-
-    transform: translateY(-50%);
-  }
-
-  /*
-     We already added 40px for navigation.
-     Add another 48px for search.
-  */
-  .site-header {
-    margin-bottom: 88px;
-  }
-}
-
-@media (max-width: 420px) {
-  .search-box {
-    left: 12px;
-    width: calc(100% - 24px);
+@media (prefers-reduced-motion: reduce) {
+  .site-header *,
+  .site-header *::before,
+  .site-header *::after {
+    transition: none;
   }
 }

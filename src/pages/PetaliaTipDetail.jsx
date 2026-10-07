@@ -18,6 +18,8 @@ import tipsCandleGuide from "../assets/tips-candle-guide.png";
 import tipsGiftGiving from "../assets/tips-gift-giving.png";
 import tipsFeatured from "../assets/tips-featured.png";
 import FlowerMeaning from "../assets/flower-meaning.png";
+import catalogImages from "../data/catalogProductImages";
+import flowersData from "../data/flowersData";
 
 function PetaliaTipDetail() {
   const navigate = useNavigate();
@@ -223,7 +225,28 @@ function PetaliaTipDetail() {
     },
   ];
 
-  const visibleFlowers = showAllFlowers ? flowers : flowers.slice(0, 8);
+  const flowerPhotos = {
+    rose: catalogImages.pinkRose,
+    tulip: catalogImages.pinkTulip,
+    lily: catalogImages.pinkLily,
+    sunflower: catalogImages.sunflower,
+    orchid: catalogImages.purpleOrchid,
+    "gerbera-daisy": catalogImages.gerbera,
+    "babys-breath": catalogImages.roseBreath,
+    jasmine: catalogImages.jasmine,
+    lotus: catalogImages.lotus,
+  };
+
+  const availableFlowers = flowers
+    .filter((flower) => flowerPhotos[flower.id] && flowersData[flower.id])
+    .map((flower) => ({
+      ...flower,
+      image: flowerPhotos[flower.id],
+    }));
+
+  const visibleFlowers = showAllFlowers
+    ? availableFlowers
+    : availableFlowers.slice(0, 8);
 
   // =====================================================
   // FEATURED ARTICLE DATA
@@ -1106,7 +1129,6 @@ function PetaliaTipDetail() {
 
           <div className="tip-flower-grid">
             {visibleFlowers.map((flower) => {
-              const Icon = flower.icon;
 
               return (
                 <article
@@ -1126,9 +1148,16 @@ function PetaliaTipDetail() {
                   }}
                 >
                   <div className="tip-flower-card-image">
-                    <div className="tip-flower-image-placeholder">
-                      <Icon size={30} strokeWidth={1.4} />
-                    </div>
+                    <img
+                      src={flower.image}
+                      alt={
+                        flower.id === "babys-breath"
+                          ? "Pink roses arranged with white baby's breath"
+                          : `${flower.name} featured in a bouquet or arrangement`
+                      }
+                      className="tip-flower-photo"
+                      loading="lazy"
+                    />
 
                     <div className="tip-flower-card-overlay" />
 
@@ -1168,7 +1197,7 @@ function PetaliaTipDetail() {
             </button>
 
             <p className="tip-flower-count">
-              Showing {visibleFlowers.length} of {flowers.length} flowers
+              Showing {visibleFlowers.length} of {availableFlowers.length} flowers
             </p>
           </div>
         </section>

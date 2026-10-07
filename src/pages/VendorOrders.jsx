@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
@@ -35,10 +34,8 @@ function VendorOrders() {
     } else {
       setOrders((previousOrders) =>
         previousOrders.map((order) =>
-          order.id === data.id
-            ? { ...order, status: data.status }
-            : order
-        )
+          order.id === data.id ? { ...order, status: data.status } : order,
+        ),
       );
     }
 
@@ -65,7 +62,7 @@ function VendorOrders() {
 
       if (shopError || !shopData) {
         setErrorMessage(
-          shopError?.message || "No shop was found for this account."
+          shopError?.message || "No shop was found for this account.",
         );
         setLoading(false);
         return;
@@ -114,13 +111,9 @@ function VendorOrders() {
           <section className="vendor-orders-section">
             <div className="vendor-orders-heading">
               <div>
-                <span className="vendor-orders-eyebrow">
-                  SHOP MANAGEMENT
-                </span>
+                <span className="vendor-orders-eyebrow">SHOP MANAGEMENT</span>
                 <h1>My Orders</h1>
-                <p>
-                  View customer orders and their payment status.
-                </p>
+                <p>View customer orders and their payment status.</p>
               </div>
 
               <span className="vendor-orders-count">
@@ -135,26 +128,19 @@ function VendorOrders() {
             ) : (
               <div className="vendor-orders-list">
                 {orders.map((order) => {
-                  const items = Array.isArray(order.items)
-                    ? order.items
-                    : [];
+                  const items = Array.isArray(order.items) ? order.items : [];
 
                   const isExpanded = expandedOrder === order.id;
 
                   return (
-                    <article
-                      className="vendor-order-card"
-                      key={order.id}
-                    >
+                    <article className="vendor-order-card" key={order.id}>
                       <div className="vendor-order-top">
                         <div>
                           <span className="vendor-order-reference">
                             #{order.order_reference || order.id}
                           </span>
                           <p>
-                            {new Date(
-                              order.created_at
-                            ).toLocaleDateString()}
+                            {new Date(order.created_at).toLocaleDateString()}
                           </p>
                         </div>
 
@@ -164,8 +150,13 @@ function VendorOrders() {
                             value={order.status}
                             disabled={
                               updatingOrder === order.id ||
-                              order.status === "completed" ||
-                              order.status === "cancelled"
+                              order.payment_status !== "paid" ||
+                              [
+                                "completed",
+                                "cancelled",
+                                "canceled",
+                                "refunded",
+                              ].includes(order.status)
                             }
                             onChange={(e) =>
                               updateOrderStatus(order.id, e.target.value)
@@ -187,18 +178,15 @@ function VendorOrders() {
                       <div className="vendor-order-details">
                         <div>
                           <small>Customer</small>
-                          <strong>
-                            {order.customer_name || "Customer"}
-                          </strong>
+                          <strong>{order.customer_name || "Customer"}</strong>
                         </div>
 
                         <div>
                           <small>Products</small>
                           <strong>
                             {items.reduce(
-                              (sum, item) =>
-                                sum + Number(item.quantity || 1),
-                              0
+                              (sum, item) => sum + Number(item.quantity || 1),
+                              0,
                             )}{" "}
                             item(s)
                           </strong>
@@ -206,9 +194,7 @@ function VendorOrders() {
 
                         <div>
                           <small>Payment method</small>
-                          <strong>
-                            {order.payment_method?.toUpperCase()}
-                          </strong>
+                          <strong>{order.payment_method?.toUpperCase()}</strong>
                         </div>
 
                         <div>
@@ -223,14 +209,10 @@ function VendorOrders() {
                         type="button"
                         className="vendor-order-toggle"
                         onClick={() =>
-                          setExpandedOrder(
-                            isExpanded ? null : order.id
-                          )
+                          setExpandedOrder(isExpanded ? null : order.id)
                         }
                       >
-                        {isExpanded
-                          ? "Hide Details"
-                          : "View Details"}
+                        {isExpanded ? "Hide Details" : "View Details"}
                       </button>
 
                       {isExpanded && (
@@ -251,51 +233,39 @@ function VendorOrders() {
 
                               <div>
                                 <strong>{item.name}</strong>
-                                <p>
-                                  Quantity: {item.quantity || 1}
-                                </p>
+                                <p>Quantity: {item.quantity || 1}</p>
 
                                 {item.wrapping && (
                                   <p>Wrapping: {item.wrapping}</p>
                                 )}
 
                                 {item.messageCard && (
-                                  <p>
-                                    Message card: {item.messageCard}
-                                  </p>
+                                  <p>Message card: {item.messageCard}</p>
                                 )}
 
-                                {item.message && (
-                                  <p>Message: {item.message}</p>
-                                )}
+                                {item.message && <p>Message: {item.message}</p>}
 
-                                {item.addon && (
-                                  <p>Add-on: {item.addon}</p>
-                                )}
+                                {item.addon && <p>Add-on: {item.addon}</p>}
                               </div>
                             </div>
                           ))}
 
                           <h3>Delivery information</h3>
                           <p>
-                            <strong>Phone:</strong>{" "}
-                            {order.phone || "—"}
+                            <strong>Phone:</strong> {order.phone || "—"}
                           </p>
                           <p>
                             <strong>Address:</strong>{" "}
                             {order.delivery_address || "—"}
                           </p>
                           <p>
-                            <strong>Area:</strong>{" "}
-                            {order.delivery_area || "—"}
+                            <strong>Area:</strong> {order.delivery_area || "—"}
                           </p>
                           <p>
-                            <strong>Date:</strong>{" "}
-                            {order.delivery_date || "—"}
+                            <strong>Date:</strong> {order.delivery_date || "—"}
                           </p>
                           <p>
-                            <strong>Time:</strong>{" "}
-                            {order.delivery_time || "—"}
+                            <strong>Time:</strong> {order.delivery_time || "—"}
                           </p>
                           <p>
                             <strong>Instructions:</strong>{" "}

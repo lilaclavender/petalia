@@ -3781,7 +3781,6 @@
 ========================================================= */
 
 @media (max-width: 640px) {
-
   /* HERO */
   .hero-section {
     min-height: auto;
@@ -3835,7 +3834,6 @@
     line-height: 1.55;
   }
 
-
   /* BUTTONS */
   .hero-buttons {
     width: 100%;
@@ -3860,7 +3858,6 @@
 
     justify-content: center;
   }
-
 
   /* BENEFITS */
   .hero-benefits {
@@ -3890,7 +3887,6 @@
     flex-shrink: 0;
   }
 
-
   /* BOUQUET */
   .hero-image-wrapper {
     width: 100%;
@@ -3914,10 +3910,8 @@
   }
 }
 
-
 /* SMALLER PHONES */
 @media (max-width: 420px) {
-
   .hero-container {
     width: calc(100% - 28px);
   }
@@ -3932,5 +3926,345 @@
 
   .hero-benefits {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* HOME — phone and tablet adjustments */
+.home-page,
+.home-page * {
+  box-sizing: border-box;
+}
+
+@media (max-width: 1180px) {
+  .home-page .hero-container,
+  .home-page .gift-finder-container,
+  .home-page .discover-categories-container,
+  .home-page .trending-container,
+  .home-page .curated-container,
+  .home-page .featured-shops-container,
+  .home-page .tips-container,
+  .home-page .why-petalia-container,
+  .home-page .testimonials-container {
+    width: calc(100% - 48px);
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+
+  .home-page .hero-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .home-page .hero-content {
+    left: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .home-page .hero-image-wrapper {
+    min-width: 0;
+  }
+
+  .home-page .hero-image {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+  }
+
+  .home-page .hero-benefits {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    white-space: normal;
+  }
+
+  .home-page .hero-benefits > span {
+    min-width: 0;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .home-page .hero-benefits svg {
+    flex-shrink: 0;
+  }
+
+  /* These steps are direct children of the container. */
+  .home-page .gift-finder-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 18px;
+    padding: 32px;
+  }
+
+  .home-page .gift-finder-intro {
+    grid-column: 1 / -1;
+    width: auto;
+    max-width: 600px;
+    min-width: 0;
+  }
+
+  .home-page .finder-step {
+    width: auto;
+    min-width: 0;
+    min-height: 200px;
+    margin: 0;
+    transform: none;
+  }
+
+  .home-page .gift-finder-flower {
+    display: none;
+  }
+
+  .home-page .trending-grid.shop-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .home-page .curated-grid,
+  .home-page .featured-shops-grid,
+  .home-page .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .home-page .why-petalia-container,
+  .home-page .testimonials-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .home-page .why-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .home-page .why-step {
+    min-width: 0;
+    transform: none;
+    margin: 0;
+  }
+
+  .home-page .why-visual {
+    width: min(245px, 100%);
+    margin-inline: auto;
+  }
+
+  .home-page .why-gift-path {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .hero-container,
+  .home-page .gift-finder-container,
+  .home-page .discover-categories-container,
+  .home-page .trending-container,
+  .home-page .curated-container,
+  .home-page .featured-shops-container,
+  .home-page .tips-container,
+  .home-page .why-petalia-container,
+  .home-page .testimonials-container {
+    width: calc(100% - 32px);
+  }
+
+  .home-page .hero-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    gap: 20px;
+    padding-block: 32px;
+  }
+
+  .home-page .hero-content {
+    width: 100%;
+    left: auto;
+  }
+
+  .home-page .hero-content h1 {
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 1.15;
+  }
+
+  .home-page .hero-description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .home-page .hero-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .home-page .hero-buttons > button {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 12px;
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  .home-page .hero-benefits {
+    width: 100%;
+    margin: 20px 0 0;
+    gap: 12px 10px;
+  }
+
+  .home-page .hero-benefits > span {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .home-page .hero-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-page .hero-image {
+    width: 85%;
+    max-width: 330px;
+    height: auto;
+  }
+
+  .home-page .gift-finder-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 12px;
+    padding: 24px 16px;
+  }
+
+  .home-page .gift-finder-intro {
+    grid-column: 1 / -1;
+  }
+
+  .home-page .finder-step {
+    min-height: 190px;
+    padding: 32px 10px 18px;
+    border-radius: 18px;
+  }
+
+  .home-page .finder-step h3 {
+    font-size: 14px;
+  }
+
+  .home-page .finder-step p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .home-page .discover-categories-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .home-page .category-panel {
+    min-width: 0;
+  }
+
+  .home-page .category-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .home-page .trending-grid.shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .home-page .trending-grid > *,
+  .home-page .curated-grid > *,
+  .home-page .featured-shops-grid > *,
+  .home-page .tips-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .home-page .curated-grid,
+  .home-page .featured-shops-grid,
+  .home-page .tips-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .home-page .why-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .home-page .why-step-text p {
+    max-width: 290px;
+    margin-inline: auto;
+  }
+
+  /* Let the active review grow with its text. */
+  .home-page .testimonial-carousel {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .home-page .testimonial-card-stack {
+    height: auto;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .home-page .testimonial-slide {
+    display: none;
+  }
+
+  .home-page .testimonial-slide.testimonial-active {
+    display: block;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 0;
+    transform: none;
+    opacity: 1;
+  }
+
+  .home-page .testimonial-card-content {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .home-page .testimonial-copy {
+    padding: 26px 22px;
+  }
+
+  .home-page .testimonial-gift-image {
+    display: none;
+  }
+
+  .home-page .testimonial-dots {
+    position: static;
+    transform: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-page .hero-buttons,
+  .home-page .gift-finder-container,
+  .home-page .trending-grid.shop-product-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

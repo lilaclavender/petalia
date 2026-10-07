@@ -13,6 +13,7 @@ import sakuraBranch from "../assets/sakura-branch.png";
 import flowersData from "../data/flowersData";
 
 import "../styles/VendorAddProduct.css";
+import "../styles/VendorAddProduct.css";
 
 const candleScents = [
   "Vanilla",

@@ -56,13 +56,15 @@ function PaymentSuccess() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // The order is complete, so clear the active shopping cart.
+    if (paymentData?.status !== "paid") {
+      return;
+    }
+
     localStorage.removeItem("petaliaCart");
     localStorage.removeItem("petaliaCheckout");
 
-    // Tell the header that the cart has changed.
     window.dispatchEvent(new Event("petalia-cart-updated"));
-  }, []);
+  }, [paymentData]);
 
   /* =========================================================
      BUTTON ACTIONS

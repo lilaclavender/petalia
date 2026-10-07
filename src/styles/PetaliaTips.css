@@ -1066,3 +1066,162 @@
     font-size: 33px;
   }
 }
+
+/* Tips homepage: responsive improvements */
+.petalia-tips-page,
+.petalia-tips-page *,
+.petalia-tips-page *::before,
+.petalia-tips-page *::after {
+  box-sizing: border-box;
+}
+
+.petalia-tips-page .tips-category-content,
+.petalia-tips-page .tips-featured-content,
+.petalia-tips-page .tips-finder-content {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .petalia-tips-page .tips-section,
+  .petalia-tips-page .tips-finder {
+    width: calc(100% - 40px);
+    margin-inline: auto;
+  }
+
+  .petalia-tips-page .tips-category-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .petalia-tips-page .tips-category-card {
+    height: auto;
+    min-height: 180px;
+    grid-template-columns: 38% minmax(0, 1fr);
+  }
+
+  .petalia-tips-page .tips-category-content {
+    padding: 24px;
+  }
+
+  .petalia-tips-page .tips-category-content p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .petalia-tips-page .tips-primary-btn,
+  .petalia-tips-page .tips-read-more {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .petalia-tips-page .tips-finder {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .petalia-tips-page .tips-finder-btn {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .petalia-tips-page .tips-section,
+  .petalia-tips-page .tips-finder {
+    width: calc(100% - 32px);
+  }
+
+  .petalia-tips-page .tips-hero {
+    height: auto;
+    min-height: 480px;
+  }
+
+  .petalia-tips-page .tips-hero-content {
+    width: calc(100% - 32px);
+    max-width: 520px;
+    margin-inline: auto;
+    padding: 48px 0;
+  }
+
+  .petalia-tips-page .tips-hero-content h1 {
+    font-size: clamp(34px, 9vw, 44px);
+    line-height: 1.15;
+  }
+
+  .petalia-tips-page .tips-hero-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .petalia-tips-page .tips-category-card {
+    min-height: 200px;
+    grid-template-columns: 35% minmax(0, 1fr);
+  }
+
+  .petalia-tips-page .tips-category-content {
+    padding: 20px 16px 48px;
+  }
+
+  .petalia-tips-page .tips-category-content h3 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .petalia-tips-page .tips-category-content p {
+    font-size: 13px;
+  }
+
+  .petalia-tips-page .tips-featured-card,
+  .petalia-tips-page .tips-article-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .petalia-tips-page .tips-featured-image-wrap {
+    height: 250px;
+    min-height: 250px;
+  }
+
+  .petalia-tips-page .tips-featured-content {
+    padding: 28px 22px;
+  }
+
+  .petalia-tips-page .tips-featured-content h2,
+  .petalia-tips-page .tips-finder-content h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .petalia-tips-page .tips-featured-description,
+  .petalia-tips-page .tips-article-content p,
+  .petalia-tips-page .tips-finder-content > p:not(.tips-eyebrow) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .petalia-tips-page .tips-article-image-button {
+    height: 230px;
+  }
+
+  .petalia-tips-page .tips-article-content {
+    padding: 24px 20px;
+  }
+
+  .petalia-tips-page .tips-article-content h3 {
+    font-size: 23px;
+  }
+
+  .petalia-tips-page .tips-article-content p {
+    min-height: 0;
+  }
+
+  .petalia-tips-page .tips-finder {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 28px 22px;
+  }
+
+  .petalia-tips-page .tips-finder-btn {
+    grid-column: auto;
+    width: 100%;
+    min-height: 48px;
+  }
+}

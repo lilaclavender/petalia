@@ -2836,3 +2836,244 @@
     padding: 16px 12px;
   }
 }
+
+/* Checkout: tablet and phone improvements */
+.checkout-page,
+.checkout-page *,
+.checkout-page *::before,
+.checkout-page *::after {
+  box-sizing: border-box;
+}
+
+.checkout-page .checkout-step-content,
+.checkout-page .checkout-field,
+.checkout-page .checkout-input-wrap,
+.checkout-page .khqr-payment-info,
+.checkout-page .summary-product-info {
+  min-width: 0;
+}
+
+.checkout-page .summary-product-info h3,
+.checkout-page .summary-customization strong {
+  overflow-wrap: anywhere;
+}
+
+.checkout-page .summary-product-top img {
+  flex-shrink: 0;
+}
+
+/* iPad and smaller laptops */
+@media (max-width: 1100px) {
+  .checkout-page .checkout-container {
+    width: calc(100% - 40px);
+    margin-inline: auto;
+  }
+
+  .checkout-page .checkout-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .checkout-page .checkout-form,
+  .checkout-page .checkout-summary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .checkout-page .checkout-summary {
+    position: static;
+  }
+
+  .checkout-page .checkout-input-wrap input,
+  .checkout-page .checkout-input-wrap select {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .checkout-page .checkout-textarea-wrap textarea {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .checkout-page .summary-payment-button,
+  .checkout-page .checkout-back {
+    min-height: 44px;
+  }
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  .checkout-page .checkout-container {
+    width: calc(100% - 32px);
+  }
+
+  .checkout-page .checkout-form {
+    padding-left: 0;
+  }
+
+  .checkout-page .petalia-growing-journey {
+    display: none;
+  }
+
+  .checkout-page .checkout-step {
+    padding: 22px 18px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+
+  .checkout-page .checkout-intro h1 {
+    font-size: clamp(29px, 7vw, 36px);
+    line-height: 1.15;
+  }
+
+  .checkout-page .checkout-intro p,
+  .checkout-page .step-heading p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .checkout-page .checkout-breadcrumb {
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+
+  .checkout-page .checkout-breadcrumb button {
+    min-height: 44px;
+  }
+
+  .checkout-page .step-heading {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .checkout-page .step-heading > div:first-child {
+    min-width: 0;
+  }
+
+  .checkout-page .step-heading h2 {
+    font-size: 23px;
+  }
+
+  .checkout-page .step-heading-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .checkout-page .checkout-field-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .checkout-page .checkout-field > span {
+    font-size: 13px;
+  }
+
+  .checkout-page .time-slot-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .checkout-page .time-slot {
+    width: 100%;
+    min-height: 80px;
+  }
+
+  .checkout-page .time-slot strong {
+    font-size: 14px;
+  }
+
+  .checkout-page .time-slot small {
+    font-size: 12px;
+  }
+
+  .checkout-page .khqr-payment-card {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .checkout-page .khqr-payment-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .checkout-page .khqr-payment-info p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .checkout-page .khqr-payment-info small {
+    display: block;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .checkout-page .khqr-payment-status {
+    grid-column: 2;
+    justify-self: start;
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .checkout-page .checkout-summary {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .checkout-page .summary-heading {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .checkout-page .summary-product-top {
+    gap: 12px;
+  }
+
+  .checkout-page .summary-product-top img {
+    width: 68px;
+    height: 76px;
+  }
+
+  .checkout-page .summary-product-info h3 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .checkout-page .summary-product-info small {
+    font-size: 12px;
+  }
+
+  .checkout-page .summary-customization {
+    padding-left: 0;
+  }
+
+  .checkout-page .summary-customization div {
+    gap: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .checkout-page .summary-customization strong {
+    white-space: normal;
+  }
+
+  .checkout-page .summary-price-row {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .checkout-page .summary-total {
+    gap: 12px;
+  }
+
+  .checkout-page .summary-payment-button {
+    width: 100%;
+    min-height: 50px;
+    white-space: normal;
+    font-size: 15px;
+  }
+}

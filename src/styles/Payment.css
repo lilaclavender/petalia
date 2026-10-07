@@ -2353,3 +2353,271 @@
     padding-right: 12px;
   }
 }
+
+/* Payment: responsive layout and readable instructions */
+.payment-page,
+.payment-page *,
+.payment-page *::before,
+.payment-page *::after {
+  box-sizing: border-box;
+}
+
+.payment-page .payment-product-info,
+.payment-page .payment-intro-copy,
+.payment-page .payment-summary-product {
+  min-width: 0;
+}
+
+.payment-page .payment-product-info h3,
+.payment-page .payment-customization strong,
+.payment-page .payment-reference-row strong {
+  overflow-wrap: anywhere;
+}
+
+/* Keep the QR square, with white space around it */
+.payment-page .khqr-frame {
+  width: min(100%, 248px);
+  padding: 18px;
+}
+
+.payment-page .khqr-visual-area {
+  width: 100%;
+}
+
+.payment-page .khqr-code-placeholder {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  aspect-ratio: 1;
+  padding: 12px;
+  margin: 16px auto;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+}
+
+.payment-page .khqr-code-placeholder > svg {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.payment-page .khqr-code-placeholder > span {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.payment-page .khqr-frame:hover {
+  transform: none;
+}
+
+/* iPad and smaller laptops */
+@media (max-width: 1100px) {
+  .payment-page .payment-container {
+    width: min(calc(100% - 40px), 760px);
+    margin-inline: auto;
+  }
+
+  .payment-page .payment-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+  .payment-page .payment-intro-progress {
+    min-width: 0;
+    width: 100%;
+    max-width: 360px;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .payment-page .payment-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .payment-page .payment-experience,
+  .payment-page .payment-summary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .payment-page .payment-summary {
+    position: static;
+  }
+
+  .payment-page .complete-payment-button,
+  .payment-page .payment-back-button {
+    min-height: 48px;
+    white-space: normal;
+  }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .payment-page .payment-container {
+    width: calc(100% - 32px);
+  }
+
+  .payment-page .payment-breadcrumb {
+    font-size: 12px;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .payment-page .payment-breadcrumb button {
+    min-height: 44px;
+  }
+
+  .payment-page .payment-intro h1 {
+    font-size: clamp(29px, 7vw, 36px);
+    line-height: 1.15;
+  }
+
+  .payment-page .payment-intro p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .payment-page .progress-step {
+    min-width: 0;
+    flex: 1;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .payment-page .progress-line {
+    left: 16.67%;
+    right: 16.67%;
+  }
+
+  .payment-page .payment-experience,
+  .payment-page .payment-summary {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .payment-page .payment-experience-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .payment-page .payment-experience-header h2 {
+    font-size: 24px;
+  }
+
+  .payment-page .selected-payment-badge {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .payment-page .khqr-amount span {
+    font-size: 13px;
+  }
+
+  .payment-page .khqr-amount strong {
+    font-size: 32px;
+  }
+
+  .payment-page .khqr-instruction,
+  .payment-page .payment-waiting,
+  .payment-page .payment-security {
+    width: 100%;
+    padding: 14px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .payment-page .khqr-instruction > div:last-child,
+  .payment-page .payment-waiting > div:last-child,
+  .payment-page .payment-security > div:last-child {
+    min-width: 0;
+  }
+
+  .payment-page .khqr-instruction strong,
+  .payment-page .payment-waiting strong,
+  .payment-page .payment-security strong,
+  .payment-page .gift-reserved-note strong {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .payment-page .khqr-instruction p,
+  .payment-page .payment-waiting small,
+  .payment-page .payment-security span,
+  .payment-page .gift-reserved-note span {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .payment-page .waiting-dots {
+    padding-top: 7px;
+  }
+
+  .payment-page .complete-payment-button,
+  .payment-page .payment-back-button {
+    width: 100%;
+    min-height: 50px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .payment-page .payment-reference-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .payment-page .payment-reference-row span {
+    font-size: 12px;
+  }
+
+  .payment-page .payment-reference-row strong {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .payment-page .payment-summary-heading {
+    gap: 12px;
+  }
+
+  .payment-page .payment-summary-heading h2 {
+    font-size: 24px;
+  }
+
+  .payment-page .payment-product-info h3 {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .payment-page .payment-product-info strong {
+    font-size: 14px;
+  }
+
+  .payment-page .payment-customization {
+    padding-left: 0;
+    gap: 10px;
+  }
+
+  .payment-page .payment-customization > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .payment-page .payment-price-row,
+  .payment-page .payment-price-row strong {
+    font-size: 14px;
+  }
+
+  .payment-page .payment-total-row {
+    gap: 12px;
+  }
+
+  .payment-page .payment-summary:hover {
+    transform: none;
+  }
+}

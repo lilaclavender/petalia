@@ -1359,3 +1359,301 @@
     flex-wrap: wrap;
   }
 }
+
+/* Seller dashboard — responsive improvements */
+.vendor-center-page,
+.vendor-center-page *,
+.vendor-center-page *::before,
+.vendor-center-page *::after {
+  box-sizing: border-box;
+}
+
+.vendor-center-page .vendor-dashboard,
+.vendor-center-page .vendor-main,
+.vendor-center-page .vendor-products-section,
+.vendor-center-page .vendor-product-tools,
+.vendor-center-page .stat-info {
+  min-width: 0;
+}
+
+.vendor-center-page .vendor-main h1,
+.vendor-center-page .vendor-main h2,
+.vendor-center-page .vendor-main p,
+.vendor-center-page .stat-info strong {
+  overflow-wrap: anywhere;
+}
+
+.vendor-center-page .vendor-shop-meta {
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.vendor-center-page .vendor-shop-meta svg {
+  flex-shrink: 0;
+}
+
+.vendor-center-page .vendor-stat-card {
+  height: auto;
+  min-height: 100px;
+}
+
+.vendor-center-page .stat-info strong {
+  line-height: 1.25;
+}
+
+.vendor-center-page .stat-info span {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* These lines are decorative, not calculated sales charts */
+.vendor-center-page .stat-trend {
+  display: none;
+}
+
+.vendor-center-page .vendor-product-search input {
+  min-width: 0;
+  font-size: 16px;
+}
+
+.vendor-center-page .vendor-product-search,
+.vendor-center-page .vendor-product-tools select,
+.vendor-center-page .vendor-add-product {
+  min-height: 48px;
+}
+
+.vendor-center-page .vendor-product-tools select {
+  font-size: 16px;
+}
+
+.vendor-center-page .vendor-product-edit-btn,
+.vendor-center-page .vendor-delete-btn {
+  height: auto;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.vendor-center-page .vendor-pagination button {
+  width: 44px;
+  height: 44px;
+}
+
+.vendor-center-page .vendor-table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.vendor-center-page .vendor-product-table th,
+.vendor-center-page .vendor-product-table td {
+  font-size: 13px;
+}
+
+.vendor-center-page .vendor-product-name {
+  max-width: 260px;
+  overflow-wrap: anywhere;
+}
+
+.vendor-center-page button:focus-visible,
+.vendor-center-page a:focus-visible,
+.vendor-center-page select:focus-visible {
+  outline: 3px solid #8b659c;
+  outline-offset: 3px;
+}
+
+/* iPad and smaller laptops */
+@media (max-width: 1100px) {
+  .vendor-center-page .vendor-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vendor-center-page .vendor-hero {
+    height: auto;
+    min-height: 260px;
+  }
+
+  .vendor-center-page .vendor-hero-content {
+    width: 75%;
+    padding: 30px;
+  }
+
+  .vendor-center-page .vendor-hero-content h1 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .vendor-center-page .vendor-products-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .vendor-center-page .vendor-product-tools {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .vendor-center-page .vendor-product-search {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .vendor-center-page .vendor-product-tools select {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Phones — keep seller navigation available */
+@media (max-width: 650px) {
+  .vendor-center-page .vendor-dashboard {
+    display: block;
+  }
+
+  .vendor-center-page .vendor-sidebar {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    padding: 12px 16px;
+    border-right: none;
+    border-bottom: 1px solid #f0e2e7;
+  }
+
+  .vendor-center-page .vendor-shop-card,
+  .vendor-center-page .vendor-sidebar-decoration {
+    display: none;
+  }
+
+  .vendor-center-page .vendor-sidebar-nav,
+  .vendor-center-page .vendor-sidebar-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .vendor-center-page .vendor-sidebar-bottom {
+    position: static;
+    margin-top: 8px;
+  }
+
+  .vendor-center-page .vendor-nav-item {
+    width: auto;
+    min-height: 44px;
+    height: auto;
+    padding: 10px 12px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .vendor-center-page .vendor-nav-item span {
+    display: inline;
+  }
+
+  .vendor-center-page .vendor-main {
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  .vendor-center-page .vendor-hero-content {
+    width: 100%;
+    min-height: 260px;
+    padding: 28px 22px;
+  }
+
+  .vendor-center-page .vendor-hero-content h1 {
+    max-width: 100%;
+    font-size: clamp(28px, 7.5vw, 34px);
+  }
+
+  .vendor-center-page .vendor-hero-content p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .vendor-center-page .vendor-hero-content p br {
+    display: none;
+  }
+
+  .vendor-center-page .vendor-hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(243, 233, 240, 0.96),
+      rgba(243, 233, 240, 0.85)
+    );
+  }
+
+  .vendor-center-page .vendor-shop-meta span {
+    font-size: 13px;
+  }
+
+  .vendor-center-page .vendor-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .vendor-center-page .vendor-stat-card {
+    padding: 16px 12px;
+  }
+
+  .vendor-center-page .stat-icon {
+    width: 32px;
+    margin-right: 10px;
+    padding-right: 8px;
+  }
+
+  .vendor-center-page .stat-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .vendor-center-page .stat-info strong {
+    font-size: 20px;
+  }
+
+  .vendor-center-page .vendor-products-section {
+    padding: 22px 16px;
+  }
+
+  .vendor-center-page .vendor-products-header h2 {
+    font-size: 26px;
+  }
+
+  .vendor-center-page .vendor-products-header p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .vendor-center-page .vendor-product-tools {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vendor-center-page .vendor-product-search,
+  .vendor-center-page .vendor-add-product {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .vendor-center-page .vendor-products-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .vendor-center-page .vendor-products-footer p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 380px) {
+  .vendor-center-page .vendor-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

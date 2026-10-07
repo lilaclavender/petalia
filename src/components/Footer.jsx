@@ -1,27 +1,17 @@
 import "../styles/Footer.css";
 import petaliaLogo from "../assets/petalia-logo.png";
 
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTiktok
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 import { ArrowRight } from "lucide-react";
 
 function Footer() {
   return (
     <footer className="footer">
-
       <div className="footer-container">
-
         {/* BRAND */}
         <div className="footer-brand">
-          <img
-            src={petaliaLogo}
-            alt="Petalia"
-            className="footer-logo"
-          />
+          <img src={petaliaLogo} alt="Petalia" className="footer-logo" />
 
           <p>
             Meaningful gifts,
@@ -44,7 +34,6 @@ function Footer() {
           </div>
         </div>
 
-
         {/* SHOP */}
         <div className="footer-column">
           <h3>Shop</h3>
@@ -55,7 +44,6 @@ function Footer() {
           <a href="#">Gift Sets</a>
         </div>
 
-
         {/* DISCOVER */}
         <div className="footer-column">
           <h3>Discover</h3>
@@ -64,7 +52,6 @@ function Footer() {
           <a href="#">By Occasion</a>
           <a href="#">Gift Finder</a>
         </div>
-
 
         {/* HELP */}
         <div className="footer-column">
@@ -76,7 +63,6 @@ function Footer() {
           <a href="#">Contact Us</a>
         </div>
 
-
         {/* ABOUT */}
         <div className="footer-column">
           <h3>About Petalia</h3>
@@ -84,32 +70,45 @@ function Footer() {
           <a href="#">Our Story</a>
           <a href="#">Our Partners</a>
           <a href="#">Terms & Privacy</a>
+          <a
+            href={
+              "https://mail.google.com/mail/?view=cm&fs=1" +
+              "&to=hongchheng257%40gmail.com" +
+              "&su=" +
+              encodeURIComponent("Petalia Seller Application") +
+              "&body=" +
+              encodeURIComponent(
+                "Hello Petalia,\n\n" +
+                  "I would like to sell on your platform.\n\n" +
+                  "Shop name:\n" +
+                  "Product types:\n" +
+                  "Location:\n" +
+                  "Phone number:\n" +
+                  "Petalia account email (if registered):\n",
+              )
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Become a Seller
+          </a>
         </div>
-
 
         {/* NEWSLETTER */}
         <div className="footer-newsletter">
           <h3>Stay in the loop</h3>
 
-          <p>
-            Get updates on new collections,
-            gift ideas and special moments.
-          </p>
+          <p>Get updates on new collections, gift ideas and special moments.</p>
 
           <div className="footer-email">
-            <input
-              type="email"
-              placeholder="Enter your email"
-            />
+            <input type="email" placeholder="Enter your email" />
 
             <button aria-label="Subscribe">
               <ArrowRight />
             </button>
           </div>
         </div>
-
       </div>
-
 
       {/* BOTTOM */}
       <div className="footer-bottom">

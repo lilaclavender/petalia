@@ -2,7 +2,6 @@
    PETALIA — SIGN IN
 ===================================================== */
 
-
 /* =====================================================
    PAGE
 ===================================================== */
@@ -21,7 +20,6 @@
 
   font-family: "Inter", sans-serif;
 }
-
 
 /* =====================================================
    MAIN
@@ -44,11 +42,8 @@
 
   background: #ffffff;
 
-  box-shadow:
-    0 18px 45px
-    rgba(110, 83, 111, 0.12);
+  box-shadow: 0 18px 45px rgba(110, 83, 111, 0.12);
 }
-
 
 /* =====================================================
    LEFT PHOTO
@@ -64,7 +59,6 @@
   background: #eadede;
 }
 
-
 .signin-visual-image {
   position: absolute;
 
@@ -76,16 +70,12 @@
   object-fit: cover;
   object-position: center;
 
-  transition:
-    transform 0.8s ease;
+  transition: transform 0.8s ease;
 }
 
-
-.signin-visual-side:hover
-.signin-visual-image {
+.signin-visual-side:hover .signin-visual-image {
   transform: scale(1.018);
 }
-
 
 /* =====================================================
    VERY SOFT PHOTO LIGHT
@@ -99,18 +89,16 @@
 
   inset: 0;
 
-  background:
-    radial-gradient(
-      ellipse at 15% 12%,
-      rgba(255, 250, 247, 0.50) 0%,
-      rgba(255, 250, 247, 0.23) 20%,
-      rgba(255, 250, 247, 0.05) 40%,
-      transparent 57%
-    );
+  background: radial-gradient(
+    ellipse at 15% 12%,
+    rgba(255, 250, 247, 0.5) 0%,
+    rgba(255, 250, 247, 0.23) 20%,
+    rgba(255, 250, 247, 0.05) 40%,
+    transparent 57%
+  );
 
   pointer-events: none;
 }
-
 
 /* =====================================================
    PETALIA BRAND
@@ -143,13 +131,10 @@
   color: #756276;
 }
 
-
 .signin-brand h2 {
   margin: 0;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 42px;
   line-height: 1;
@@ -159,11 +144,8 @@
 
   color: #6e536f;
 
-  text-shadow:
-    0 2px 14px
-    rgba(255, 250, 247, 0.95);
+  text-shadow: 0 2px 14px rgba(255, 250, 247, 0.95);
 }
-
 
 .signin-brand p {
   margin: 9px 0 0;
@@ -173,11 +155,8 @@
 
   color: #756276;
 
-  text-shadow:
-    0 1px 9px
-    rgba(255, 250, 247, 0.95);
+  text-shadow: 0 1px 9px rgba(255, 250, 247, 0.95);
 }
-
 
 /* =====================================================
    STORY TEXT
@@ -200,7 +179,6 @@
 
   padding: 30px 22px;
 
-
   /*
     IMPORTANT:
 
@@ -211,20 +189,18 @@
     without hiding the image.
   */
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(255, 250, 247, 0.76) 0%,
-      rgba(255, 250, 247, 0.48) 32%,
-      rgba(255, 250, 247, 0.20) 57%,
-      rgba(255, 250, 247, 0) 82%
-    );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 250, 247, 0.76) 0%,
+    rgba(255, 250, 247, 0.48) 32%,
+    rgba(255, 250, 247, 0.2) 57%,
+    rgba(255, 250, 247, 0) 82%
+  );
 }
 .signin-story-content > * {
   position: relative;
   z-index: 1;
 }
-
 
 /* =====================================================
    STORY HEADING
@@ -233,9 +209,7 @@
 .signin-story-content h1 {
   margin: 0;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 33px;
   line-height: 1.12;
@@ -244,22 +218,17 @@
 
   color: #58445d;
 
-  text-shadow:
-    0 1px 10px
-    rgba(255, 255, 255, 0.72);
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.72);
 }
-
 
 .signin-story-content h1 span {
   color: #d35b8c;
 }
 
-
 /* DESCRIPTION */
 
 .signin-story-description {
-  margin:
-    18px 0 22px;
+  margin: 18px 0 22px;
 
   max-width: 245px;
 
@@ -268,11 +237,8 @@
 
   color: #655667;
 
-  text-shadow:
-    0 1px 8px
-    rgba(255, 255, 255, 0.65);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.65);
 }
-
 
 /* =====================================================
    BENEFITS
@@ -286,18 +252,15 @@
   gap: 16px;
 }
 
-
 .signin-benefit {
   display: grid;
 
-  grid-template-columns:
-    21px 1fr;
+  grid-template-columns: 21px 1fr;
 
   gap: 10px;
 
   align-items: start;
 }
-
 
 /* =====================================================
    FLATICON ICONS
@@ -310,12 +273,9 @@
 /* TEXT */
 
 .signin-benefit h3 {
-  margin:
-    0 0 3px;
+  margin: 0 0 3px;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 10px;
 
@@ -323,11 +283,8 @@
 
   color: #57475b;
 
-  text-shadow:
-    0 1px 7px
-    rgba(255, 255, 255, 0.70);
+  text-shadow: 0 1px 7px rgba(255, 255, 255, 0.7);
 }
-
 
 .signin-benefit p {
   margin: 0;
@@ -337,11 +294,8 @@
 
   color: #6e6070;
 
-  text-shadow:
-    0 1px 7px
-    rgba(255, 255, 255, 0.68);
+  text-shadow: 0 1px 7px rgba(255, 255, 255, 0.68);
 }
-
 
 /* =====================================================
    RIGHT FORM SIDE
@@ -355,13 +309,10 @@
   align-items: center;
   justify-content: center;
 
-  padding:
-    70px 70px
-    55px;
+  padding: 70px 70px 55px;
 
   background: #ffffff;
 }
-
 
 /* =====================================================
    LANGUAGE
@@ -387,18 +338,14 @@
 
   color: #a36f7e;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 11px;
 
   cursor: pointer;
 
-  transition:
-    color 0.2s ease;
+  transition: color 0.2s ease;
 }
-
 
 .signin-language svg {
   width: 14px;
@@ -407,11 +354,9 @@
   stroke-width: 1.5;
 }
 
-
 .signin-language:hover {
   color: #d35b8c;
 }
-
 
 /* =====================================================
    FORM
@@ -423,7 +368,6 @@
   max-width: 440px;
 }
 
-
 /* =====================================================
    HEADING
 ===================================================== */
@@ -434,13 +378,10 @@
   text-align: center;
 }
 
-
 .signin-heading h1 {
   margin: 0;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: "Playfair Display", serif;
 
   font-size: 34px;
   line-height: 1.2;
@@ -450,16 +391,13 @@
   color: #6e536f;
 }
 
-
 .signin-heading p {
-  margin:
-    10px 0 0;
+  margin: 10px 0 0;
 
   font-size: 11px;
 
   color: #ad98a7;
 }
-
 
 /* =====================================================
    FIELD
@@ -468,7 +406,6 @@
 .signin-field {
   margin-bottom: 20px;
 }
-
 
 .signin-field label {
   display: block;
@@ -482,7 +419,6 @@
   color: #6e536f;
 }
 
-
 /* =====================================================
    INPUT BOX
 ===================================================== */
@@ -495,9 +431,7 @@
 
   align-items: center;
 
-  border:
-    1px solid
-    rgba(110, 83, 111, 0.14);
+  border: 1px solid rgba(110, 83, 111, 0.14);
 
   border-radius: 8px;
 
@@ -509,17 +443,13 @@
     box-shadow 0.2s ease;
 }
 
-
 .signin-input-box:focus-within {
   border-color: #d35b8c;
 
   background: #faf6fa;
 
-  box-shadow:
-    0 0 0 3px
-    rgba(211, 91, 140, 0.08);
+  box-shadow: 0 0 0 3px rgba(211, 91, 140, 0.08);
 }
-
 
 /* SIMPLE ICON */
 
@@ -536,7 +466,6 @@
   flex-shrink: 0;
 }
 
-
 .signin-input-box input {
   flex: 1;
 
@@ -544,8 +473,7 @@
 
   height: 100%;
 
-  padding:
-    0 12px;
+  padding: 0 12px;
 
   border: none;
 
@@ -553,21 +481,16 @@
 
   background: transparent;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 11px;
 
   color: #6e536f;
 }
 
-
-.signin-input-box
-input::placeholder {
+.signin-input-box input::placeholder {
   color: #baa8b5;
 }
-
 
 /* =====================================================
    PASSWORD EYE
@@ -593,7 +516,6 @@ input::placeholder {
   cursor: pointer;
 }
 
-
 .signin-eye svg {
   width: 16px;
   height: 16px;
@@ -601,11 +523,9 @@ input::placeholder {
   stroke-width: 1.5;
 }
 
-
 .signin-eye:hover {
   color: #d35b8c;
 }
-
 
 /* =====================================================
    FORGOT PASSWORD
@@ -621,7 +541,6 @@ input::placeholder {
   margin-bottom: 23px;
 }
 
-
 .signin-forgot {
   padding: 0;
 
@@ -629,9 +548,7 @@ input::placeholder {
 
   background: transparent;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 10px;
 
@@ -640,11 +557,9 @@ input::placeholder {
   cursor: pointer;
 }
 
-
 .signin-forgot:hover {
   text-decoration: underline;
 }
-
 
 /* =====================================================
    SIGN IN BUTTON
@@ -662,9 +577,7 @@ input::placeholder {
 
   color: #ffffff;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 12px;
 
@@ -672,9 +585,7 @@ input::placeholder {
 
   cursor: pointer;
 
-  box-shadow:
-    0 7px 18px
-    rgba(211, 91, 140, 0.16);
+  box-shadow: 0 7px 18px rgba(211, 91, 140, 0.16);
 
   transition:
     background-color 0.2s ease,
@@ -682,18 +593,13 @@ input::placeholder {
     box-shadow 0.2s ease;
 }
 
-
 .signin-submit:hover {
   background: #c84d80;
 
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 
-  box-shadow:
-    0 9px 20px
-    rgba(211, 91, 140, 0.22);
+  box-shadow: 0 9px 20px rgba(211, 91, 140, 0.22);
 }
-
 
 /* =====================================================
    DIVIDER
@@ -706,20 +612,16 @@ input::placeholder {
 
   gap: 13px;
 
-  margin:
-    25px 0 18px;
+  margin: 25px 0 18px;
 }
-
 
 .signin-divider span {
   flex: 1;
 
   height: 1px;
 
-  background:
-    rgba(110, 83, 111, 0.11);
+  background: rgba(110, 83, 111, 0.11);
 }
-
 
 .signin-divider p {
   margin: 0;
@@ -730,7 +632,6 @@ input::placeholder {
 
   color: #b09daa;
 }
-
 
 /* =====================================================
    GOOGLE
@@ -747,9 +648,7 @@ input::placeholder {
 
   gap: 14px;
 
-  border:
-    1px solid
-    rgba(110, 83, 111, 0.17);
+  border: 1px solid rgba(110, 83, 111, 0.17);
 
   border-radius: 8px;
 
@@ -757,9 +656,7 @@ input::placeholder {
 
   color: #6e536f;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: 11px;
 
@@ -773,17 +670,13 @@ input::placeholder {
     transform 0.2s ease;
 }
 
-
 .signin-google:hover {
-  border-color:
-    rgba(211, 91, 140, 0.35);
+  border-color: rgba(211, 91, 140, 0.35);
 
   background: #fffafb;
 
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 }
-
 
 .signin-google-icon {
   width: 18px;
@@ -792,14 +685,12 @@ input::placeholder {
   flex-shrink: 0;
 }
 
-
 /* =====================================================
    CREATE ACCOUNT
 ===================================================== */
 
 .signin-create-text {
-  margin:
-    20px 0 0;
+  margin: 20px 0 0;
 
   text-align: center;
 
@@ -808,7 +699,6 @@ input::placeholder {
   color: #aa98a5;
 }
 
-
 .signin-create-text button {
   padding: 0;
 
@@ -816,9 +706,7 @@ input::placeholder {
 
   background: transparent;
 
-  font-family:
-    "Inter",
-    sans-serif;
+  font-family: "Inter", sans-serif;
 
   font-size: inherit;
 
@@ -829,41 +717,30 @@ input::placeholder {
   cursor: pointer;
 }
 
-
-.signin-create-text
-button:hover {
+.signin-create-text button:hover {
   text-decoration: underline;
 }
-
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 
 @media (max-width: 1100px) {
-
   .signin-page {
     padding: 30px;
   }
 
-
   .signin-shell {
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
 
   .signin-form-side {
-    padding:
-      70px 45px
-      50px;
+    padding: 70px 45px 50px;
   }
-
 
   .signin-brand {
     left: 35px;
   }
-
 
   .signin-story-content {
     top: 180px;
@@ -872,23 +749,18 @@ button:hover {
 
     width: 270px;
 
-    padding:
-      25px 17px;
+    padding: 25px 17px;
   }
-
 
   .signin-story-content h1 {
     font-size: 30px;
   }
 }
 
-
 @media (max-width: 850px) {
-
   .signin-page {
     padding: 20px;
   }
-
 
   .signin-shell {
     display: block;
@@ -896,30 +768,23 @@ button:hover {
     max-width: 520px;
   }
 
-
   .signin-visual-side {
     display: none;
   }
 
-
   .signin-form-side {
     min-height: 680px;
 
-    padding:
-      80px 35px
-      50px;
+    padding: 80px 35px 50px;
   }
 }
 
-
 @media (max-width: 480px) {
-
   .signin-page {
     padding: 0;
 
     background: #ffffff;
   }
-
 
   .signin-shell {
     min-height: 100vh;
@@ -929,15 +794,11 @@ button:hover {
     box-shadow: none;
   }
 
-
   .signin-form-side {
     min-height: 100vh;
 
-    padding:
-      80px 24px
-      40px;
+    padding: 80px 24px 40px;
   }
-
 
   .signin-heading h1 {
     font-size: 28px;
@@ -966,19 +827,15 @@ button:hover {
   /* lighter, more transparent glass */
   background: rgba(255, 247, 247, 0.22);
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.58);
 
-  backdrop-filter:
-    blur(10px);
+  backdrop-filter: blur(10px);
 
-  -webkit-backdrop-filter:
-    blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   /* soft glow */
   box-shadow:
-    0 0 28px rgba(255, 245, 248, 0.20),
+    0 0 28px rgba(255, 245, 248, 0.2),
     0 10px 28px rgba(110, 83, 111, 0.08);
 }
 .signin-story-content::before {
@@ -989,12 +846,11 @@ button:hover {
 
   border-radius: inherit;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.20),
-      rgba(255, 255, 255, 0.03)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.03)
+  );
 
   pointer-events: none;
 }
@@ -1013,11 +869,9 @@ button:hover {
   color: #5b465f;
 }
 
-
 .signin-story-content h1 span {
   color: #d35b8c;
 }
-
 
 /* DESCRIPTION */
 
@@ -1034,7 +888,6 @@ button:hover {
   text-shadow: none;
 }
 
-
 /* =====================================================
    BENEFITS
 ===================================================== */
@@ -1046,7 +899,6 @@ button:hover {
   gap: 17px;
 }
 
-
 .signin-benefit {
   display: grid;
 
@@ -1056,7 +908,6 @@ button:hover {
 
   align-items: start;
 }
-
 
 /* SIMPLE ICON ONLY
    NO CIRCLE / NO BOX */
@@ -1072,7 +923,6 @@ button:hover {
   object-fit: contain;
 }
 
-
 .signin-benefit h3 {
   margin: 0 0 4px;
 
@@ -1083,7 +933,6 @@ button:hover {
 
   text-shadow: none;
 }
-
 
 .signin-benefit p {
   margin: 0;
@@ -1096,7 +945,6 @@ button:hover {
   text-shadow: none;
 }
 
-
 /* =====================================================
    KEEP PETALIA LOGO READABLE
 ===================================================== */
@@ -1105,29 +953,23 @@ button:hover {
   z-index: 4;
 }
 
-
 .signin-brand h2 {
   color: #6e536f;
 
-  text-shadow:
-    0 2px 12px rgba(255, 250, 247, 0.75);
+  text-shadow: 0 2px 12px rgba(255, 250, 247, 0.75);
 }
-
 
 .signin-brand p {
   color: #756276;
 
-  text-shadow:
-    0 1px 8px rgba(255, 250, 247, 0.75);
+  text-shadow: 0 1px 8px rgba(255, 250, 247, 0.75);
 }
-
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 
 @media (max-width: 1100px) {
-
   .signin-story-content {
     top: 160px;
     right: 20px;
@@ -1136,7 +978,6 @@ button:hover {
 
     padding: 28px 24px;
   }
-
 
   .signin-story-content h1 {
     font-size: 29px;
@@ -1251,5 +1092,206 @@ button:hover {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+  }
+}
+/* Lavender email and password fields */
+input[type="email"],
+input[type="password"] {
+  background-color: #f3eef6;
+  color: #6e536f;
+  caret-color: #d35b8c;
+}
+
+input[type="email"]:-webkit-autofill,
+input[type="email"]:-webkit-autofill:hover,
+input[type="email"]:-webkit-autofill:focus,
+input[type="password"]:-webkit-autofill,
+input[type="password"]:-webkit-autofill:hover,
+input[type="password"]:-webkit-autofill:focus {
+  -webkit-text-fill-color: #6e536f;
+  -webkit-box-shadow: 0 0 0 1000px #f3eef6 inset;
+  box-shadow: 0 0 0 1000px #f3eef6 inset;
+  caret-color: #d35b8c;
+}
+
+/* Sign in — responsive refinements */
+.signin-page,
+.signin-page *,
+.signin-page *::before,
+.signin-page *::after {
+  box-sizing: border-box;
+}
+
+.signin-page .signin-shell,
+.signin-page .signin-visual-side,
+.signin-page .signin-form-side,
+.signin-page .signin-form-wrapper {
+  min-width: 0;
+}
+
+.signin-page h1,
+.signin-page h3,
+.signin-page p {
+  overflow-wrap: anywhere;
+}
+
+/* Position the actual logo used in JSX */
+.signin-page .signin-logo {
+  position: absolute;
+  z-index: 4;
+  top: 40px;
+  left: 40px;
+  width: 145px;
+  max-width: calc(100% - 80px);
+  height: auto;
+}
+
+.signin-page .signin-input-box {
+  min-height: 52px;
+  background: #f3eef6;
+}
+
+.signin-page .signin-input-box input {
+  width: 100%;
+  font-size: 16px;
+  background: transparent;
+}
+
+.signin-page .signin-eye {
+  flex: 0 0 44px;
+  min-height: 44px;
+}
+
+.signin-page .signin-field label {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signin-page .signin-heading p,
+.signin-page .signin-create-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.signin-page .signin-submit,
+.signin-page .signin-google {
+  height: auto;
+  min-height: 50px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.signin-page .signin-forgot,
+.signin-page .signin-create-text button,
+.signin-page .signin-language {
+  min-height: 44px;
+  font-size: 13px;
+}
+
+.signin-page .signin-divider p {
+  font-size: 12px;
+}
+
+.signin-page button:focus-visible {
+  outline: 3px solid #8b659c;
+  outline-offset: 3px;
+}
+
+/* Smaller laptops */
+@media (max-width: 1180px) {
+  .signin-page {
+    padding: 24px;
+  }
+
+  .signin-page .signin-shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .signin-page .signin-form-side {
+    padding: 80px 32px 48px;
+  }
+
+  .signin-page .signin-story-content {
+    width: min(300px, calc(100% - 40px));
+    right: 20px;
+    padding: 26px 22px;
+  }
+}
+
+/* iPad — give the form comfortable space */
+@media (max-width: 1000px) {
+  .signin-page .signin-shell {
+    display: block;
+    max-width: 560px;
+    min-height: 0;
+  }
+
+  .signin-page .signin-visual-side {
+    display: none;
+  }
+
+  .signin-page .signin-form-side {
+    min-height: 0;
+    padding: 88px 40px 48px;
+  }
+
+  .signin-page .signin-form-wrapper {
+    max-width: 440px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .signin-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .signin-page .signin-shell {
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .signin-page .signin-form-side {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 84px 24px 36px;
+  }
+
+  .signin-page .signin-heading {
+    margin-bottom: 28px;
+  }
+
+  .signin-page .signin-heading h1 {
+    font-size: clamp(28px, 7.5vw, 34px);
+    line-height: 1.25;
+  }
+
+  .signin-page .signin-language {
+    top: 16px;
+    right: 24px;
+  }
+
+  .signin-page .signin-field {
+    margin-bottom: 20px;
+  }
+
+  .signin-page .signin-forgot-row {
+    margin-top: -8px;
+    margin-bottom: 16px;
+  }
+
+  .signin-page .signin-google {
+    gap: 10px;
+  }
+
+  .signin-page .signin-create-text {
+    margin-top: 18px;
   }
 }

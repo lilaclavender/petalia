@@ -861,3 +861,187 @@
     box-sizing: border-box;
   }
 }
+
+/* Sign up — tablet and phone refinements */
+.signup-page,
+.signup-page *,
+.signup-page *::before,
+.signup-page *::after {
+  box-sizing: border-box;
+}
+
+.signup-page .signup-shell,
+.signup-page .signup-form-side,
+.signup-page .signup-form-wrapper,
+.signup-page .signup-visual-side,
+.signup-page .signup-heading > div {
+  min-width: 0;
+}
+
+.signup-page h1,
+.signup-page h2,
+.signup-page p {
+  overflow-wrap: anywhere;
+}
+
+.signup-page .signup-heading-decoration {
+  flex-shrink: 0;
+}
+
+.signup-page .signup-heading p,
+.signup-page .signup-login-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.signup-page .signup-field label {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signup-page .signup-field > input,
+.signup-page .signup-password-box {
+  height: 52px;
+  background: #f3eef6;
+}
+
+.signup-page .signup-field > input,
+.signup-page .signup-password-box input {
+  min-width: 0;
+  font-size: 16px;
+}
+
+.signup-page .signup-password-box input {
+  background: transparent;
+}
+
+.signup-page .signup-password-box:focus-within {
+  background: #faf6fa;
+}
+
+.signup-page .signup-eye {
+  flex: 0 0 44px;
+  min-height: 44px;
+}
+
+.signup-page .signup-submit,
+.signup-page .signup-google {
+  height: auto;
+  min-height: 50px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.signup-page .signup-language,
+.signup-page .signup-login-text button {
+  min-height: 44px;
+  font-size: 13px;
+}
+
+.signup-page .signup-divider p {
+  font-size: 12px;
+}
+
+.signup-page button:focus-visible {
+  outline: 3px solid #8b659c;
+  outline-offset: 3px;
+}
+
+/* Smaller laptops */
+@media (max-width: 1180px) {
+  .signup-page {
+    padding: 24px;
+  }
+
+  .signup-page .signup-shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .signup-page .signup-form-side {
+    padding: 80px 32px 48px;
+  }
+
+  .signup-page .signup-visual-content {
+    left: 32px;
+    right: 32px;
+    max-width: 310px;
+  }
+}
+
+/* iPad — comfortable single-column form */
+@media (max-width: 1000px) {
+  .signup-page .signup-shell {
+    display: block;
+    max-width: 560px;
+    min-height: 0;
+  }
+
+  .signup-page .signup-visual-side {
+    display: none;
+  }
+
+  .signup-page .signup-form-side {
+    min-height: 0;
+    padding: 88px 40px 48px;
+  }
+
+  .signup-page .signup-form-wrapper {
+    max-width: 440px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .signup-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .signup-page .signup-shell {
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .signup-page .signup-form-side {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 84px 24px 36px;
+  }
+
+  .signup-page .signup-language {
+    top: 16px;
+    right: 24px;
+  }
+
+  .signup-page .signup-heading {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .signup-page .signup-heading h1 {
+    font-size: clamp(26px, 7vw, 32px);
+    line-height: 1.25;
+  }
+
+  .signup-page .signup-heading-decoration {
+    font-size: 23px;
+  }
+
+  .signup-page .signup-field {
+    margin-bottom: 20px;
+  }
+
+  .signup-page .signup-google {
+    gap: 10px;
+  }
+
+  .signup-page .signup-login-text {
+    margin-top: 18px;
+  }
+}

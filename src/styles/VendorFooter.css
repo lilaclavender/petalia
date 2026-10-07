@@ -52,3 +52,56 @@
     gap: 16px;
   }
 }
+
+/* Responsive seller footer */
+.vendor-dashboard-footer,
+.vendor-dashboard-footer * {
+  box-sizing: border-box;
+}
+
+.vendor-dashboard-footer {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.vendor-dashboard-footer p {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.vendor-dashboard-footer-links {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+}
+
+.vendor-dashboard-footer-links button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 4px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.vendor-dashboard-footer-links button:focus-visible {
+  outline: 2px solid #84649c;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .vendor-dashboard-footer {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+    padding: 18px 0 8px;
+    gap: 4px;
+    text-align: center;
+  }
+}

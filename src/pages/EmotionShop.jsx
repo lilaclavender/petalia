@@ -24,6 +24,7 @@ import loveGuidance from "../assets/love-guidance.png";
 import loveGiftFinder from "../assets/love-gift-finder.png";
 
 import "../styles/EmotionShop.css";
+<div className="emotion-detail-product-grid"></div>
 
 /* =====================================================
    EMOTION DATA
@@ -886,7 +887,7 @@ function EmotionShop() {
         </div>
 
         {emotionProducts.length > 0 ? (
-          <div className="emotion-detail-product-grid">
+          <div className="emotion-detail-product-grid shop-product-grid">
             {emotionProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}

@@ -1136,3 +1136,185 @@
     width: 35px;
   }
 }
+/* EMOTION — phone and tablet improvements */
+.emotion-page,
+.emotion-page * {
+  box-sizing: border-box;
+}
+
+.emotion-page button:focus-visible {
+  outline: 2px solid #d35b8c;
+  outline-offset: 4px;
+}
+
+@media (max-width: 1050px) {
+  .emotion-page .emotion-breadcrumb,
+  .emotion-page .emotion-hero-inner,
+  .emotion-page .emotion-selection,
+  .emotion-page .emotion-finder,
+  .emotion-page .emotion-why {
+    width: calc(100% - 40px);
+    margin-inline: auto;
+  }
+
+  .emotion-page .emotion-card {
+    height: auto;
+    min-width: 0;
+  }
+
+  .emotion-page .emotion-card-content {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .emotion-page .emotion-card-content h2 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .emotion-page .emotion-card-content p {
+    min-height: 0;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .emotion-page .emotion-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .emotion-page .emotion-card-tags span {
+    font-size: 11px;
+  }
+
+  .emotion-page .emotion-finder {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 32px;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .emotion-page .emotion-finder-art,
+  .emotion-page .emotion-finder-right-art {
+    display: none;
+  }
+
+  .emotion-page .emotion-finder-copy {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+    min-width: 0;
+  }
+
+  .emotion-page .emotion-finder-copy p,
+  .emotion-page .emotion-hero-copy p,
+  .emotion-page .emotion-why-heading p,
+  .emotion-page .emotion-why-item p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .emotion-page .emotion-finder-copy button {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .emotion-page .emotion-finder-points {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .emotion-page .emotion-finder-points > div {
+    min-width: 0;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .emotion-page .emotion-breadcrumb,
+  .emotion-page .emotion-hero-inner,
+  .emotion-page .emotion-selection,
+  .emotion-page .emotion-finder,
+  .emotion-page .emotion-why {
+    width: calc(100% - 32px);
+  }
+
+  .emotion-page .emotion-breadcrumb {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-block: 10px;
+  }
+
+  .emotion-page .emotion-breadcrumb button {
+    min-height: 44px;
+  }
+
+  .emotion-page .emotion-hero-inner {
+    min-height: 0;
+    padding-block: 36px;
+  }
+
+  .emotion-page .emotion-hero-copy {
+    width: 100%;
+  }
+
+  .emotion-page .emotion-hero-copy h1 {
+    flex-wrap: wrap;
+    font-size: clamp(29px, 8vw, 36px);
+    line-height: 1.2;
+  }
+
+  .emotion-page .emotion-title-heart {
+    flex-shrink: 0;
+  }
+
+  .emotion-page .emotion-hero-decoration {
+    display: none;
+  }
+
+  .emotion-page .emotion-selection-heading > div {
+    white-space: normal;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .emotion-page .emotion-heading-line {
+    display: none;
+  }
+
+  .emotion-page .emotion-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .emotion-page .emotion-card-visual {
+    height: 200px;
+  }
+
+  .emotion-page .emotion-finder {
+    padding: 28px 20px;
+  }
+
+  .emotion-page .emotion-finder-copy h2,
+  .emotion-page .emotion-why-heading h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .emotion-page .emotion-finder-points {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .emotion-page .emotion-why-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}

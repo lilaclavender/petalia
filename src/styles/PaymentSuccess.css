@@ -2146,3 +2146,223 @@
     padding-right: 12px;
   }
 }
+
+/* Payment success: phone and iPad improvements */
+.success-page,
+.success-page *,
+.success-page *::before,
+.success-page *::after {
+  box-sizing: border-box;
+}
+
+.success-page .success-product-info,
+.success-page .success-detail-item > div:last-child,
+.success-page .preparing-copy {
+  min-width: 0;
+}
+
+.success-page .success-product-info h3,
+.success-page .success-customization strong,
+.success-page .success-detail-item strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1100px) {
+  .success-page .success-container {
+    width: min(calc(100% - 40px), 800px);
+    margin-inline: auto;
+  }
+
+  .success-page .success-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .success-page .success-experience,
+  .success-page .success-summary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .success-page .success-summary {
+    position: static;
+  }
+
+  .success-page .success-actions button {
+    min-height: 48px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .success-page .success-container {
+    width: calc(100% - 32px);
+  }
+
+  .success-page .success-breadcrumb {
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin-bottom: 22px;
+  }
+
+  .success-page .success-breadcrumb button {
+    min-height: 44px;
+  }
+
+  .success-page .success-intro h1 {
+    font-size: clamp(29px, 7vw, 36px);
+    line-height: 1.2;
+  }
+
+  .success-page .success-intro p,
+  .success-page .success-message p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .success-page .success-experience {
+    padding: 30px 18px 24px;
+    border-radius: 22px;
+  }
+
+  .success-page .success-message h2 {
+    font-size: clamp(23px, 6vw, 28px);
+    line-height: 1.35;
+  }
+
+  .success-page .success-main-amount span {
+    font-size: 13px;
+  }
+
+  .success-page .success-main-amount strong {
+    font-size: 32px;
+  }
+
+  .success-page .success-details-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .success-page .success-detail-item {
+    padding: 14px;
+  }
+
+  .success-page .success-detail-item span {
+    font-size: 12px;
+  }
+
+  .success-page .success-detail-item strong {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .success-page .success-secure-note {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .success-page .success-secure-note strong,
+  .success-page .success-confirmed-card strong {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .success-page .success-secure-note span,
+  .success-page .success-confirmed-card span {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .success-page .success-preparing {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .success-page .preparing-copy strong {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .success-page .preparing-copy p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .success-page .preparing-status {
+    grid-column: 2;
+    justify-self: start;
+    font-size: 12px;
+  }
+
+  .success-page .success-actions {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .success-page .success-actions button {
+    width: 100%;
+    min-height: 50px;
+    font-size: 14px;
+  }
+
+  .success-page .success-summary {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .success-page .success-summary-heading {
+    gap: 12px;
+  }
+
+  .success-page .success-product-info h3 {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .success-page .success-product-info strong {
+    font-size: 14px;
+  }
+
+  .success-page .success-customization {
+    padding-left: 0;
+  }
+
+  .success-page .success-customization > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .success-page .success-price-row,
+  .success-page .success-price-row strong {
+    font-size: 14px;
+  }
+
+  .success-page .success-total-row {
+    gap: 12px;
+  }
+
+  .success-page.success-empty-page {
+    padding: 40px 16px;
+  }
+
+  .success-page .success-empty-card {
+    padding: 30px 20px;
+  }
+
+  .success-page .success-empty-card h1 {
+    font-size: 27px;
+  }
+
+  .success-page .success-empty-card p {
+    font-size: 14px;
+  }
+
+  .success-page .success-empty-card button {
+    width: 100%;
+    min-height: 48px;
+    font-size: 14px;
+  }
+}

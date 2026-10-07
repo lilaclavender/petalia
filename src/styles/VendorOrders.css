@@ -250,3 +250,182 @@
     width: 100%;
   }
 }
+
+/* Seller orders — tablet and phone improvements */
+.vendor-center-page .vendor-orders-section,
+.vendor-center-page .vendor-order-card,
+.vendor-center-page .vendor-order-top > div,
+.vendor-center-page .vendor-order-details > div,
+.vendor-center-page .vendor-order-item > div {
+  min-width: 0;
+}
+
+.vendor-center-page .vendor-orders-section {
+  width: 100%;
+  max-width: 100%;
+}
+
+.vendor-center-page .vendor-orders-section p,
+.vendor-center-page .vendor-orders-section strong,
+.vendor-center-page .vendor-order-reference,
+.vendor-center-page .vendor-payment-badge {
+  overflow-wrap: anywhere;
+}
+
+.vendor-center-page .vendor-order-details {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.vendor-center-page .vendor-order-details small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.vendor-center-page .vendor-order-details strong {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.vendor-center-page .vendor-order-statuses {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.vendor-center-page select.vendor-order-badge {
+  min-height: 48px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e5ccd8;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.vendor-center-page select.vendor-order-badge:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.vendor-center-page .vendor-payment-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vendor-center-page .vendor-order-toggle {
+  min-height: 48px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.vendor-center-page .vendor-order-expanded {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vendor-center-page .vendor-order-expanded > p {
+  margin: 10px 0;
+}
+
+.vendor-center-page .vendor-order-item img {
+  flex-shrink: 0;
+}
+
+/* iPad */
+@media (max-width: 1100px) {
+  .vendor-center-page .vendor-orders-section {
+    padding: 28px 24px;
+  }
+
+  .vendor-center-page .vendor-orders-heading,
+  .vendor-center-page .vendor-order-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .vendor-center-page .vendor-order-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .vendor-center-page .vendor-orders-heading p,
+  .vendor-center-page .vendor-order-top p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Phones */
+@media (max-width: 650px) {
+  .vendor-center-page .vendor-orders-section {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .vendor-center-page .vendor-orders-heading h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .vendor-center-page .vendor-orders-count {
+    font-size: 14px;
+  }
+
+  .vendor-center-page .vendor-orders-list {
+    margin-top: 22px;
+    gap: 16px;
+  }
+
+  .vendor-center-page .vendor-order-card {
+    padding: 20px 16px;
+  }
+
+  .vendor-center-page .vendor-order-reference {
+    font-size: 16px;
+  }
+
+  .vendor-center-page .vendor-order-statuses {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .vendor-center-page .vendor-order-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin: 22px 0;
+  }
+
+  .vendor-center-page .vendor-order-toggle {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .vendor-center-page .vendor-order-expanded {
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+
+  .vendor-center-page .vendor-order-expanded h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .vendor-center-page .vendor-order-item {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .vendor-center-page .vendor-order-item img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .vendor-center-page .vendor-orders-empty {
+    padding: 24px 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}

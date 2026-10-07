@@ -1558,3 +1558,245 @@
     width: calc(100% - 24px);
   }
 }
+
+/* Add Product — responsive refinements */
+.vendor-add-page,
+.vendor-add-page *,
+.vendor-add-page *::before,
+.vendor-add-page *::after {
+  box-sizing: border-box;
+}
+
+.vendor-add-page .vendor-add-top,
+.vendor-add-page .vendor-basic-fields,
+.vendor-add-page .vendor-matching-header > div,
+.vendor-add-page .vendor-match-chips {
+  min-width: 0;
+}
+
+.vendor-add-page h1,
+.vendor-add-page h2,
+.vendor-add-page h3,
+.vendor-add-page p,
+.vendor-add-page small,
+.vendor-add-page .vendor-match-chip {
+  overflow-wrap: anywhere;
+}
+
+.vendor-add-page .vendor-add-back {
+  min-height: 44px;
+}
+
+.vendor-add-page .vendor-field label {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vendor-add-page .vendor-field input,
+.vendor-add-page .vendor-field select,
+.vendor-add-page .vendor-field textarea {
+  min-width: 0;
+  font-size: 16px;
+}
+
+.vendor-add-page .vendor-field input,
+.vendor-add-page .vendor-field select,
+.vendor-add-page .vendor-price-input {
+  height: 50px;
+}
+
+.vendor-add-page .vendor-price-input > span {
+  flex: 0 0 40px;
+}
+
+.vendor-add-page .vendor-price-input input {
+  width: 0;
+  min-width: 0;
+  flex: 1;
+  height: 100%;
+}
+
+.vendor-add-page .vendor-field textarea {
+  min-height: 130px;
+}
+
+.vendor-add-page .vendor-character-count {
+  margin-top: 6px;
+  padding-right: 0;
+  font-size: 12px;
+}
+
+.vendor-add-page .vendor-field-hint,
+.vendor-add-page .vendor-image-guidance,
+.vendor-add-page .vendor-image-guidance strong,
+.vendor-add-page .vendor-upload-placeholder small {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.vendor-add-page .vendor-section-heading p,
+.vendor-add-page .vendor-personalization-text,
+.vendor-add-page .vendor-matching-header p,
+.vendor-add-page .vendor-matching-placeholder p,
+.vendor-add-page .vendor-match-intro p,
+.vendor-add-page .vendor-adjust-heading p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vendor-add-page .vendor-option-check,
+.vendor-add-page .vendor-adjust-option {
+  min-height: 44px;
+  max-width: 100%;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vendor-add-page .vendor-option-check input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.vendor-add-page .vendor-match-chip {
+  max-width: 100%;
+  min-height: 44px;
+  font-size: 13px;
+}
+
+.vendor-add-page .vendor-match-remove {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
+.vendor-add-page .vendor-match-title,
+.vendor-add-page .vendor-adjust-label,
+.vendor-add-page .vendor-match-empty {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vendor-add-page .vendor-suggest-button,
+.vendor-add-page .vendor-adjust-button,
+.vendor-add-page .vendor-cancel-product,
+.vendor-add-page .vendor-submit-product {
+  height: auto;
+  min-height: 48px;
+  padding: 12px 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.vendor-add-page button:focus-visible {
+  outline: 3px solid #8b659c;
+  outline-offset: 3px;
+}
+
+/* iPad */
+@media (max-width: 1100px) {
+  .vendor-add-page .vendor-add-main {
+    width: calc(100% - 48px);
+    padding: 32px 0 48px;
+  }
+
+  .vendor-add-page .vendor-add-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .vendor-add-page .vendor-image-section {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .vendor-add-page .vendor-image-upload {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .vendor-add-page .vendor-matching-header {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}
+
+/* Phones */
+@media (max-width: 650px) {
+  .vendor-add-page .vendor-add-main {
+    width: calc(100% - 32px);
+    padding: 24px 0 40px;
+  }
+
+  .vendor-add-page .vendor-add-heading h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .vendor-add-page .vendor-add-heading p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .vendor-add-page .vendor-add-card {
+    padding: 22px 16px;
+  }
+
+  .vendor-add-page .vendor-image-preview {
+    object-fit: contain;
+  }
+
+  .vendor-add-page .vendor-field-row,
+  .vendor-add-page .vendor-four-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .vendor-add-page .vendor-badge-field {
+    width: 100%;
+  }
+
+  .vendor-add-page .vendor-form-section,
+  .vendor-add-page .vendor-personalization-block,
+  .vendor-add-page .vendor-matching-section {
+    padding: 22px 14px;
+  }
+
+  .vendor-add-page .vendor-section-heading h2,
+  .vendor-add-page .vendor-matching-header h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .vendor-add-page .vendor-matching-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vendor-add-page .vendor-match-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .vendor-add-page .vendor-adjust-panel {
+    padding: 18px 12px;
+  }
+
+  .vendor-add-page .vendor-form-actions {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .vendor-add-page .vendor-suggest-button,
+  .vendor-add-page .vendor-adjust-button,
+  .vendor-add-page .vendor-cancel-product,
+  .vendor-add-page .vendor-submit-product {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+  }
+
+  .vendor-add-page .vendor-add-flower-decoration {
+    display: none;
+  }
+}

@@ -1,133 +1,129 @@
-
 import { useNavigate } from "react-router-dom";
+import "../styles/OrderConfirmation.css";
 
 function OrderConfirmation() {
   const navigate = useNavigate();
 
-  const paymentData = JSON.parse(
-    localStorage.getItem("petaliaPayment") || "null"
-  );
+  const paymentData = (() => {
+    try {
+      return JSON.parse(
+        localStorage.getItem("petaliaPayment") || "null"
+      );
+    } catch {
+      return null;
+    }
+  })();
 
   if (!paymentData) {
     return (
-      <div className="page-content" style={{ textAlign: "center", padding: "100px 20px" }}>
-        <h2>No order found</h2>
-        <p>Please place an order first.</p>
-        <button onClick={() => navigate("/shop")}>
-          Continue Shopping
-        </button>
-      </div>
+      <main className="order-confirmation-page">
+        <section className="order-confirmation-card">
+          <p className="order-confirmation-eyebrow">PETALIA</p>
+
+          <h1>No order found</h1>
+
+          <p className="order-confirmation-description">
+            Please place an order first.
+          </p>
+
+          <button
+            type="button"
+            className="order-confirmation-button"
+            onClick={() => navigate("/shop")}
+          >
+            Continue Shopping
+          </button>
+        </section>
+      </main>
     );
   }
 
   const { orderReference, paymentMethod, total, status } = paymentData;
+  const isPaid = status === "paid";
+  const amount = Number(total);
 
   return (
-    <div
-      style={{
-        minHeight: "75vh",
-        background: "#EEE7F1",
-        padding: "70px 20px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "650px",
-          background: "#FFFAF7",
-          borderRadius: "24px",
-          padding: "45px",
-          textAlign: "center",
-          boxShadow: "0 12px 35px rgba(110, 83, 111, 0.08)",
-        }}
-      >
-        <p
-          style={{
-            color: "#D35B8C",
-            fontSize: "12px",
-            letterSpacing: "2px",
-            fontWeight: "600",
-          }}
-        >
+    <main className="order-confirmation-page">
+      <section className="order-confirmation-card">
+        <p className="order-confirmation-eyebrow">
           PETALIA · ORDER CONFIRMATION
         </p>
 
-        <h1
-          style={{
-            color: "#6E536F",
-            fontFamily: "Georgia, serif",
-            fontSize: "34px",
-            margin: "20px 0 12px",
-          }}
-        >
-          Your gift is on its way to becoming a special moment.
+        <h1>
+          {isPaid
+            ? "Payment confirmed. Your thoughtful gift comes next."
+            : "Your thoughtful gift is one step closer."}
         </h1>
 
-        <p style={{ color: "#8D798C", lineHeight: "1.7" }}>
-          Your order has been placed successfully.
-          Payment is still pending and has not been verified.
+        <p className="order-confirmation-description">
+          {isPaid
+            ? "Your payment has been verified. You can follow your order’s progress in your account."
+            : "Your order has been created. Payment is still pending and has not been verified."}
         </p>
 
-        <div
-          style={{
-            margin: "30px 0",
-            padding: "25px",
-            background: "#F8EEF1",
-            borderRadius: "16px",
-            textAlign: "left",
-          }}
-        >
-          <p><strong>Order Reference:</strong> {orderReference}</p>
+        <dl className="order-confirmation-details">
+          <div>
+            <dt>Order reference</dt>
+            <dd>{orderReference || "Unavailable"}</dd>
+          </div>
 
-          <p>
-            <strong>Payment Method:</strong>{" "}
-            {paymentMethod?.toUpperCase()}
-          </p>
+          <div>
+            <dt>Payment method</dt>
+            <dd>{paymentMethod?.toUpperCase() || "Unavailable"}</dd>
+          </div>
 
-          <p>
-            <strong>Total:</strong> ${Number(total).toFixed(2)}
-          </p>
+          <div>
+            <dt>Total</dt>
+            <dd>
+              {Number.isFinite(amount)
+                ? `$${amount.toFixed(2)}`
+                : "Unavailable"}
+            </dd>
+          </div>
 
-          <p>
-            <strong>Payment Status:</strong>{" "}
-            <span style={{ color: "#A36F7E", fontWeight: "600" }}>
-              {status === "paid" ? "Paid" : "Pending"}
-            </span>
-          </p>
+          <div>
+            <dt>Payment status</dt>
+            <dd>
+              <span
+                className={`order-confirmation-status ${
+                  isPaid ? "is-paid" : "is-pending"
+                }`}
+              >
+                {isPaid ? "Paid" : "Pending"}
+              </span>
+            </dd>
+          </div>
+        </dl>
+
+        <p className="order-confirmation-note">
+          {isPaid
+            ? "Payment confirmation and delivery progress are separate. Check your account for the latest order status."
+            : "Return to the payment page to complete your KHQR payment. Your order remains pending until payment is verified."}
+        </p>
+
+        <div className="order-confirmation-actions">
+          {!isPaid && (
+            <button
+              type="button"
+              className="order-confirmation-button"
+              onClick={() => navigate("/payment")}
+            >
+              Return to Payment
+            </button>
+          )}
+
+          <button
+            type="button"
+            className={`order-confirmation-button ${
+              !isPaid ? "is-secondary" : ""
+            }`}
+            onClick={() => navigate("/shop")}
+          >
+            Continue Shopping
+          </button>
         </div>
-
-        <p
-          style={{
-            fontSize: "13px",
-            color: "#8D798C",
-            lineHeight: "1.7",
-          }}
-        >
-          Please complete your payment using the instructions
-          provided by the seller. Your order will remain pending
-          until payment is verified.
-        </p>
-
-        <button
-          onClick={() => navigate("/shop")}
-          style={{
-            marginTop: "25px",
-            padding: "14px 35px",
-            border: "none",
-            borderRadius: "30px",
-            background: "#D35B8C",
-            color: "#fff",
-            fontWeight: "600",
-            cursor: "pointer",
-          }}
-        >
-          Continue Shopping
-        </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

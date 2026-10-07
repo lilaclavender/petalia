@@ -555,3 +555,183 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+/* Account: phone and iPad improvements */
+.account-page,
+.account-page *,
+.account-page *::before,
+.account-page *::after {
+  box-sizing: border-box;
+}
+
+.account-page .account-profile-card,
+.account-page .account-order-top > div,
+.account-page .account-detail-item > div {
+  min-width: 0;
+}
+
+.account-page .account-email,
+.account-page .account-profile-card h2,
+.account-page .account-order-top h3,
+.account-page .account-products-summary p,
+.account-page .account-detail-item p {
+  overflow-wrap: anywhere;
+}
+
+.account-page .account-order-top {
+  flex-wrap: wrap;
+}
+
+.account-page .account-status {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.account-page .account-signout,
+.account-page .account-settings-button {
+  height: auto;
+  min-height: 48px;
+  padding: 12px 18px;
+  font-size: 14px;
+}
+
+.account-page button:focus-visible {
+  outline: 3px solid #6e536f;
+  outline-offset: 3px;
+}
+
+/* iPad and smaller laptops */
+@media (max-width: 1100px) {
+  .account-page {
+    padding: 40px 20px 60px;
+  }
+
+  .account-page .account-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .account-page .account-profile-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .account-page .account-sakura-branch {
+    display: none;
+  }
+
+  .account-page .account-order-details {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .account-page .account-detail-item {
+    padding-inline: 12px;
+    align-items: flex-start;
+  }
+
+  .account-page .account-detail-item:first-child {
+    padding-left: 0;
+  }
+
+  .account-page .account-detail-item:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Phones */
+@media (max-width: 650px) {
+  .account-page {
+    padding: 30px 16px 48px;
+  }
+
+  .account-page .account-heading h1 {
+    font-size: clamp(30px, 8vw, 36px);
+    line-height: 1.2;
+  }
+
+  .account-page .account-heading p,
+  .account-page .account-email {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .account-page .account-profile-card {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  .account-page .account-orders-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .account-page .account-orders-heading h2 {
+    font-size: 28px;
+  }
+
+  .account-page .account-order-card {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .account-page .account-order-main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .account-page .account-order-image {
+    width: 88px;
+    height: 88px;
+  }
+
+  .account-page .account-order-top {
+    gap: 12px;
+  }
+
+  .account-page .account-order-top h3 {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .account-page .account-status {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .account-page .account-products-summary p,
+  .account-page .account-products-summary > span:first-child {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .account-page .account-order-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .account-page .account-detail-item,
+  .account-page .account-detail-item:first-child,
+  .account-page .account-detail-item:last-child {
+    padding: 0;
+    border-right: none;
+    gap: 12px;
+  }
+
+  .account-page .account-detail-item span {
+    font-size: 12px;
+  }
+
+  .account-page .account-detail-item p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .account-page .account-empty {
+    padding: 30px 20px;
+  }
+
+  .account-page .account-empty p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}

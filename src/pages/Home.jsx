@@ -170,16 +170,14 @@ function Home() {
     trendingIds.includes(product.id),
   );
 
-  const curatedIds = [21, 22, 23, 24];
-
-  const curatedSets = products.filter((product) =>
-    curatedIds.includes(product.id),
-  );
+  const curatedSets = products
+    .filter((product) => product.category === "Gift Sets")
+    .slice(0, 4);
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   return (
-    <main>
+    <main className="home-page">
       {/* HERO */}
       <section
         className="hero-section"
@@ -560,16 +558,19 @@ function Home() {
               <ChevronRight />
             </button>
           </div>
-          <div className="trending-grid">
+          <div className="trending-grid shop-product-grid">
             {trendingProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 id={product.id}
                 image={product.image}
                 name={product.name}
+                description={product.description}
+                category={product.category}
                 price={product.price}
                 rating={product.rating}
                 reviews={product.reviews}
+                badge={product.badge}
               />
             ))}
           </div>

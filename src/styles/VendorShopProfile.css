@@ -785,3 +785,223 @@
     max-width: 100%;
   }
 }
+
+/* Shop profile — responsive refinements */
+.vendor-center-page .vendor-profile-main {
+  min-width: 0;
+}
+
+.vendor-profile-main .shop-profile-field,
+.vendor-profile-main .shop-cover-actions > div,
+.vendor-profile-main .shop-logo-copy,
+.vendor-profile-main .shop-overview-heading > div {
+  min-width: 0;
+}
+
+.vendor-profile-main p,
+.vendor-profile-main h2,
+.vendor-profile-main h3,
+.vendor-profile-main strong,
+.vendor-profile-main .shop-detail-row span {
+  overflow-wrap: anywhere;
+}
+
+.vendor-profile-main .shop-profile-heading p,
+.vendor-profile-main .shop-overview-description {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vendor-profile-main .shop-profile-section-heading p,
+.vendor-profile-main .shop-overview-heading p,
+.vendor-profile-main .shop-profile-details-intro {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.vendor-profile-main .shop-profile-field > span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vendor-profile-main .shop-profile-field input,
+.vendor-profile-main .shop-profile-field select,
+.vendor-profile-main .shop-profile-field textarea {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 16px;
+}
+
+.vendor-profile-main .shop-profile-field input,
+.vendor-profile-main .shop-profile-field select {
+  height: 50px;
+}
+
+.vendor-profile-main .shop-profile-field textarea {
+  min-height: 130px;
+  padding: 12px 14px;
+}
+
+.vendor-profile-main .shop-profile-field small,
+.vendor-profile-main .shop-hours-note,
+.vendor-profile-main .shop-cover-actions span,
+.vendor-profile-main .shop-logo-copy span,
+.vendor-profile-main .shop-image-placeholder span {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.vendor-profile-main .shop-cover-actions strong,
+.vendor-profile-main .shop-logo-copy strong,
+.vendor-profile-main .shop-image-placeholder strong {
+  font-size: 14px;
+}
+
+.vendor-profile-main .shop-secondary-button,
+.vendor-profile-main .shop-overview-view {
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.vendor-profile-main .shop-save-button {
+  min-height: 50px;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.vendor-profile-main .shop-overview-heading {
+  flex-wrap: wrap;
+}
+
+.vendor-profile-main .shop-overview-meta {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.vendor-profile-main .shop-detail-row {
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.vendor-profile-main .shop-detail-row strong {
+  font-size: 12px;
+}
+
+.vendor-profile-main .shop-profile-message {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.vendor-profile-main button:focus-visible {
+  outline: 3px solid #8b659c;
+  outline-offset: 3px;
+}
+
+/* iPad */
+@media (max-width: 1100px) {
+  .vendor-center-page .vendor-profile-main {
+    width: auto;
+    flex: 1;
+    padding: 28px 24px 48px;
+  }
+
+  .vendor-profile-main .shop-profile-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vendor-profile-main .shop-profile-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 650px) {
+  .vendor-center-page .vendor-profile-main {
+    width: 100%;
+    padding: 24px 16px 40px;
+  }
+
+  .vendor-profile-main .shop-profile-heading h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .vendor-profile-main .shop-profile-layout {
+    gap: 20px;
+  }
+
+  .vendor-profile-main .shop-profile-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vendor-profile-main .shop-profile-card,
+  .vendor-profile-main .shop-overview-card,
+  .vendor-profile-main .shop-profile-details-card {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .vendor-profile-main .shop-profile-section-heading h2,
+  .vendor-profile-main .shop-overview-heading h2,
+  .vendor-profile-main .shop-profile-details-card h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .vendor-profile-main .shop-profile-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .vendor-profile-main .shop-cover-preview {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 150px;
+  }
+
+  .vendor-profile-main .shop-cover-preview img {
+    display: block;
+  }
+
+  .vendor-profile-main .shop-cover-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .vendor-profile-main .shop-logo-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+  }
+
+  .vendor-profile-main .shop-logo-row .shop-secondary-button {
+    grid-column: 1 / -1;
+  }
+
+  .vendor-profile-main .shop-secondary-button,
+  .vendor-profile-main .shop-overview-view,
+  .vendor-profile-main .shop-save-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+  }
+
+  .vendor-profile-main .shop-overview-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .vendor-profile-main .shop-overview-content h3 {
+    font-size: 23px;
+    line-height: 1.3;
+  }
+}

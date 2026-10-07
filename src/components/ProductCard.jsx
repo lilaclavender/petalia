@@ -71,6 +71,10 @@ function ProductCard({
       <div className="product-card-content">
         <h3>{name}</h3>
 
+        {description?.trim() && (
+          <p className="product-card-description">{description}</p>
+        )}
+
         <div className="product-card-bottom">
           <span className="product-price">${price}</span>
 

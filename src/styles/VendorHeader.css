@@ -291,3 +291,107 @@
     display: none;
   }
 }
+
+/* Seller header — responsive refinements */
+.vendor-center-header,
+.vendor-center-header * {
+  box-sizing: border-box;
+}
+
+.vendor-center-header {
+  gap: 16px;
+}
+
+.vendor-center-brand,
+.vendor-center-actions,
+.vendor-center-account-text {
+  min-width: 0;
+}
+
+.vendor-center-logo,
+.vendor-center-divider {
+  flex-shrink: 0;
+}
+
+.vendor-view-shop {
+  min-width: 44px;
+  min-height: 44px;
+  height: auto;
+}
+
+.vendor-center-account {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.vendor-center-account-text small {
+  font-size: 12px;
+}
+
+.vendor-center-account-text strong {
+  font-size: 13px;
+}
+
+.vendor-center-header button:focus-visible,
+.vendor-center-header a:focus-visible {
+  outline: 3px solid #8b659c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .vendor-center-header {
+    padding: 12px 20px;
+  }
+
+  .vendor-center-brand {
+    gap: 10px;
+  }
+
+  .vendor-center-actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vendor-center-header {
+    min-height: 68px;
+    padding: 12px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .vendor-center-brand {
+    gap: 8px;
+  }
+
+  .vendor-center-title {
+    font-size: 12px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .vendor-center-actions {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .vendor-view-shop {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  .vendor-view-shop svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .vendor-center-account {
+    padding: 5px;
+  }
+
+  .vendor-center-avatar {
+    width: 34px;
+    height: 34px;
+  }
+}

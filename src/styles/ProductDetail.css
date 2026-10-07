@@ -2382,3 +2382,275 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* PRODUCT DETAIL — phone and tablet improvements */
+.product-detail-page,
+.product-detail-page * {
+  box-sizing: border-box;
+}
+
+.product-detail-page button:focus-visible,
+.product-detail-page textarea:focus-visible {
+  outline: 2px solid #d35b8c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1150px) {
+  .product-detail-page .product-detail-container {
+    width: calc(100% - 40px);
+  }
+
+  .product-detail-page .product-main-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .product-detail-page .product-gallery,
+  .product-detail-page .product-detail-info,
+  .product-detail-page .customization-card {
+    min-width: 0;
+  }
+
+  .product-detail-page .personalize-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .product-detail-page .customization-heading {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .product-detail-page .customization-heading h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .product-detail-page .gift-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .product-detail-page .summary-item > div {
+    min-width: 0;
+  }
+
+  .product-detail-page .summary-item strong,
+  .product-detail-page .summary-item small {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .product-detail-page .gift-message-area textarea {
+    font-size: 16px;
+    line-height: 1.6;
+    resize: vertical;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-detail-page .product-detail-container {
+    width: calc(100% - 32px);
+  }
+
+  .product-detail-page .product-detail-breadcrumb {
+    flex-wrap: wrap;
+    gap: 8px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .product-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .product-detail-page .product-main-image-wrapper {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1.1;
+  }
+
+  .product-detail-page .product-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-detail-page .product-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 4px;
+  }
+
+  .product-detail-page .product-thumbnail {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .product-detail-page .detail-wishlist-button,
+  .product-detail-page .gallery-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .product-detail-page .detail-product-badge {
+    max-width: calc(100% - 80px);
+    white-space: normal;
+  }
+
+  .product-detail-page .product-detail-info h1 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .detail-rating,
+  .product-detail-page .detail-seller,
+  .product-detail-page .detail-tags {
+    flex-wrap: wrap;
+  }
+
+  .product-detail-page .detail-description,
+  .product-detail-page .detail-meaning-card p,
+  .product-detail-page .section-heading p,
+  .product-detail-page .small-section-heading p,
+  .product-detail-page .why-gift-item p,
+  .product-detail-page .good-to-know-item p,
+  .product-detail-page .seller-section-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .product-detail-page .detail-quantity-area {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .product-detail-page .quantity-control button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .product-detail-page .detail-main-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .product-detail-page .personalize-button,
+  .product-detail-page .detail-secondary-wishlist,
+  .product-detail-page .add-gift-basket-button,
+  .product-detail-page .view-shop-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 12px 16px;
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  .product-detail-page .customization-card {
+    padding: 20px 16px;
+  }
+
+  .product-detail-page .wrapping-options,
+  .product-detail-page .card-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-detail-page .wrapping-option,
+  .product-detail-page .message-card-option {
+    min-width: 0;
+    height: auto;
+    min-height: 90px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .wrapping-option > span,
+  .product-detail-page .message-card-option small,
+  .product-detail-page .addon-option strong,
+  .product-detail-page .addon-option span {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .product-detail-page .customization-note {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .product-detail-page .addon-option {
+    min-height: 64px;
+    padding: 12px;
+  }
+
+  .product-detail-page .addon-option > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .addon-option img {
+    flex-shrink: 0;
+  }
+
+  .product-detail-page .gift-message-area textarea {
+    min-height: 110px;
+  }
+
+  .product-detail-page .gift-summary-heading {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .product-detail-page .gift-summary-grid,
+  .product-detail-page .why-gift-grid,
+  .product-detail-page .good-to-know-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .product-detail-page .summary-message {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .summary-item strong {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .product-detail-page .detail-seller-section {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .product-detail-page .seller-section-content h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail-page .view-shop-button {
+    grid-column: 1 / -1;
+  }
+
+  .product-detail-page .basket-success-message {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .product-detail-page .wrapping-options,
+  .product-detail-page .card-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

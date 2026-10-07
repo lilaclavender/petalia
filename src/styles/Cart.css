@@ -1293,3 +1293,210 @@
     height: 280px;
   }
 }
+/* CART — readable phone and tablet layouts */
+.cart-page,
+.cart-page * {
+  box-sizing: border-box;
+}
+
+.cart-page button:focus-visible,
+.cart-page textarea:focus-visible {
+  outline: 2px solid #d35b8c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .cart-page .cart-container {
+    width: calc(100% - 40px);
+  }
+
+  .cart-page .cart-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cart-page .cart-summary {
+    position: static;
+  }
+
+  .cart-page .cart-item-title-row > div,
+  .cart-page .summary-product-row > div,
+  .cart-page .message-edit-area,
+  .cart-page .message-preview-content {
+    min-width: 0;
+  }
+
+  .cart-page .cart-item-title-row h2,
+  .cart-page .summary-product-row span,
+  .cart-page .message-preview-content p {
+    overflow-wrap: anywhere;
+  }
+
+  .cart-page .message-edit-area textarea {
+    max-width: 100%;
+    min-height: 110px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .cart-page .cart-quantity-control button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cart-page .edit-gift-button,
+  .cart-page .remove-cart-item,
+  .cart-page .cart-message-preview button,
+  .cart-page .continue-shopping-button {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .cart-page .message-edit-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .cart-page .cart-container {
+    width: calc(100% - 32px);
+  }
+
+  .cart-page .cart-page-heading h1 {
+    font-size: clamp(28px, 8vw, 34px);
+    line-height: 1.2;
+  }
+
+  .cart-page .cart-page-heading p,
+  .cart-page .cart-care-note,
+  .cart-page .empty-cart p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .cart-page .cart-item-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .cart-page .cart-item-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cart-page .cart-item-image img {
+    object-fit: contain;
+  }
+
+  .cart-page .cart-item-title-row h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .cart-page .cart-customization-row {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 6px 10px;
+    align-items: start;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .cart-page .cart-customization-row strong {
+    grid-column: 2;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .cart-page .cart-customization-row svg {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+  }
+
+  .cart-page .cart-item-bottom {
+    gap: 16px;
+  }
+
+  .cart-page .cart-quantity-area {
+    flex-wrap: wrap;
+  }
+
+  .cart-page .cart-line-total {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cart-page .cart-message-preview {
+    grid-template-columns: 36px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .cart-page .message-preview-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .cart-page .message-edit-area {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  .cart-page .message-edit-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  /* Cancel and Save sit beside each other. */
+  .cart-page .message-edit-actions button {
+    grid-column: auto;
+    justify-self: stretch;
+    min-width: 0;
+    padding: 10px;
+  }
+
+  .cart-page .cart-summary {
+    padding: 22px 18px;
+  }
+
+  .cart-page .summary-product-row {
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  .cart-page .summary-product-row strong {
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  .cart-page .cart-summary-row,
+  .cart-page .cart-summary-total {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cart-page .delivery-row small {
+    max-width: 160px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .cart-page .secure-checkout-note span,
+  .cart-page .cart-delivery-note {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .cart-page .proceed-checkout-button {
+    min-height: 48px;
+    padding: 12px;
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  .cart-page .empty-cart {
+    min-height: 360px;
+    padding: 32px 20px;
+  }
+}

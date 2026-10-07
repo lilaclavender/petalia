@@ -38,6 +38,8 @@ function VendorDashboard() {
 
   const [shop, setShop] = useState(null);
   const [products, setProducts] = useState([]);
+  const [orderCount, setOrderCount] = useState(null);
+  const [paidOrderTotal, setPaidOrderTotal] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const [search, setSearch] = useState("");
@@ -81,6 +83,44 @@ function VendorDashboard() {
       }
 
       setShop(shopData);
+      // Count every order belonging to this shop.
+      const { count, error: countError } = await supabase
+        .from("orders")
+        .select("id", { count: "exact", head: true })
+        .eq("shop_id", shopData.id);
+
+      if (countError) {
+        console.error("Error counting shop orders:", countError);
+      } else {
+        setOrderCount(count ?? 0);
+      }
+
+      // Sum verified paid orders, excluding cancelled/refunded orders.
+      // This is an order-value summary, not a seller payout calculation.
+      const { data: paidOrders, error: revenueError } = await supabase
+        .from("orders")
+        .select("total, status")
+        .eq("shop_id", shopData.id)
+        .eq("payment_status", "paid");
+
+      if (revenueError) {
+        console.error("Error loading paid orders:", revenueError);
+      } else {
+        const excludedStatuses = ["cancelled", "canceled", "refunded"];
+
+        const total = (paidOrders ?? []).reduce((sum, order) => {
+          const status = String(order.status ?? "")
+            .trim()
+            .toLowerCase();
+
+          if (excludedStatuses.includes(status)) return sum;
+
+          const amount = Number(order.total);
+          return sum + (Number.isFinite(amount) ? amount : 0);
+        }, 0);
+
+        setPaidOrderTotal(total);
+      }
 
       // Get products from this shop
       const { data: productData, error: productError } = await supabase
@@ -323,7 +363,7 @@ function VendorDashboard() {
               </div>
 
               <div className="stat-info">
-                <strong>0</strong>
+                <strong>{orderCount === null ? "—" : orderCount}</strong>
                 <span>Total Orders</span>
               </div>
 
@@ -388,8 +428,12 @@ function VendorDashboard() {
               </div>
 
               <div className="stat-info">
-                <strong>$0.00</strong>
-                <span>Total Revenue</span>
+                <strong>
+                  {paidOrderTotal === null
+                    ? "—"
+                    : `$${paidOrderTotal.toFixed(2)}`}
+                </strong>
+                <span>Paid Order Total</span>
               </div>
 
               <svg
@@ -565,7 +609,6 @@ function VendorDashboard() {
               <table className="vendor-product-table">
                 <thead>
                   <tr>
-
                     <th>Image</th>
                     <th>Product Name</th>
                     <th>Category</th>
@@ -693,6 +736,6 @@ function VendorDashboard() {
     </div>
   );
 }
-<VendorFooter />
+<VendorFooter />;
 
 export default VendorDashboard;
